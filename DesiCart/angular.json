@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DesiCart"
+    }
+  },
+  "defaultProject": "DesiCart",
+  "cli": {
+    "analytics": false
+  }
 }
