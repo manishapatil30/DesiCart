@@ -2,8 +2,17 @@
 body {
     font-family: 'Poppins';
     width:100%;
+    overflow-y: auto;
+    scrollbar-width: none;
   }
+ body::-webkit-scrollbar {
+    display: none;
+}
   .responsive {
     width: 100%;
     height: auto;
   }
+  .clear-fix {
+    clear: both;
+  }
+  
