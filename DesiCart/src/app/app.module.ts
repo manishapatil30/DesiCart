@@ -7,7 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderlinkComponent } from './headerlink/headerlink.component';
 import { ContantComponent } from './contant/contant.component';
 import { HomepageComponent } from './homepage/homepage.component';
-
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { HomepageComponent } from './homepage/homepage.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatStepperModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

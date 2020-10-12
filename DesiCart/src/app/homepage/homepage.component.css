@@ -2,6 +2,7 @@
   {
       position: absolute;
       /* margin-top:114px; */
+      width: 100%;
   }
 .Frame-3
 {
@@ -17,8 +18,8 @@ h3
     font-size: 25px;
     line-height: 37px;
     color: #000000;
-    text-align: center;
     font-weight: 500;
+    margin-bottom: 20px;
     /* top: 669.17px; */
     text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12);
   }
@@ -168,6 +169,175 @@ h3
   .center a
   {
       color: white;
+  }
+  .stepper
+  {
+    /* position: absolute; */
+    width: 102%;
+    height: 557px;
+    background: black;
+    margin-left: -15px;
+    color: white;
+  }
+  .stepper h3
+  {
+    font-style: normal;
+    font-size: 25px;
+    line-height: 37px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 10px;
+    /* top: 669.17px; */
+    text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12);
+  }
+  mat-step
+  {
+    border: 2px solid white;
+    color: white;
+  }
+  .mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+  .grid
+  {
+    position: absolute;
+    width: 100%;
+    height: 557px;
+    margin-left: -15px;
+  }
+  .whysign p
+  {
+  font-size: 18px;
+  Line-Height: 20px;
+  padding: 0px;
+  }
+  .whysign p img
+  {
+  margin-right: 5px;
+  }
+  .numberCircle
+  {
+      border-radius: 50%;
+      width:120px;
+      height: 120px;
+      padding: 34px;
+      margin-left: 25px;
+      background: black;
+      border: 7px solid #fff;
+      color: #e6e9ee;
+      text-align: center;
+      transition: transform .2s;
+      font: 40px Arial, sans-serif;
+  }
+  .numberCircle:hover {
+    -ms-transform: scale(1.4); /* IE 9 */
+    -webkit-transform: scale(1.4); /* Safari 3-8 */
+    transform: scale(1.4); 
+    color: #F7CD26;
+    border: 8px solid #F7CD26;
+  }
+  .stepper .dash
+  {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 40px;
+    text-align: left;
+   margin-left: -30px;
+    color: #e6e9ee;
+  }
+  h6{
+    padding-top: 40px;
+  }
+  .stepper p{
+    font-size: 25px;
+    color:#e6e9ee;
+    text-align: left;
+    padding: 28px 28px 0px 28px;
+    margin-left: 20px;
+  }
+  .hide1 {
+    display: none;
+  }
+ .hide2  {
+    display: none;
+  }
+  .hide3 {
+    display: none;
+  }
+  .hide4 {
+    display: none;
+  }
+      
+  .stepper #myDIV1:hover .hide1 {
+    display: block;
+    color: #e6e9ee;
+  }
+  .stepper #myDIV2:hover .hide2 {
+    display: block;
+    color: #e6e9ee;
+  }
+  .stepper #myDIV3:hover .hide3 {
+    display: block;
+    color: #e6e9ee;
+  }
+  .stepper #myDIV4:hover .hide4 {
+    display: block;
+    color: #e6e9ee;
+  }
+  .yourDesiCart p
+  {
+  font-size: 16px;
+  }
+  .yourDesiCart .Desipp p
+  {
+    font-size: 18px;
+    Line-Height: 20px;
+    padding: 0px;
+    margin-left: 150px;
+  } 
+  .yourDesiCart p img
+  {
+    margin-right: 5px;
+  }
+  .review
+  {
+    width: 100%;
+    height:300px;
+    left: 0px;
+    margin-left: -15px;
+    background: #F2F6FD;
+    margin-top: 30px;
+  }
+  footer{
+    width: 100%;
+    height: 390px;
+    left: 0px;
+    background: black;
+    margin-left: -15px;
+    color: white;
+  }
+  div.vertical-line{
+    margin-top: 40px;
+    width: 1px; /* Line width */
+    background: #F2F6FD; /* Line color */
+    height: 300px; /* Override in-line if you want specific height. */
+    float: left; /* Causes the line to float to left of content. 
+      You can instead use position:absolute or display:inline-block
+      if this fits better with your design */
+  }
+  footer .title
+  {
+    margin-top: 30px;
+  }
+  #footer
+  {
+    padding-top: 30px;
+    margin-left: 20px;
   }
 
   
