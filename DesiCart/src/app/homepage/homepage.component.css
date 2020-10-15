@@ -20,6 +20,7 @@ h3
     color: #000000;
     font-weight: 500;
     margin-bottom: 20px;
+    margin-top: 20px;
     /* top: 669.17px; */
     text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12);
   }
@@ -34,7 +35,7 @@ h3
     margin-top: 16px;
   }
 
-  .card {
+  .card-container .card {
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
@@ -141,7 +142,7 @@ h3
     }
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 600px) {
     svg#rocket-smoke {
       display: none;
       visibility: hidden;
@@ -157,7 +158,7 @@ h3
   }
   .center button
   {
-    width: 250px;
+    width: 200px;
     height: 55px;
     background: #25262A;
     border-radius: 10px;
@@ -173,7 +174,7 @@ h3
   .stepper
   {
     /* position: absolute; */
-    width: 102%;
+    width: 100%;
     height: 557px;
     background: black;
     margin-left: -15px;
@@ -300,22 +301,97 @@ h3
     padding: 0px;
     margin-left: 150px;
   } 
+  .yourDesiCart .Desipp p:hover 
+  {
+    color: #acb3bd;
+    cursor: pointer;
+  } 
+ 
   .yourDesiCart p img
   {
     margin-right: 5px;
   }
+  .yourDesiCart .Desipp #innerhide
+  {
+    color: #acb3bd;
+    font-size: 18px;
+  }
+  #innerhide {
+    display: none;
+    color: #acb3bd;
+  }
+  #innerhide4 {
+    display: none;
+  }
+  #innerhide1 {
+    display: none;
+    color: #acb3bd;
+  }
+  #innerhide2 {
+    display: none;
+    color: #acb3bd;
+  }
+  #innerhide3 {
+    display: none;
+    color: #acb3bd;
+  }
+  #desihover:focus
+  {
+    outline:none;
+    color: #acb3bd;
+  }
+  #desi1:focus
+  {
+    outline:none;
+    color: #acb3bd;
+  }
+  #desi2:focus
+  {
+    outline:none;
+    color: #acb3bd;
+  }
+  #desi3:focus
+  {
+    outline:none;
+    color: #acb3bd;
+  }
+  #desi4:focus
+  {
+    outline:none;
+    color: #acb3bd;
+  }
+   #desihover:focus #innerhide {
+   display: block;
+  }
+  #desi1:focus #innerhide1 {
+    display: block;
+   }
+   #desi2:focus #innerhide2{
+    display: block;
+   }
+   #desi3:focus #innerhide3 {
+    display: block;
+   }
+   #desi4:focus #innerhide4 {
+    display: block;
+   }
+
+  .yourDesiCart .Desipp hr{
+   margin-left: 100px;
+  }
   .review
   {
     width: 100%;
-    height:300px;
+    height:500px;
     left: 0px;
     margin-left: -15px;
     background: #F2F6FD;
     margin-top: 30px;
+    padding-bottom: 30px;
   }
   footer{
     width: 100%;
-    height: 390px;
+    height: 340px;
     left: 0px;
     background: black;
     margin-left: -15px;
@@ -323,12 +399,11 @@ h3
   }
   div.vertical-line{
     margin-top: 40px;
-    width: 1px; /* Line width */
-    background: #F2F6FD; /* Line color */
-    height: 300px; /* Override in-line if you want specific height. */
-    float: left; /* Causes the line to float to left of content. 
-      You can instead use position:absolute or display:inline-block
-      if this fits better with your design */
+    color: silver;
+    width: 0.1px;
+    background: silver; 
+    height: 100%; 
+    float: left;
   }
   footer .title
   {
@@ -339,5 +414,181 @@ h3
     padding-top: 30px;
     margin-left: 20px;
   }
+  #footer p 
+  {
+    color: silver;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+  }
+  #footer a
+  {
+    color: silver;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+  }
+  #footer ul
+  {
+    list-style-type: none;
+    margin-left: -25px;
+    margin-top: 30px;
+  }
+  .icon-flipped:hover {
+    transform: rotate(180deg);
+}
+.flip-icon-holder{
+ padding: 10px 10px 10px 0px;;
+}
 
+
+.tech-slideshow {
+  height: 250px;
+  max-width:100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.tech-slideshow > div {
+  height: 250px;
+  width: 2526px;
+  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/collage.jpg); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+.tech-slideshow .mover-1 {
+  animation: moveSlideshow 12s linear infinite;
+}
+.tech-slideshow .mover-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  background-position: 0 -200px;
+  animation: moveSlideshow 15s linear infinite;
+}
+.tech-slideshow:hover .mover-2 {
+  opacity: 1;
+}
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-39.6666%);  
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.review
+  {
+    width: 100%;
+    /* height:500px; */
+    height: 100%;
+    left: 0px;
+    margin-left: -15px;
+    background: #F2F6FD;
+    margin-top: 30px;
+  }
+/* Float four columns side by side */
+.review .column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;padding-left: 60px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.review .column .card {
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  width: 350px;
+  height: 330px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background: #FFFFFF;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.video .card{
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05);
+  /* padding: 30px; */
+  width: 399px;
+  height: 492px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background: #FFFFFF;
+}
+.video .card-header
+{
+  background: #000000;
+  color: white;
+}
+.center1
+  {
+      text-align: center;
+      justify-content: center;
+      justify-items: center;
+      margin-top: 10px;
+  }
+  .center1 button
+  {
+    width: 245px;
+    height: 33px;
+    background: white;
+    border-radius: 27px;
+    color: black;
+    padding: 0;
+  }
+  .center1 button:focus{
+      outline: none;
+  }
+  .center1 a
+  {
+      color: white;
+  }
+  .center1 .btn1
+  {
+    width: 154px;
+    height: 46px;
+    background: #EAECEF;
+    border-radius: 7px;
+    color: black;
+    padding: 0;
+    border: 1px solid #EAECEF;
+  }
+  .center1 .btn1:focus{
+      outline: none;
+  }
+  .social 
+  {
+    width: 100px;
+    height: 23px;
+    border-radius: 4px;
+    color: white;
+    padding: 0px;
+    margin: 5px;
+  }
+  .social:focus{
+      outline: none;
+  }
   

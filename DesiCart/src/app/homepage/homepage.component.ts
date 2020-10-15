@@ -9,8 +9,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class HomepageComponent implements OnInit {
   isLinear = true;
   constructor() { }
-
   ngOnInit(): void {
   }
-
 }

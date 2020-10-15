@@ -35,6 +35,7 @@ header
   
   .topnav a:hover {
     color: #F7CD26;
+    cursor: pointer;
   }
   
   .topnav a.active {
