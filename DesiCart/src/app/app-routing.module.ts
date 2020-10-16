@@ -10,7 +10,8 @@ const routes: Routes = [
   {
     path: 'home', component: HomeComponent, children: [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-      { path: 'homepage', component: HomepageComponent }
+      { path: 'homepage', component: HomepageComponent },
+      { path: 'headerlink', component: HeaderlinkComponent }
     ]
   }
 ];

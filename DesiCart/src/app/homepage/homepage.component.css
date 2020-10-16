@@ -38,7 +38,7 @@ h3
   .card-container .card {
     border-radius: 4px;
     border: 1px solid #eee;
-    background-color: #fafafa;
+    background-color: white;
     height: 55px;
     width: 175px;
     margin: 0 50px 16px;
@@ -110,9 +110,9 @@ h3
     text-decoration: none;
   } */
 
-  a:hover {
+  /* a:hover {
     color: #125699;
-  }
+  } */
   @media screen and (max-width: 600px) {
 
     .card-container > *:not(.circle-link) ,
@@ -120,19 +120,20 @@ h3
       /* width: 100%; */
       width: 120px;
       height: 30px;
+      background-color: white;
     }
 
-    .card:not(.highlight-card) {
+    .card-container .card:not(.highlight-card) {
       height: 16px;
       margin: 8px 8px;
     }
-    .card img
+    .card-container .card img
     {
     width: 120px;
     height: 30px;
        
     }
-    .card.highlight-card span {
+    .card-container .card.highlight-card span {
       margin-left: 72px;
     }
 
@@ -140,9 +141,19 @@ h3
       right: 120px;
       transform: rotate(-5deg);
     }
+    .Frame-3
+    {
+      width: 100%;
+      height: auto;
+    }
+    h3
+    {
+      width: 98%;
+      font-size: 20px;
+    }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     svg#rocket-smoke {
       display: none;
       visibility: hidden;
@@ -204,6 +215,7 @@ h3
   .mat-form-field {
     margin-top: 16px;
   }
+  
   .grid
   {
     position: absolute;
@@ -289,6 +301,37 @@ h3
   .stepper #myDIV4:hover .hide4 {
     display: block;
     color: #e6e9ee;
+  }
+  @media screen and (max-width: 800px) {
+    .Frame-3
+    {
+      width: 100%;
+      height: auto;
+    }
+    .stepper
+      {
+        width: 100%;
+        height: 100%;
+      }
+      .dash{
+        display: none;
+      }
+      #myDIV1{
+       width: 100%;
+      }
+      .stepper #myDIV1:hover .hide1 {
+        display: none;
+      }
+      .stepper #myDIV2:hover .hide2 {
+        display: none;
+      }
+      .stepper #myDIV3:hover .hide3 {
+        display: none;
+      }
+      .stepper #myDIV4:hover .hide4 {
+        display: none;
+      }
+     
   }
   .yourDesiCart p
   {
@@ -590,5 +633,89 @@ h3
   }
   .social:focus{
       outline: none;
+  }
+  @media screen and (max-width: 600px) {
+    .col-sm 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-xs 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .whysign .gGroup
+    {
+      width: 50%;
+      margin: 0;
+      padding: 0;
+    }
+    .video .card{
+      width: 100%;
+      height: 530px;
+      margin-left: -15px;
+    }
+    .row {margin: 0;padding-left:0;}
+    .social1 
+    {
+      margin-left: 22px;
+    }
+    iframe
+    {
+      width: 100%;
+      margin-left: -15px;
+      height: 200px;
+    }
+    .yourDesiCart .Desipp p
+  {
+    font-size: 16px;
+    padding: 0px;
+    margin-left: 50px;
+  }
+  .yourDesiCart .Desipp hr
+  {
+    margin-left: 45px;
+  }
+  .review h2
+  {
+    font-size: 25px;
+  }
+  .review .column
+  {
+    width: 100%;
+  }
+  .review .column .card {
+    width: 100%;
+    height: 330px;
+  
+    margin-top: 30px;
+  }
+  footer
+  {
+    width: 100%;
+    height: 100%;
+  }
+        
+  }
+  @media screen and (max-width: 800px) {
+    .dash
+    {
+      display: none;
+    }
+    .col-sm 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-xs 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-md
+    {
+      display: inline;
+    }
   }
   
