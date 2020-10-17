@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderlinkComponent } from './headerlink/headerlink.component';
 import { ContantComponent } from './contant/contant.component';
 import { HomepageComponent } from './homepage/homepage.component';
-
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
@@ -12,6 +12,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
       { path: 'homepage', component: HomepageComponent },
       { path: 'headerlink', component: HeaderlinkComponent },
+      { path: 'login', component: LoginComponent },
     ]
   },
 ];
