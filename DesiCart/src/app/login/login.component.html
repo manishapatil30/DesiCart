@@ -1,11 +1,12 @@
 <div class="top">
+    <app-homepage></app-homepage>
     <!-- <mat-card>
         <mat-card-header>
             <mat-card-title>Example Login Form</mat-card-title>
         </mat-card-header>
         <mat-card-content>
             <form>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <input matInput placeholder="your email" [(ngModel)]="email" type="email" name="email" required>
                 </mat-form-field>
                 <mat-form-field>
@@ -18,4 +19,27 @@
             <button  mat-raised-button (click)="login()"  color="primary">Login</button>
         </mat-card-actions>
     </mat-card> -->
+    <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+    <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog"
+        tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+        <div class="modal-dialog" role="document" (click)="onDialogClick($event)">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h5>I was loaded via route</h5>
+                    <button type="button"
+                        class="close"
+                        (click)="onClose()"
+                        aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </div> -->
+                <div class="modal-body">
+                    <h3 align="center">Login</h3>
+                   
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
 </div>

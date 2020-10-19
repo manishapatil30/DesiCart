@@ -15,6 +15,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
+import { PricingservicesComponent } from './pricingservices/pricingservices.component';
+import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalculator.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +28,9 @@ import { LoginComponent } from './login/login.component';
     HeaderlinkComponent,
     ContantComponent,
     HomepageComponent,
-    LoginComponent
+    LoginComponent,
+    PricingservicesComponent,
+    ShippingcalculatorComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,9 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
