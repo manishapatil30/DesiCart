@@ -1,0 +1,156 @@
+.top
+  {
+      position: absolute;
+      margin-top:114px;
+      width: 100%;
+  }
+ .shipping
+  {
+    width: 95%;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  .shipping .card .card-body
+  {
+    background: #303030;
+    color: white;
+  }
+  .shipping label
+  {
+      font-weight: bold;
+  }
+  .review
+  {
+    width: 100%;
+    /* height:500px; */
+    height: 100%;
+    left: 0px;
+    margin-left: -15px;
+    background: #F2F6FD;
+    margin-top: 30px;
+   
+  }
+/* Float four columns side by side */
+.review .column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.review .row {margin: 0 -5px;padding-left: 60px;}
+
+/* Clear floats after the columns */
+.review .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.review .column .card {
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  width: 350px;
+  height: 330px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background: #FFFFFF;
+}
+  .center
+  {
+      text-align: center;
+      justify-content: center;
+      justify-items: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .center button
+  {
+    width: 200px;
+    height: 55px;
+    background: #25262A;
+    border-radius: 10px;
+    color: white;
+  }
+  .center button:focus{
+      outline: none;
+  }
+  .center a
+  {
+      color: white;
+  }
+  .services
+  {
+      width: 100%;
+      margin-top:20px;
+  }
+  .services .row p
+  {
+      font-size:18px;
+  }
+  .services .row{
+      margin-top: 20px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .col-sm 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-xs 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .review .row {margin: 0;padding-left:0;}
+ 
+  .review .column
+  {
+    width: 100%;
+  }
+  .review .column .card {
+    width: 100%;
+    height: 330px;
+  
+    margin-top: 30px;
+  }
+
+ 
+}
+@media screen and (max-width: 800px) {
+  .col-sm 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-xs 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-md
+    {
+      display: flex;
+      width: 100%;
+    }
+    .review .row {margin: 0;padding-left:0;}
+  .review .column
+  {
+    width: 100%;
+  }
+  .review .column .card {
+    width: 100%;
+    height: 330px;
+  
+    margin-top: 30px;
+  }
+}
