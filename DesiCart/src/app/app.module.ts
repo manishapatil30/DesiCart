@@ -19,6 +19,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { PricingservicesComponent } from './pricingservices/pricingservices.component';
 import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalculator.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalcul
     HomepageComponent,
     LoginComponent,
     PricingservicesComponent,
-    ShippingcalculatorComponent
+    ShippingcalculatorComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

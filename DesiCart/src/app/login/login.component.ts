@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +10,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
  showModal = false;
+ emailFormControl = new FormControl('', [
+  Validators.required,
+  Validators.email,
+]);
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {

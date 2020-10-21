@@ -9,5 +9,37 @@
     width: 100%;
     height: 100%;
     margin: 100px auto;
+    border-radius:20px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
   }
   
+  .example-full-width {
+    width: 100%;
+  }
+  .center
+  {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  .center .btn
+  {
+    background: #303030;
+    color:white;
+    width: 150px;
+    height: 50px;
+  }
+  h3{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  input[type='text'],
+  input[type='password']
+  {
+    padding: 0 30px 0 30px;
+    outline: none;
+  }
