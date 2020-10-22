@@ -40,6 +40,12 @@
   input[type='text'],
   input[type='password']
   {
-    padding: 0 30px 0 30px;
     outline: none;
   }
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: white;
+    }
+
+       .mat-hint, input, ::placeholder, .mat-form-field-label {
+          color: white;
+       }

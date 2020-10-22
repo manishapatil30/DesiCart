@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,7 +20,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { PricingservicesComponent } from './pricingservices/pricingservices.component';
 import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalculator.component';
 import { SignupComponent } from './signup/signup.component';
-
 
 @NgModule({
   declarations: [
@@ -45,7 +44,8 @@ import { SignupComponent } from './signup/signup.component';
     MatFormFieldModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

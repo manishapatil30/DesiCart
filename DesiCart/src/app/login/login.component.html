@@ -22,7 +22,7 @@
     <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
     <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog"
         tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
-        <div class="modal-dialog" role="document" (click)="onDialogClick($event)">
+        <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
             <div class="modal-content">
                 <!-- <div class="modal-header">
                     <h5>I was loaded via route</h5>
@@ -35,7 +35,7 @@
                 <div class="modal-body">
                     <h3 align="center">Login</h3>
                     <form class="example-form">
-                        <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-form-field class="example-full-width border-white" appearance="outline">
                             <mat-label>Email</mat-label>
                             <input matInput placeholder="Email Id" type="text">
                             <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
@@ -55,10 +55,11 @@
                                       Email is <strong>required</strong>
                                     </mat-error> -->
                         </mat-form-field>
-                        <!-- <span class="float-right"><a href="">Forgot password ?</a></span> -->
-                        
+                        <div class="float-right"><a href="" style="color: black;">Forgot password ?</a></div>
+                        <br><br><br>
                         <div class="center">
-                            <button mat-raised-button color="dark" class="btn button-style float-none" type="submit">Login</button>
+                            <button mat-raised-button color="dark" class="btn button-style float-none"
+                                type="submit">Login</button>
                         </div>
                     </form>
                 </div>
