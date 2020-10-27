@@ -1,18 +1,71 @@
-<!-- <div class="top">
-    <app-homepage></app-homepage>
-    <h1 mat-dialog-title>Favorite Animal</h1>
-<div mat-dialog-content>
-  My favorite animal is:
-  <ul>
-    <li>
-      <span *ngIf="data.animal === 'panda'">&#10003;</span> Panda
-    </li>
-    <li>
-      <span *ngIf="data.animal === 'unicorn'">&#10003;</span> Unicorn
-    </li>
-    <li>
-      <span *ngIf="data.animal === 'lion'">&#10003;</span> Lion
-    </li>
-  </ul>
+<div class="top">
+  <app-homepage></app-homepage>
+  <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+  <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog" tabindex="-1"
+    role="dialog" aria-labelledby="modalIdLabel">
+    <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+                  <h5>I was loaded via route</h5>
+                  <button type="button"
+                      class="close"
+                      (click)="onClose()"
+                      aria-label="Close"><span aria-hidden="true">&times;</span>
+                  </button>
+              </div> -->
+        <div class="modal-body">
+          <h3 align="center">Create account</h3>
+          <form class="example-form"  novalidate>
+            <mat-form-field class="example-full-width border-white" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email id" type="text">
+              <mat-hint>(Mandatory Email)</mat-hint>
+              <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                              Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                              Email is <strong>required</strong>
+                            </mat-error> -->
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Name" type="text">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Phone number</mat-label>
+              <input matInput placeholder="Phone number" type="text">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Whatsapp number</mat-label>
+              <input matInput placeholder="Whatsapp number" type="text">
+              <mat-hint>(Mandatory Whatsapp number)</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" type="password">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Confirm password</mat-label>
+              <input matInput placeholder="Confirm password" type="password">
+            </mat-form-field>
+            <div class="float-left">
+              <!-- <input type="checkbox"> -->
+              <mat-checkbox class="example-margin ">&nbsp;I agree all <a href="">Terms and conditions</a></mat-checkbox>
+              <!-- &nbsp;&nbsp;I agree all <a href="">Terms and conditions</a> -->
+            </div>
+            <br><br><br>
+            <div class="center">
+              <button mat-raised-button color="dark" class="btn button-style float-none" type="submit">Login</button>
+            </div>
+            <div>
+              <p style="margin: 15px;">Already have an account?<a [routerLink]="['login']"> Login here</a></p>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+              </div> -->
+      </div>
+    </div>
+  </div>
 </div>
-</div> -->

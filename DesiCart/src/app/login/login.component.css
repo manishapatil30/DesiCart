@@ -42,10 +42,22 @@
   {
     outline: none;
   }
-    .mat-form-field-appearance-outline .mat-form-field-outline {
-       color: white;
+  @media screen and (max-width: 600px) {
+    .modal
+    {
+      width: 90%;
+      height: 100%;
+      overflow-y:auto;
+      scrollbar-width: none;
     }
-
-       .mat-hint, input, ::placeholder, .mat-form-field-label {
-          color: white;
-       }
+    .modal::-webkit-scrollbar {
+      display: none;
+    }
+    .example-form {
+      min-width: 100%;
+      max-width: 100%;
+      width: 100%;
+    }
+    
+   
+  }

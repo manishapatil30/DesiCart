@@ -3,4 +3,99 @@
       position: absolute;
       margin-top:114px;
       width: 100%;
+      height:100%;
   }
+  .example-margin {
+    margin: 0 10px;
+  }
+  .modal
+  {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius:20px;
+    text-align:center;
+    max-height: 100%;
+    overflow-y:auto;
+    scrollbar-width: none;
+  }
+  .modal::-webkit-scrollbar {
+    display: none;
+  }
+  .modal-dialog
+  {
+    display: inline-block;
+  
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    
+  }
+  
+  .example-full-width {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .center
+  {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  .center .btn
+  {
+    background: #303030;
+    color:white;
+    width: 150px;
+    height: 50px;
+  }
+  h3{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+ 
+  input[type='text'],
+  input[type='password']
+  {
+    outline: none;
+  }
+@media screen and (max-width: 600px) {
+  .modal
+  {
+    width: 90%;
+    height: 100%;
+    overflow-y:auto;
+    scrollbar-width: none;
+  }
+  .modal::-webkit-scrollbar {
+    display: none;
+  }
+  .example-form {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    
+  }
+  
+ 
+}
+@media screen and (max-width: 800px) {
+  .modal
+  {
+    width: 90%;
+    height: 100%;
+    overflow-y:auto;
+    scrollbar-width: none;
+  }
+  .modal::-webkit-scrollbar {
+    display: none;
+  }
+  .example-form {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+}

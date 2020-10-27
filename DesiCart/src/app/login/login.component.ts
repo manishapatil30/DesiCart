@@ -1,7 +1,10 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+// import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -9,17 +12,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
  showModal = false;
- emailFormControl = new FormControl('', [
-  Validators.required,
-  Validators.email,
-]);
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.showModal = true;
+    
   }
+ 
   onClose() {
     this.showModal = false;
     setTimeout(

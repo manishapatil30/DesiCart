@@ -15,11 +15,15 @@ const routes: Routes = [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
       { path: 'homepage', component: HomepageComponent },
       { path: 'headerlink', component: HeaderlinkComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'signup', component: SignupComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'shipping', component: ShippingcalculatorComponent },
-    ]
+      { path: 'login', component: LoginComponent },
+      { path: 'signup', children: [
+        { path: '', component: SignupComponent },
+        { path: 'login', component: LoginComponent }
+       ]
+      },
+   ]
   },
 ];
 
