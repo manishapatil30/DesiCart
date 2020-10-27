@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { PricingservicesComponent } from './pricingservices/pricingservices.component';
 import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalculator.component';
 import { SignupComponent } from './signup/signup.component';
+import { ContactComponent } from './contact/contact.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
@@ -17,13 +19,20 @@ const routes: Routes = [
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'shipping', component: ShippingcalculatorComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'signup', children: [
-        { path: '', component: SignupComponent },
-        { path: 'login', component: LoginComponent }
-       ]
+      { path: 'contact', component: ContactComponent },
+      {
+        path: 'login', children: [
+          { path: '', component: LoginComponent },
+          { path: 'signup', component: SignupComponent }
+        ]
       },
-   ]
+      {
+        path: 'signup', children: [
+          { path: '', component: SignupComponent },
+          { path: 'login', component: LoginComponent }
+        ]
+      },
+    ]
   },
 ];
 

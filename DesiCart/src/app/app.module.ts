@@ -22,6 +22,8 @@ import { PricingservicesComponent } from './pricingservices/pricingservices.comp
 import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalculator.component';
 import { SignupComponent } from './signup/signup.component';
 import { FadeComponent } from './fade/fade.component';
+import { ContactComponent } from './contact/contact.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { FadeComponent } from './fade/fade.component';
     PricingservicesComponent,
     ShippingcalculatorComponent,
     SignupComponent,
-    FadeComponent
+    FadeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { FadeComponent } from './fade/fade.component';
     MatIconModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

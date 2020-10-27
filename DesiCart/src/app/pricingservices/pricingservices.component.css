@@ -204,7 +204,7 @@
     height: 340px;
     left: 0px;
     background: black;
-    margin-left: -15px;
+    /* margin-left: -15px; */
     color: white;
   }
   div.vertical-line{
@@ -329,11 +329,11 @@
   }
   .top .response
   {
-    width: 90%;
+    width: 100%;
   }
   .top .res
   {
-    width: 90%;
+    width: 100%;
   }
   .dig .number img
   {
@@ -417,11 +417,11 @@
   }
   .top .response
   {
-    width: 92%;
+    width: 99%;
   }
   .top .res
   {
-    width: 92%;
+    width: 99%;
   }
   .dig .number img
   {

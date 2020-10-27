@@ -1,0 +1,34 @@
+<div class="top">
+    <div class="box">
+        <h1 align="center" style="margin-bottom:25px; ">Contact Us</h1>
+        <div>
+            <!-- <label>Work email</label>
+            <input type="text" class="form-control input-lg">
+            <label>Subject</label>
+            <select id="selectedValue" class="form-control input-lg">
+                <option>Select</option>
+            </select>
+            <label>Message</label>
+            <textarea rows="4" class="form-control"></textarea> -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Work email</mat-label>
+                <input matInput placeholder="Work email" type="text">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Subject</mat-label>
+                <mat-select name="food">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput placeholder="Message" rows="5"></textarea>
+            </mat-form-field>
+            <div class="center">
+                <button mat-raised-button color="primary" class="btn button-style" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
