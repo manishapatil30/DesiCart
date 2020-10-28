@@ -19,9 +19,19 @@
   {
     outline: none;
   }
+  .shipping .card .card-body select
+  {
+    height: 30px;
+  }
   .card-body .row .right input
   {
-    width: 440px;
+    width: 410px;
+    margin-left: 20px;
+  }
+  .card-body .row .right label
+  {
+  
+    margin-left: 20px;
   }
   .shipping label
   {
@@ -176,6 +186,13 @@
   .card-body .row .right input
   {
     width: 100%;
+    padding-left:0;
+    margin-left:0;
+  }
+  .card-body .row .right label
+  {
+    padding-left:0;
+    margin-left:0;
   }
   .card-body .row .right img
   {
@@ -226,7 +243,7 @@
   .card-body .row .right input
   {
     width: 100%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
   .card-body .row input
   {
@@ -234,7 +251,7 @@
   }
   .card-body .row .right label
   {
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
   .card-body .row .right img
   {
@@ -250,10 +267,15 @@
   }
   .center1
   {
+      
       text-align: left;
       justify-content: left;
       justify-items: left;
       margin-top: 35px;
       margin-bottom: 10px;
+  }
+  .center1 .btn
+  {
+    font-size: 14px;
   }
 }

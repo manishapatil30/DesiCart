@@ -26,12 +26,12 @@ const routes: Routes = [
           { path: 'signup', component: SignupComponent }
         ]
       },
-      {
-        path: 'signup', children: [
-          { path: '', component: SignupComponent },
-          { path: 'login', component: LoginComponent }
-        ]
-      },
+      // {
+      //   path: 'signup', children: [
+      //     { path: '', component: SignupComponent },
+      //     { path: 'login', component: LoginComponent }
+      //   ]
+      // },
     ]
   },
 ];
