@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  Message: any;
   email: string;
   name: string;
   phoneNumber: string;
@@ -51,7 +52,14 @@ export class SignupComponent implements OnInit {
     };
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users', body, { headers }).subscribe((data => {
       console.log(data);
-      this.router.navigate(['/home/login']);
+      console.log(data.Message);
+      if (data.Status === 1) {
+        this.router.navigate(['/home/login']);
+      }
+      else {
+        this.Message = data.Message;
+      }
+
     }), (error) => {
       console.log(error);
     });

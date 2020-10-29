@@ -21,23 +21,19 @@
     </mat-card> -->
     <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
     <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog"
-        tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+        tabindex="-1" role="dialog" aria-labelledby="modalIdLabel" >
         <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
             <div class="modal-content">
-                <!-- <div class="modal-header">
-                    <h5>I was loaded via route</h5>
-                    <button type="button"
-                        class="close"
-                        (click)="onClose()"
-                        aria-label="Close"><span aria-hidden="true">&times;</span>
-                    </button>
-                </div> -->
+                <button type="button" class="close" (click)="onClose()" aria-label="Close"><span class="spin"
+                        aria-hidden="true">&times;</span>
+                </button>
                 <div class="modal-body">
                     <h3 align="center">Login</h3>
                     <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
                         <mat-form-field class="example-full-width border-white" appearance="outline">
                             <mat-label>Email</mat-label>
-                            <input matInput placeholder="Email id" formControlName="email" id="email" [(ngModel)]="email" type="text"  required/>
+                            <input matInput placeholder="Email id" formControlName="email" id="email"
+                                [(ngModel)]="email" type="text" required />
                             <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
                                 Please enter a valid email address
                             </mat-error>
@@ -47,7 +43,8 @@
                         </mat-form-field>
                         <mat-form-field class="example-full-width" appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input matInput placeholder="Password" formControlName="password" id="password" [(ngModel)]="password" type="password" required/>
+                            <input matInput placeholder="Password" formControlName="password" id="password"
+                                [(ngModel)]="password" type="password" required />
                             <!-- <mat-error *ngIf="f.password.errors.password && !f.password.errors.required">
                                 Please enter a valid Password
                             </mat-error> -->
@@ -56,10 +53,11 @@
                             </mat-error>
                         </mat-form-field>
                         <div class="float-right"><a href="" style="color: black;">Forgot password ?</a></div>
-                        <br><br><br>
+                        <br><br>
+                        <p style="color: red;" align="center">{{Message}}</p>
                         <div class="center">
                             <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
-                            [disabled]="!form.valid" >Login</button>
+                                [disabled]="!form.valid">Login</button>
                         </div>
                         <div>
                             <p style="margin: 15px;text-align: center;"><a [routerLink]="['signup']"> Create new Account
@@ -69,6 +67,13 @@
                                             d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                     </svg></a></p>
                         </div>
+                        <div class="center">
+                            <button mat-raised-button color="primary" class="btn2 button-style float-none">Login with
+                                Gmail</button>
+                        </div>
+                        <!-- <div align="center">
+                            
+                        </div> -->
                     </form>
                 </div>
                 <!-- <div class="modal-footer">

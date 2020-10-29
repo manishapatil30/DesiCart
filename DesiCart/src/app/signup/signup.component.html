@@ -5,20 +5,16 @@
     role="dialog" aria-labelledby="modalIdLabel">
     <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
       <div class="modal-content">
-        <!-- <div class="modal-header">
-                  <h5>I was loaded via route</h5>
-                  <button type="button"
-                      class="close"
-                      (click)="onClose()"
-                      aria-label="Close"><span aria-hidden="true">&times;</span>
-                  </button>
-              </div> -->
+        <button type="button" class="close" (click)="onClose()" aria-label="Close"><span
+            aria-hidden="true">&times;</span>
+        </button>
         <div class="modal-body">
           <h3 align="center">Create account</h3>
           <form class="example-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
             <mat-form-field class="example-full-width border-white" appearance="outline">
               <mat-label>Email</mat-label>
-              <input matInput placeholder="Email id" formControlName="email" id="email" [(ngModel)]="email" type="text" required/>
+              <input matInput placeholder="Email id" formControlName="email" id="email" [(ngModel)]="email" type="text"
+                required />
               <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
                 Please enter a valid email address
               </mat-error>
@@ -29,19 +25,21 @@
 
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Name" formControlName="name" [(ngModel)]="name" type="text" required/>
+              <input matInput placeholder="Name" formControlName="name" [(ngModel)]="name" type="text" required />
             </mat-form-field>
 
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Phone number</mat-label>
-              <input matInput placeholder="Phone number" formControlName="phoneNumber" [(ngModel)]="phoneNumber" type="text" required/>
+              <input matInput placeholder="Phone number" formControlName="phoneNumber" [(ngModel)]="phoneNumber"
+                type="text" required />
             </mat-form-field>
 
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label for="mobileNumber">Whatsapp number</mat-label>
-              <input matInput placeholder="Whatsapp number" formControlName="mobileNumber" id="mobileNumber" [(ngModel)]="mobileNumber"
-                type="text" required/>
-              <mat-error *ngIf="f.mobileNumber.errors?.pattern && f.mobileNumber.errors?.maxlength && !f.mobileNumber.errors?.required">
+              <input matInput placeholder="Whatsapp number" formControlName="mobileNumber" id="mobileNumber"
+                [(ngModel)]="mobileNumber" type="text" required />
+              <mat-error
+                *ngIf="f.mobileNumber.errors?.pattern && f.mobileNumber.errors?.maxlength && !f.mobileNumber.errors?.required">
                 Please, Enter 10 digit Mobile Number.
               </mat-error>
               <mat-error *ngIf="f.mobileNumber.errors?.required">
@@ -51,7 +49,8 @@
 
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" formControlName="password" [(ngModel)]="password" type="password" required/>
+              <input matInput placeholder="Password" formControlName="password" [(ngModel)]="password" type="password"
+                required />
             </mat-form-field>
 
             <!-- <mat-form-field class="example-full-width" appearance="outline">
@@ -64,6 +63,7 @@
               <!-- &nbsp;&nbsp;I agree all <a href="">Terms and conditions</a> -->
             </div>
             <br><br><br>
+            <p style="color: red;text-align: center;" align="center">{{Message}}</p>
             <div class="center">
               <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
                 [disabled]="!form.valid">CREATE
@@ -72,6 +72,9 @@
             <div>
               <p style="margin: 15px;">Already have an account?<a [routerLink]="[]" (click)="signup()"> Login here</a>
               </p>
+            </div>
+            <div class="center">
+                <button mat-raised-button color="primary" class="btn2 button-style float-none">Login with Gmail</button>
             </div>
           </form>
         </div>

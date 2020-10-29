@@ -9,29 +9,29 @@ import { PricingservicesComponent } from './pricingservices/pricingservices.comp
 import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalculator.component';
 import { SignupComponent } from './signup/signup.component';
 import { ContactComponent } from './contact/contact.component';
+import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home', component: HomeComponent, children: [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
-      { path: 'homepage', component: HomepageComponent },
+      {
+        path: 'homepage', children: [
+          { path: '', component: HomepageComponent },
+          { path: 'contact', component: ContactComponent },
+        ]
+      },
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'pricing', component: PricingservicesComponent },
+      { path: 'shop', component: ShopComponent },
       { path: 'shipping', component: ShippingcalculatorComponent },
-      { path: 'contact', component: ContactComponent },
       {
         path: 'login', children: [
           { path: '', component: LoginComponent },
           { path: 'signup', component: SignupComponent }
         ]
       },
-      // {
-      //   path: 'signup', children: [
-      //     { path: '', component: SignupComponent },
-      //     { path: 'login', component: LoginComponent }
-      //   ]
-      // },
     ]
   },
 ];

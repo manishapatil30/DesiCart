@@ -25,6 +25,16 @@ import { FadeComponent } from './fade/fade.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { NgxPopper } from 'angular-popper';
+
+import {
+  GoogleLoginProvider
+} from 'angularx-social-login';
+import { ShopComponent } from './shop/shop.component';
+const google_client_id: string = '149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.apps.googleusercontent.com';
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     ShippingcalculatorComponent,
     SignupComponent,
     FadeComponent,
-    ContactComponent
+    ContactComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,

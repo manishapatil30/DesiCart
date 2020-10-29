@@ -242,7 +242,7 @@
   {
     list-style-type: none;
     margin-left: -25px;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .icon-flipped:hover {
     transform: rotate(180deg);
