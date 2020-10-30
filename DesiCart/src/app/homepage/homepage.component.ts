@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -8,8 +9,17 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class HomepageComponent implements OnInit {
   isLinear = true;
-  constructor() { }
+  constructor(private router: Router) { }
   ngOnInit(): void {
+  }
+
+  public moreSites()
+  {
+    this.router.navigate(['/home/shop']);
+  }
+  public contactUs()
+  {
+    this.router.navigate(['/home/contact']);
   }
  
 }

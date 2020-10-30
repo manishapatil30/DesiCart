@@ -72,7 +72,7 @@
         </a>
     </div>
     <div class="center">
-        <a href=""><button class="btn">More Awesome Sites</button></a>
+        <a [routerLink]="[]" (click)="moreSites()"><button class="btn">More Awesome Sites</button></a>
     </div>
     <!-- <div class="stepper">
         <h3 align="center">करे मुद्दे की बात?</h3>
@@ -385,7 +385,7 @@
             </div>
         </div>
         <div class="center">
-            <a href=""><button class="btn">View More</button></a>
+            <a [routerLink]="['comment']"><button class="btn">View More</button></a>
         </div>
     </div>
     <footer>
@@ -495,11 +495,11 @@
                 <h4 class="title" style="margin-left: 15px;">Quick Links</h4>
                 <ul>
                     <li>
-                        <a href="terms-of-use">Terms of
+                        <a href="https://yourdesicart.com/terms-of-use">Terms of
                             Use</a>
                     </li>
                     <li>
-                        <a href="prohibited-items">Prohibited
+                        <a href="https://yourdesicart.com/prohibited-items">Prohibited
                             Items</a>
                     </li>
                     <li>
@@ -522,7 +522,7 @@
                     <h4 class="title" style="margin-left: 15px;">ContactUs</h4>
                     <ul>
                         <li>
-                            <a [routerLink]="['contact']">ContactUs</a>
+                            <a [routerLink]="[]" (click)="contactUs()">ContactUs</a>
                         </li>
                     </ul>
                 </div>

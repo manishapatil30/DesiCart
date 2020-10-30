@@ -10,6 +10,8 @@ import { ShippingcalculatorComponent } from './shippingcalculator/shippingcalcul
 import { SignupComponent } from './signup/signup.component';
 import { ContactComponent } from './contact/contact.component';
 import { ShopComponent } from './shop/shop.component';
+import { HowComponent } from './how/how.component';
+import { CommentComponent } from './comment/comment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,13 +21,20 @@ const routes: Routes = [
       {
         path: 'homepage', children: [
           { path: '', component: HomepageComponent },
-          { path: 'contact', component: ContactComponent },
+          { path: 'comment', component: CommentComponent },
         ]
       },
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'shop', component: ShopComponent },
-      { path: 'shipping', component: ShippingcalculatorComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'how', component: HowComponent },
+      {
+        path: 'shipping', children: [
+          { path: '', component: ShippingcalculatorComponent },
+          { path: 'comment', component: CommentComponent }
+        ]
+      },
       {
         path: 'login', children: [
           { path: '', component: LoginComponent },

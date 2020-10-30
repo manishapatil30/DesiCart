@@ -179,6 +179,7 @@ h3
     background: #25262A;
     border-radius: 10px;
     color: white;
+    margin-bottom: 20px;
   }
   .center button:focus{
       outline: none;
@@ -205,6 +206,7 @@ h3
     text-align: center;
     font-weight: 500;
     margin-top: 10px;
+   
     /* top: 669.17px; */
     text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.12);
   }
@@ -396,6 +398,7 @@ h3
     background: black;
     /* margin-left: -15px; */
     color: white;
+    margin-top:-10px;
   }
   div.vertical-line{
     margin-top: 40px;
@@ -427,6 +430,11 @@ h3
     padding: 0px;
     margin: 0px;
     font-size: 18px;
+    text-align:center;
+  }
+  #footer .ccvv
+  {
+    margin: auto;
   }
   #footer ul
   {

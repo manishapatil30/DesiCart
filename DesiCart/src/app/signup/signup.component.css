@@ -66,6 +66,13 @@
     width: 250px;
     height: 50px;
   }
+  .center .btn1
+  {
+    background: #3f51b5;
+    color:white;
+    width: 150px;
+    height: 50px;
+  }
   h3{
     margin-bottom: 30px;
   }
@@ -112,4 +119,22 @@
     width: 100%;
   }
   
+}
+.questionNumbers {
+  display: flex;
+  align-items: center;
+}
+.questionNumberIcon {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
+.questionNumberLine {
+  flex: 1 0 auto;
+  height: 0;
+  border-top: 1px solid black;
 }

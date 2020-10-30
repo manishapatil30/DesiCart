@@ -25,16 +25,26 @@ import { FadeComponent } from './fade/fade.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { NgxPopper } from 'angular-popper';
-
 import {
   GoogleLoginProvider
 } from 'angularx-social-login';
+
 import { ShopComponent } from './shop/shop.component';
+import { HowComponent } from './how/how.component';
+import { CommentComponent } from './comment/comment.component';
 const google_client_id: string = '149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.apps.googleusercontent.com';
 
-
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.apps.googleusercontent.com')
+  }
+]);
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -49,7 +59,9 @@ const google_client_id: string = '149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.
     SignupComponent,
     FadeComponent,
     ContactComponent,
-    ShopComponent
+    ShopComponent,
+    HowComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -67,10 +79,15 @@ const google_client_id: string = '149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    HttpClientModule
-
+    HttpClientModule,
+    SocialLoginModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
