@@ -12,7 +12,6 @@ export class ShippingcalculatorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
   public contactUs()
   {
     this.router.navigate(['/home/contact']);

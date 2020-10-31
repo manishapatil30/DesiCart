@@ -171,6 +171,7 @@ h3
       justify-items: center;
       margin-top: 10px;
       margin-bottom: 10px;
+      padding: 30px;
   }
   .center button
   {
@@ -415,7 +416,7 @@ h3
   #footer
   {
     padding-top: 30px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
   #footer p 
   {
@@ -784,4 +785,12 @@ h3
       margin-left: 15px;
     }
   }
-  
+  #cvvv
+  {
+    float:none;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+  }

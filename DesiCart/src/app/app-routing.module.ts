@@ -19,10 +19,7 @@ const routes: Routes = [
     path: 'home', component: HomeComponent, children: [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },
       {
-        path: 'homepage', children: [
-          { path: '', component: HomepageComponent },
-          { path: 'comment', component: CommentComponent },
-        ]
+        path: 'homepage', component: HomepageComponent
       },
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'pricing', component: PricingservicesComponent },
@@ -30,10 +27,7 @@ const routes: Routes = [
       { path: 'contact', component: ContactComponent },
       { path: 'how', component: HowComponent },
       {
-        path: 'shipping', children: [
-          { path: '', component: ShippingcalculatorComponent },
-          { path: 'comment', component: CommentComponent }
-        ]
+        path: 'shipping', component: ShippingcalculatorComponent
       },
       {
         path: 'login', children: [

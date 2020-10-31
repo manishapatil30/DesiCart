@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { SocialUser, GoogleLoginProvider } from 'angularx-social-login';
 import { AuthService } from 'angularx-social-login';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
@@ -28,12 +29,12 @@ export class SignupComponent implements OnInit {
   showModal = false;
   postId;
   form: FormGroup = new FormGroup({});
-  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
+  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private authService: AuthService, private location: Location) {
     this.form = fb.group({
       email: ['', [Validators.required, Validators.email]],
       mobileNumber: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(12)]],
       name: ['', Validators.required],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(12)]],
       password: ['', Validators.required],
       checkbox: ['', Validators.required]
       // confirmPass: ['', Validators.required]
@@ -45,8 +46,8 @@ export class SignupComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.lemail = user.email,
-      this.lname = user.name,
-      this.loggedIn = (user != null);
+        this.lname = user.name,
+        this.loggedIn = (user != null);
 
     });
   }
@@ -62,8 +63,9 @@ export class SignupComponent implements OnInit {
 
     };
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/user-signup-social', body, { headers }).subscribe((data => {
-      console.log(data);
+
       if (data.Status === 1) {
+        console.log(data);
         this.router.navigate(['/home/homepage']);
       }
       else {
@@ -71,6 +73,7 @@ export class SignupComponent implements OnInit {
       }
     }), (error) => {
       console.log(error);
+      alert('Error!!...Please Try Again');
     });
   }
   submit() {
@@ -89,6 +92,7 @@ export class SignupComponent implements OnInit {
       console.log(data);
       console.log(data.Message);
       if (data.Status === 1) {
+        alert('Your Account Created Successfully Please Login.');
         this.router.navigate(['/home/login']);
       }
       else {

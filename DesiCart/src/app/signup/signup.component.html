@@ -31,19 +31,26 @@
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Phone number</mat-label>
               <input matInput placeholder="Phone number" formControlName="phoneNumber" [(ngModel)]="phoneNumber"
-                type="text" required />
+                type="number" min="0" required />
+              <mat-error
+                *ngIf="f.phoneNumber.errors?.pattern && f.phoneNumber.errors?.maxlength && !f.phoneNumber.errors?.required">
+                Please, Enter 10 digit Mobile Number.
+              </mat-error>
+              <mat-error *ngIf="f.phoneNumber.errors?.required">
+                Mobile Number is <strong>required</strong>
+              </mat-error>
             </mat-form-field>
 
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label for="mobileNumber">Whatsapp number</mat-label>
               <input matInput placeholder="Whatsapp number" formControlName="mobileNumber" id="mobileNumber"
-                [(ngModel)]="mobileNumber" type="text" required />
+                [(ngModel)]="mobileNumber" type="number"  min="0" required />
               <mat-error
                 *ngIf="f.mobileNumber.errors?.pattern && f.mobileNumber.errors?.maxlength && !f.mobileNumber.errors?.required">
                 Please, Enter 10 digit Mobile Number.
               </mat-error>
               <mat-error *ngIf="f.mobileNumber.errors?.required">
-                Mobile Number is <strong>required</strong>
+                Whatsapp Number is <strong>required</strong>
               </mat-error>
             </mat-form-field>
 
@@ -60,7 +67,8 @@
 
             <div class="float-left">
               <mat-checkbox class="example-margin " formControlName="checkbox" [(ngModel)]="checkbox" required>&nbsp;I
-                agree all <a href="http://yourdesicart.com/terms-of-use" target="_blank">Terms and conditions</a></mat-checkbox>
+                agree all <a href="http://yourdesicart.com/terms-of-use" target="_blank">Terms and conditions</a>
+              </mat-checkbox>
               <!-- &nbsp;&nbsp;I agree all <a href="">Terms and conditions</a> -->
               <!-- <mat-error *ngIf="f.checkbox.errors?.required">
                <strong>required</strong>
@@ -74,17 +82,17 @@
                 ACCOUNT</button>
             </div>
             <div style="margin-top: 20px;">
-                <main class="questionNumbers">
-                    <div class="questionNumberLine"></div>
-                    <div class="questionNumberIcon">
-                        OR
-                    </div>
-                    <div class="questionNumberLine"></div>
-                </main>
-                <!-- <hr style="color: black;border:1px solid black;width: 50%; line-height: 2em;"><div class="numberCircle">OR</div><hr style="color: black;border:1px solid black;width: 50%;"> -->
+              <main class="questionNumbers">
+                <div class="questionNumberLine"></div>
+                <div class="questionNumberIcon">
+                  OR
+                </div>
+                <div class="questionNumberLine"></div>
+              </main>
+              <!-- <hr style="color: black;border:1px solid black;width: 50%; line-height: 2em;"><div class="numberCircle">OR</div><hr style="color: black;border:1px solid black;width: 50%;"> -->
             </div>
 
-           
+
             <!-- <div class="center">
                 <button mat-raised-button color="primary" class="btn2 button-style float-none">Login with Gmail</button>
             </div> -->
@@ -96,9 +104,9 @@
               Gmail</button>
           </div>
           <div>
-              <p style="margin: 15px;">Already have an account?<a [routerLink]="[]" (click)="signup()"> Login here</a>
-              </p>
-            </div>
+            <p style="margin: 15px;">Already have an account?<a [routerLink]="[]" (click)="signup()"> Login here</a>
+            </p>
+          </div>
           <!-- <div *ngIf="user" class="card-text-center">
             <h1>login</h1>
             <h5>{{user.name}}</h5>
