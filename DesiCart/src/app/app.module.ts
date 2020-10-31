@@ -35,7 +35,6 @@ import { ShopComponent } from './shop/shop.component';
 import { HowComponent } from './how/how.component';
 import { CommentComponent } from './comment/comment.component';
 
-
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
