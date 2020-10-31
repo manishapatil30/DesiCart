@@ -17,6 +17,10 @@ export class HomepageComponent implements OnInit {
   {
     this.router.navigate(['/home/shop']);
   }
+  public comment()
+  {
+    this.router.navigate(['/home/comment']);
+  }
   public contactUs()
   {
     this.router.navigate(['/home/contact']);

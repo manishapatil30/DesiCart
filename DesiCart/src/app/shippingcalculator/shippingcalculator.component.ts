@@ -16,4 +16,8 @@ export class ShippingcalculatorComponent implements OnInit {
   {
     this.router.navigate(['/home/contact']);
   }
+  public comment()
+  {
+    this.router.navigate(['/home/comment']);
+  }
 }

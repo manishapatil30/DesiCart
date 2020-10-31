@@ -79,7 +79,7 @@
   #footer
   {
     padding-top: 30px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
   }
   #footer p 
   {
@@ -243,4 +243,13 @@
       margin-top: 30px;
     }
     .row {margin: 0;padding-left:0;}
+}
+#cvvv
+{
+  float:none;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
 }

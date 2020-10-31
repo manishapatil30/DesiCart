@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'shop', component: ShopComponent },
+      { path: 'comment', component: CommentComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'how', component: HowComponent },
       {
