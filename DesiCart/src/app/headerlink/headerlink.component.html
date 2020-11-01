@@ -19,7 +19,7 @@
                         <!-- <a [routerLink]="['login']" routerLinkActive="active">Login</a> -->
                         <a [routerLink]="['shop']" routerLinkActive="active">Shop</a>
                         <a [routerLink]="['login']" routerLinkActive="active" data-backdrop="static"
-                            data-keyboard="false">{{(useremail == ''?'SignUp/Login':useremail)}}
+                            data-keyboard="false">{{(useremail != ''?'SignUp/Login':useremail)}}
 
                         </a>
                         <!-- <span>
