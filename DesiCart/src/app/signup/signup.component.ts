@@ -43,29 +43,41 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.showModal = true;
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.lemail = user.email,
-        this.lname = user.name,
-        this.loggedIn = (user != null);
+    // this.authService.authState.subscribe((user) => {
+    //   this.user = user;
+    //   this.lemail = user.email,
+    //     this.lname = user.name,
+    //     this.loggedIn = (user != null);
 
-    });
+    // });
   }
   get f() {
     return this.form.controls;
   }
-  signInWithGoogle(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  public signInWithGoogle() {
+    let socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    this.authService.signIn(socialPlatformProvider)
+      .then((userData) => {
+        this.user = userData;
+        this.lemail = userData.email,
+          this.lname = userData.name,
+          //on success
+          //this will return user data from google. What you need is a user token which you will send it to the server
+          this.sendToRestApiMethod(userData.idToken);
+      });
+  }
+  sendToRestApiMethod(token: string): void {
+    localStorage.setItem('userid', this.lemail);
+    localStorage.setItem('username', this.lname);
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     const body = {
       EmailID: this.lemail,
       Name: this.lname
+    }
 
-    };
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/user-signup-social', body, { headers }).subscribe((data => {
-
+      console.log(data);
       if (data.Status === 1) {
-        console.log(data);
         this.router.navigate(['/home/homepage']);
       }
       else {
@@ -73,9 +85,33 @@ export class SignupComponent implements OnInit {
       }
     }), (error) => {
       console.log(error);
-      alert('Error!!...Please Try Again');
     });
   }
+  // signInWithGoogle(): void {
+  //   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  //   const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
+  //   const body = {
+  //     EmailID: this.lemail,
+  //     Name: this.lname
+
+  //   };
+  //   this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/user-signup-social', body, { headers }).subscribe((data => {
+
+  //     if (data.Status === 1) {
+  //       console.log(data);
+
+  //       this.router.navigate(['/home/homepage']);
+
+
+  //     }
+  //     else {
+  //       this.Message = data.Message;
+  //     }
+  //   }), (error) => {
+  //     console.log(error);
+  //     alert('Error!!...Please Try Again');
+  //   });
+  // }
   submit() {
     // console.log(this.form.value);
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };

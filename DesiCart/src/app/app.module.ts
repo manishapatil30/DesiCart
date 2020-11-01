@@ -35,13 +35,20 @@ import { ShopComponent } from './shop/shop.component';
 import { HowComponent } from './how/how.component';
 import { CommentComponent } from './comment/comment.component';
 
-const config = new AuthServiceConfig([
-  {
-    id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.apps.googleusercontent.com')
-  }
-]);
+// const config = new AuthServiceConfig([
+//   {
+//     id: GoogleLoginProvider.PROVIDER_ID,
+//     provider: new GoogleLoginProvider('149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.apps.googleusercontent.com')
+//   }
+// ]);
+
 export function provideConfig() {
+  const config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider('149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.apps.googleusercontent.com')
+    }
+  ]);
   return config;
 }
 

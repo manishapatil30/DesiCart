@@ -11,6 +11,12 @@ export class HomepageComponent implements OnInit {
   isLinear = true;
   constructor(private router: Router) { }
   ngOnInit(): void {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload');
+      location.reload();
+    } else {
+      localStorage.removeItem('foo');
+    }
   }
 
   public moreSites()
