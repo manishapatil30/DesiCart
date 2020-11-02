@@ -11,21 +11,23 @@ export class HomepageComponent implements OnInit {
   isLinear = true;
   constructor(private router: Router) { }
   ngOnInit(): void {
-    if (!localStorage.getItem('foo')) {
-      localStorage.setItem('foo', 'no reload');
-      location.reload();
-    } else {
-      localStorage.removeItem('foo');
-    }
+    // if (!localStorage.getItem('foo')) {
+    //   localStorage.setItem('foo', 'no reload');
+    //   location.reload();
+    // } else {
+    //   localStorage.removeItem('foo');
+    // }
   }
 
   public moreSites()
   {
     this.router.navigate(['/home/shop']);
+    window.scrollTo(0, 0);
   }
   public comment()
   {
     this.router.navigate(['/home/comment']);
+    window.scrollTo(0, 0);
   }
   public contactUs()
   {

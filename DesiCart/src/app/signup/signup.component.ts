@@ -20,11 +20,12 @@ export class SignupComponent implements OnInit {
   email: string;
   name: string;
   checkbox: any;
-  phoneNumber: string;
-  mobileNumber: string;
+  phoneNumber: string='';
+  mobileNumber: string='';
   password: string;
   lemail: any;
   lname: any;
+  checkboxModel:boolean = false;
   // confirmPass: string;
   showModal = false;
   postId;
@@ -78,7 +79,7 @@ export class SignupComponent implements OnInit {
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/user-signup-social', body, { headers }).subscribe((data => {
       console.log(data);
       if (data.Status === 1) {
-        this.router.navigate(['/home/homepage']);
+        this.router.navigate(['/home']);
       }
       else {
         this.Message = data.Message;
@@ -114,6 +115,7 @@ export class SignupComponent implements OnInit {
   // }
   submit() {
     // console.log(this.form.value);
+    localStorage.setItem('username', this.name);
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     const body = {
       EmailID: this.email,
@@ -128,8 +130,8 @@ export class SignupComponent implements OnInit {
       console.log(data);
       console.log(data.Message);
       if (data.Status === 1) {
-        alert('Your Account Created Successfully Please Login.');
-        this.router.navigate(['/home/login']);
+        alert('Your Account Created Successfully.');
+        this.router.navigate(['/home']);
       }
       else {
         this.Message = data.Message;
@@ -156,4 +158,11 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['/home/login']);
   }
   checkBoxValue: any = false;
+
+  public showHidePassword(checkboxModel) {
+    this.mobileNumber = checkboxModel ? '' : this.phoneNumber;
+  }
+  public showPassword(checkboxModel) {
+    this.phoneNumber = checkboxModel ? '' : this.mobileNumber;
+  }
 }

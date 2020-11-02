@@ -68,10 +68,15 @@
   }
   .center .btn1
   {
-    background: #3f51b5;
+    background: red;
     color:white;
-    width: 150px;
+    width: 250px;
     height: 50px;
+  }
+  .center .btn1:focus
+  {
+    outline: none;
+    border:1px solid red;
   }
   h3{
     margin-bottom: 30px;

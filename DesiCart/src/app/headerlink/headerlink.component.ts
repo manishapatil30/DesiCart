@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'angularx-social-login';
 
 @Component({
   selector: 'app-headerlink',
@@ -8,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class HeaderlinkComponent implements OnInit {
   x: any;
-  popup:any;
+  popup: any;
+  display: any;
   useremail: any;
-  constructor(private router: Router) {
+  username: any;
+  constructor(private router: Router, private authService: AuthService) {
     this.useremail = localStorage.getItem('username');
     console.log(localStorage.getItem('username'));
+    this.useremail = localStorage.getItem('username');
+    this.username = localStorage.getItem('name');
+    console.log(localStorage.getItem('name'));
   }
 
   ngOnInit(): void {
@@ -22,6 +28,7 @@ export class HeaderlinkComponent implements OnInit {
     // } else {
     //   localStorage.removeItem('foo');
     // }
+    this.display = false;
   }
 
   public myFunction() {
@@ -33,11 +40,18 @@ export class HeaderlinkComponent implements OnInit {
     }
   }
   public logout() {
+    this.authService.signOut();
+    this.router.navigate(['/home']);
     localStorage.clear();
-    this.router.navigate(['/']);
+    // location.reload();
   }
+
   public myPopupbox() {
+
     this.popup = document.getElementById('myPopup');
     this.popup.classList.toggle("show");
+  }
+  public myFunctionaa() {
+    document.getElementById("myDropdown").classList.toggle("show");
   }
 }

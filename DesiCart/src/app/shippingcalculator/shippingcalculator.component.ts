@@ -15,9 +15,11 @@ export class ShippingcalculatorComponent implements OnInit {
   public contactUs()
   {
     this.router.navigate(['/home/contact']);
+    window.scrollTo(0, 0);
   }
   public comment()
   {
     this.router.navigate(['/home/comment']);
+    window.scrollTo(0, 0);
   }
 }

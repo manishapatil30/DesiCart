@@ -18,19 +18,27 @@
                         <!-- <a  href="#contact" routerLinkActive="active">Login</a> -->
                         <!-- <a [routerLink]="['login']" routerLinkActive="active">Login</a> -->
                         <a [routerLink]="['shop']" routerLinkActive="active">Shop</a>
-                        <a [routerLink]="['login']" routerLinkActive="active" data-backdrop="static"
-                            data-keyboard="false">{{(useremail != ''?'SignUp/Login':useremail)}}
+                        <a *ngIf="!useremail" [routerLink]="['login']" routerLinkActive="active" data-backdrop="static"
+                            data-keyboard="false">SignUp/Login
                         </a>
-                        <!-- <span>
-                            <div class="popup" (click)="myPopupbox()"><a href=""><i class="fa fa-angle-down"
-                                        style="margin-left: 5px;color: white;"></i>
-                                </a>
-                                <span class="popuptext" id="myPopup">
-                                    <a href="#" (click)="logout()"><i class="fa fa-power-off"
-                                            style="margin-right: 10px;"></i>Logout</a>
+                        <a *ngIf="useremail" [routerLink]="[]" data-backdrop="static"
+                            data-keyboard="false">{{useremail}}
+                        </a>
+                        <span>
+                            <a *ngIf="useremail" [routerLink]="[]">
+                                <span>
+                                    <div class="popup" (click)="myPopupbox()"><a [routerLink]="[]"><i
+                                                class="fa fa-angle-down" style="color: white;margin-left: -50px;"></i>
+                                        </a>
+                                        <span class="popuptext" id="myPopup">
+                                            <a [routerLink]="[]" (click)="logout()"><i class="fa fa-power-off"
+                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Logout</i></a>
+                                        </span>
+                                    </div>
                                 </span>
-                            </div>
-                        </span> -->
+                            </a>
+                        </span>
+
                         <a href="javascript:void(0);" class="icon" (click)="myFunction()">
                             <i class="fa fa-bars"></i>
                         </a>

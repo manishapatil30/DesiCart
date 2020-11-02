@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
   Message: any;
   lemail: any;
   lname: any;
+  userID: any;
+  logname: any;
+  dataa: any;
   showModal = false;
   form: FormGroup = new FormGroup({});
 
@@ -89,7 +92,7 @@ export class LoginComponent implements OnInit {
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/user-signup-social', body, { headers }).subscribe((data => {
       console.log(data);
       if (data.Status === 1) {
-        this.router.navigate(['/home/homepage']);
+        this.router.navigateByUrl('/home');
       }
       else {
         this.Message = data.Message;
@@ -103,9 +106,11 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+
     // console.log(this.form.value);
     // console.log(this.email);
     // console.log(this.password);
+    // localStorage.setItem('username', this.name);
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     const body = {
       EmailID: this.email,
@@ -115,8 +120,17 @@ export class LoginComponent implements OnInit {
     };
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users', body, { headers }).subscribe((data => {
       console.log(data);
+      this.userID = data.UserID;
       if (data.Status === 1) {
-        this.router.navigate(['/home/homepage']);
+        // this.router.navigate(['/home/homepage']);
+
+        this.http.get<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users?UserID=' + this.userID, { headers }).subscribe(data => {
+          console.log(data);
+          this.dataa = data.Users;
+          this.logname = this.dataa.Name;
+          localStorage.setItem('username', this.logname);
+        })
+        this.router.navigate(['/home']);
       }
       else {
         this.Message = data.Message;
