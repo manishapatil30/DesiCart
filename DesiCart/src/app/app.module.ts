@@ -25,6 +25,7 @@ import { FadeComponent } from './fade/fade.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { NgxPopper } from 'angular-popper';
 import {

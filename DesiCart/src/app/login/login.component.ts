@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   public signInWithGoogle() {
     let socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-    this.authService.signIn(socialPlatformProvider)
+    this.authService.signIn(socialPlatformProvider,{ prompt: 'select_account' })
       .then((userData) => {
         this.user = userData;
         this.lemail = userData.email,
