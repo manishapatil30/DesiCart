@@ -80,7 +80,7 @@ export class SignupComponent implements OnInit {
       console.log(data);
       if (data.Status === 1) {
         this.router.navigate(['/home']);
-        location.reload();
+        // location.reload();
       }
       else {
         this.Message = data.Message;
@@ -133,7 +133,7 @@ export class SignupComponent implements OnInit {
       if (data.Status === 1) {
         alert('Your Account Created Successfully.');
         this.router.navigate(['/home']);
-        location.reload();
+        // location.reload();
       }
       else {
         this.Message = data.Message;
