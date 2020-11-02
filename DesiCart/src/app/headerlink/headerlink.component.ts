@@ -43,7 +43,7 @@ export class HeaderlinkComponent implements OnInit {
     this.authService.signOut();
     this.router.navigate(['/home']);
     localStorage.clear();
-    // location.reload();
+    location.reload();
   }
 
   public myPopupbox() {

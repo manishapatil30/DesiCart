@@ -93,6 +93,7 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if (data.Status === 1) {
         this.router.navigateByUrl('/home');
+        location.reload();
       }
       else {
         this.Message = data.Message;
@@ -131,6 +132,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('username', this.logname);
         })
         this.router.navigate(['/home']);
+        location.reload();
       }
       else {
         this.Message = data.Message;
