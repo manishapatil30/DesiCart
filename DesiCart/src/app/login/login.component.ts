@@ -131,6 +131,7 @@ export class LoginComponent implements OnInit {
           this.logname = this.dataa.Name;
           localStorage.setItem('username', this.logname);
         })
+        alert('login Successfully.');
         localStorage.setItem('username', this.logname);
         this.router.navigateByUrl('/home');
         // location.reload();
