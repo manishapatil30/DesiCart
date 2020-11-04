@@ -141,22 +141,22 @@
   }
   .stepper p{
     font-size: 25px;
-    color:#e6e9ee;
+    color: #F7CD26;
     text-align: left;
     padding: 28px 28px 0px 28px;
     margin-left: 20px;
   }
   .hide1 {
-    display: none;
+    display: block;
   }
  .hide2  {
-    display: none;
+    display: block;
   }
   .hide3 {
-    display: none;
+    display: block;
   }
   .hide4 {
-    display: none;
+    display: block;
   }
       
   .stepper #myDIV1:hover .hide1 {
