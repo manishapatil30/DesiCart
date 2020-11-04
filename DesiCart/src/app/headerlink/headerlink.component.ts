@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'angularx-social-login';
-declare var $: any;
+import $ from 'jquery';
 
 @Component({
   selector: 'app-headerlink',
@@ -21,6 +21,12 @@ export class HeaderlinkComponent implements OnInit {
     this.username = localStorage.getItem('name');
     console.log(localStorage.getItem('name'));
 
+    $('.topnav .topnav a').on('click', function () {
+      if ($('.topnav').hasClass('in')) {
+        $('.icon').click();
+      }
+    });
+
   }
 
   ngOnInit(): void {
@@ -31,6 +37,7 @@ export class HeaderlinkComponent implements OnInit {
     //   localStorage.removeItem('foo');
     // }
     this.display = false;
+    
 
   }
 
