@@ -61,10 +61,15 @@
   }
   .center .btn
   {
+    background: #F7CD26;
+    color:white;
+    width: 100%;
+    height: 40px;
+  }
+  .center .btn:hover
+  {
     background: #303030;
     color:white;
-    width: 250px;
-    height: 50px;
   }
   .center .btn1
   {
@@ -88,6 +93,11 @@
     outline: none;
   }
 @media screen and (max-width: 600px) {
+  #hidest
+  {
+    display: block;
+  }
+ 
   .modal
   {
     width: 90%;
@@ -104,10 +114,17 @@
     width: 100%;
     
   }
-  
+  .dynamic .column
+  {
+    display: none;
+  }
  
 }
 @media screen and (max-width: 800px) {
+  #hidest
+  {
+    display: block;
+  }
   .modal
   {
     width: 90%;
@@ -123,7 +140,28 @@
     max-width: 100%;
     width: 100%;
   }
-  
+  .dynamic .row .column
+  {
+    /* float: left; */
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    background-color: #ffc635;
+    background-image: linear-gradient(-45deg, #ffc635, #ff8209  );
+  }
+  .dynamic .row .column1
+  {
+    /* float: left; */
+    width: 100%;
+    height: 900px;
+    padding: 0 10px;
+    background-color: #f6f6f6;
+  }
+  .dynamic .column
+  {
+   display: none;
+  }
+
 }
 .questionNumbers {
   display: flex;
@@ -142,4 +180,120 @@
   flex: 1 0 auto;
   height: 0;
   border-top: 1px solid black;
+}
+.dynamic
+{
+  /* margin: 50px auto; */
+  width: 100%;
+  /* height:900px; */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: 100%; */
+  background-size: 100% 100%;
+  /* position: absolute; */
+}
+.dynamic .column
+{
+  float: left;
+  width: 33%;
+  height: 900px;
+  padding: 0 10px;
+  background-color: #ffc635;
+  background-image: linear-gradient(-45deg, #ffc635, #ff8209  );
+}
+.dynamic .column1
+{
+  float: left;
+  width: 66%;
+  height: 900px;
+  padding: 0 10px;
+  background-color: #f6f6f6;
+}
+.column .buttons
+{
+  margin-top: 60%;
+  margin-right:-11px;
+}
+.column .buttons .btn
+{
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  width: 80px;
+  height: 40px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.column .buttons .btn1
+{
+  color: #ffc635;
+  background-color: #f6f6f6;
+  border: 1px solid #ff8209; 
+  padding: 0px;
+  margin: 0px;
+  width: 80px;
+  height: 40px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.column .buttons .btn:hover
+{
+  color: #ffc635;
+  background-color: #f6f6f6;
+}
+.column .buttons .btn:focus
+{
+  outline: none;
+  outline-color: #f6f6f6;
+  border: 1px solid #ffc635;
+}
+.innerbox
+{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  margin: 7% auto;
+  justify-content: center;
+  justify-items: center;
+  margin-left:25%;
+}
+.example-button-container {
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  margin: 20px auto;
+  width: 120px;
+}
+.innerbox1
+{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  margin: 7% auto;
+  justify-content: center;
+  justify-items: center;
+  margin-left:25%;
+}
+#hidest
+{
+  display: none;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
 }

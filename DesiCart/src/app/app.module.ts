@@ -25,7 +25,7 @@ import { FadeComponent } from './fade/fade.component';
 import { ContactComponent } from './contact/contact.component';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
-
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { NgxPopper } from 'angular-popper';
 import {
@@ -35,6 +35,8 @@ import {
 import { ShopComponent } from './shop/shop.component';
 import { HowComponent } from './how/how.component';
 import { CommentComponent } from './comment/comment.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { MyaccountComponent } from './myaccount/myaccount.component';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -68,7 +70,9 @@ export function provideConfig() {
     ContactComponent,
     ShopComponent,
     HowComponent,
-    CommentComponent
+    CommentComponent,
+    ForgotpassComponent,
+    MyaccountComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,8 @@
             <div class="row hide-in-mob">
                 <div class="col-sm-2">
                     <div class="logo">
-                        <img src="assets\Images\Group 23.png" width="69" height="69">
+                        <a [routerLink]="['home']" (click)="signup()"> <img src="assets\Images\Group 23.png" width="69"
+                                height="69"></a>
                     </div>
                 </div>
                 <div class="col-sm-2"></div>
@@ -31,6 +32,8 @@
                                                 class="fa fa-angle-down" style="color: white;margin-left: -50px;"></i>
                                         </a>
                                         <span class="popuptext" id="myPopup">
+                                            <a [routerLink]="['myaccount']" (click)="account()"><i class="fa fa-user"
+                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Account</i></a>
                                             <a [routerLink]="[]" (click)="logout()"><i class="fa fa-power-off"
                                                     style="margin-right: 10px;margin-left: 0;">&nbsp;Logout</i></a>
                                         </span>

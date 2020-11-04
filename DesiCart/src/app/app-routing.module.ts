@@ -12,6 +12,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ShopComponent } from './shop/shop.component';
 import { HowComponent } from './how/how.component';
 import { CommentComponent } from './comment/comment.component';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { MyaccountComponent } from './myaccount/myaccount.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,16 +26,18 @@ const routes: Routes = [
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'shop', component: ShopComponent },
+      { path: 'myaccount', component: MyaccountComponent },
       { path: 'comment', component: CommentComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'how', component: HowComponent },
+      { path: 'signup', component: SignupComponent },
       {
         path: 'shipping', component: ShippingcalculatorComponent
       },
       {
         path: 'login', children: [
           { path: '', component: LoginComponent },
-          { path: 'signup', component: SignupComponent }
+          { path: 'forgot', component: ForgotpassComponent }
         ]
       },
     ]

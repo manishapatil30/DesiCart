@@ -1,24 +1,111 @@
 <div class="top">
-    <app-homepage></app-homepage>
-    <!-- <mat-card>
-        <mat-card-header>
-            <mat-card-title>Example Login Form</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <form>
-                <mat-form-field appearance="outline">
-                    <input matInput placeholder="your email" [(ngModel)]="email" type="email" name="email" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="your password" [(ngModel)]="password" type="password" name="password"
-                        required>
-                </mat-form-field>
-            </form>
-        </mat-card-content>
-        <mat-card-actions>
-            <button  mat-raised-button (click)="login()"  color="primary">Login</button>
-        </mat-card-actions>
-    </mat-card> -->
+
+    <div class="dynamic">
+        <div class="row">
+            <div class="column">
+                <div class="buttons">
+                    <div>
+                        <button color="dark" class="btn1 button-style float-right" type="submit" [routerLink]="[]"
+                            routerLinkActive="active" (click)="toggleShow11()">Login</button>
+                    </div><br><br>
+                    <div>
+                        <button color="dark" class="btn button-style float-right" [routerLink]="[]"
+                            routerLinkActive="active" type="submit" (click)="toggleShow()">Sign
+                            up</button>
+                    </div>
+                </div>
+                <div class="buttons1">
+                    <div>
+                        <button color="dark" class="btn1 button-style" type="submit" [routerLink]="[]"
+                            routerLinkActive="active" (click)="toggleShow11()">Login</button>
+                    </div><br><br>
+                    <div>
+                        <button color="dark" class="btn button-style" [routerLink]="[]" routerLinkActive="active"
+                            type="submit" (click)="toggleShow()">Sign
+                            up</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column1">
+                <div class="innerbox">
+                    <h2 align="center" style="margin-top: 10px;margin-bottom: 20px;">Login</h2>
+                    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+                        <mat-form-field class="example-full-width border-white">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="  Email id" formControlName="email" id="email"
+                                [(ngModel)]="email" type="text" required />
+                            <span matPrefix></span>
+                            <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="f.email.errors?.required">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="password" id="password"
+                                [(ngModel)]="password" [type]="hide ? 'password' : 'text'" required />
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="f.password.errors?.required">
+                                Password is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <div class="float-right"><a [routerLink]="['forgot']" style="color: black;">Forgot password
+                                ?</a></div>
+                        <br><br>
+                        <p style="color: red;" align="center">{{Message}}</p>
+                        <div class="center">
+                            <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
+                                style="margin-top: 50px;">Login</button>
+
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <main class="questionNumbers">
+                                <div class="questionNumberLine"></div>
+                                <div class="questionNumberIcon">
+                                    OR
+                                </div>
+                                <div class="questionNumberLine"></div>
+                            </main>
+
+                        </div>
+                    </form>
+                    <div class="center">
+                        <div class="row example-button-container btn-group float-none">
+                            <button mat-mini-fab style="background-color: #ff7800;border: 1px solid #ff7800;width: 30px;
+                            height: 30px;" aria-label="Example icon button with a menu icon"
+                                (click)="signInWithGoogle()">
+                                <i class="fa fa-google-plus" style="font-size: 12px;margin-top: -10px;"></i>
+                            </button><span style="margin-top: 3px;margin-left:5px;">Google</span>
+                        </div>
+                        <!-- <button mat-raised-button color="primary" style="background-color: red;border: 1px solid red;"
+                            class="btn3 btn-social-icon btn-google-mx-1 float-none" (click)="signInWithGoogle()">
+                            <i class="fa fa-google-plus"></i>Google
+                        </button> -->
+                    </div>
+
+                    <div id="hidest">
+                        <p style="margin: 15px;text-align: center;"><a [routerLink]="[]" (click)="toggleShow()"
+                                style="color: orange;">
+                                Create new Account
+                                <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                </svg></a></p>
+                    </div>
+                </div>
+                <!-- <div class="innerbox1" *ngIf="isShown">
+                    <app-signup></app-signup>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- <app-homepage></app-homepage>
     <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
     <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog"
         tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
@@ -45,19 +132,19 @@
                             <mat-label>Password</mat-label>
                             <input matInput placeholder="Password" formControlName="password" id="password"
                                 [(ngModel)]="password" type="password" required />
-                            <!-- <mat-error *ngIf="f.password.errors.password && !f.password.errors.required">
-                                Please enter a valid Password
-                            </mat-error> -->
+
                             <mat-error *ngIf="f.password.errors?.required">
                                 Password is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
-                        <div class="float-right"><a href="" style="color: black;">Forgot password ?</a></div>
+                        <div class="float-right"><a [routerLink]="['forgot']" style="color: black;">Forgot password
+                                ?</a></div>
                         <br><br>
                         <p style="color: red;" align="center">{{Message}}</p>
                         <div class="center">
-                            <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
-                                [disabled]="!form.valid">Login</button>
+                            <button mat-raised-button color="dark" class="btn button-style float-none"
+                                type="submit">Login</button>
+
                         </div>
                         <div style="margin-top: 20px;">
                             <main class="questionNumbers">
@@ -67,17 +154,11 @@
                                 </div>
                                 <div class="questionNumberLine"></div>
                             </main>
-                            <!-- <hr style="color: black;border:1px solid black;width: 50%; line-height: 2em;"><div class="numberCircle">OR</div><hr style="color: black;border:1px solid black;width: 50%;"> -->
+
                         </div>
 
 
-                        <!-- <div class="center">
-                            <button mat-raised-button color="primary" class="btn2 btn-social-icon btn-google-mx-1 float-none">Login with
-                                Gmail</button>
-                        </div> -->
-                        <!-- <div align="center">
-                            
-                        </div> -->
+
                     </form>
                     <div class="center" style="margin-top: 20px;">
                         <button mat-raised-button color="primary" style="background-color: red;border: 1px solid red;"
@@ -93,16 +174,25 @@
                                         d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                 </svg></a></p>
                     </div>
-                    <!-- <div *ngIf="user" class="card-text-center">
-                        <h1>login</h1>
-                        <h5>{{user.name}}</h5>
-                        <h5>{{user.email}}</h5>
-                    </div> -->
+
                 </div>
-                <!-- <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
-                </div> -->
+
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
+
+<!-- <mat-error *ngIf="f.password.errors.password && !f.password.errors.required">
+                                Please enter a valid Password
+                            </mat-error> -->
+<!-- [disabled]="!form.valid" -->
+<!-- <div class="center">
+                            <button mat-raised-button color="primary" class="btn2 btn-social-icon btn-google-mx-1 float-none">Login with
+                                Gmail</button>
+                        </div> -->
+<!-- <div align="center">
+                            
+                        </div> -->
+<!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                </div> -->

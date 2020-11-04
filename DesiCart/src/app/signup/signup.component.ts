@@ -20,12 +20,14 @@ export class SignupComponent implements OnInit {
   email: string;
   name: string;
   checkbox: any;
-  phoneNumber: string='';
-  mobileNumber: string='';
+  phoneNumber: string = '';
+  mobileNumber: string = '';
   password: string;
   lemail: any;
   lname: any;
-  checkboxModel:boolean = false;
+  userID: any;
+  hide = true;
+  checkboxModel: boolean = false;
   // confirmPass: string;
   showModal = false;
   postId;
@@ -33,12 +35,13 @@ export class SignupComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private authService: AuthService, private location: Location) {
     this.form = fb.group({
       email: ['', [Validators.required, Validators.email]],
-      mobileNumber: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(12)]],
+      mobileNumber: ['', [Validators.required, Validators.pattern('^[0-9 ]{10}$'), Validators.maxLength(10)]],
       name: ['', Validators.required],
-      phoneNumber: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'), Validators.maxLength(12)]],
-      password: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9 ]{10}$'), Validators.maxLength(10)]],
+      password: ['', [Validators.required, Validators.maxLength(8)]],
       checkbox: ['', Validators.required]
       // confirmPass: ['', Validators.required]
+      // ^((\\+91-?)|0)?[0-9]{10}$
     });
   }
 
@@ -57,7 +60,7 @@ export class SignupComponent implements OnInit {
   }
   public signInWithGoogle() {
     let socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-    this.authService.signIn(socialPlatformProvider,{ prompt: 'select_account' })
+    this.authService.signIn(socialPlatformProvider, { prompt: 'select_account' })
       .then((userData) => {
         this.user = userData;
         this.lemail = userData.email,
@@ -68,7 +71,7 @@ export class SignupComponent implements OnInit {
       });
   }
   sendToRestApiMethod(token: string): void {
-    localStorage.setItem('userid', this.lemail);
+    // localStorage.setItem('userid', this.lemail);
     localStorage.setItem('username', this.lname);
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     const body = {
@@ -78,8 +81,11 @@ export class SignupComponent implements OnInit {
 
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/user-signup-social', body, { headers }).subscribe((data => {
       console.log(data);
+      this.userID = data.UserID;
+
       if (data.Status === 1) {
         this.router.navigate(['/home']);
+        localStorage.setItem('usersid', this.userID);
         // location.reload();
       }
       else {
@@ -129,10 +135,13 @@ export class SignupComponent implements OnInit {
     };
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users', body, { headers }).subscribe((data => {
       console.log(data);
+      this.userID = data.UserID;
+
       console.log(data.Message);
       if (data.Status === 1) {
         alert('Your Account Created Successfully.');
         this.router.navigate(['/home']);
+        localStorage.setItem('usersid', this.userID);
         // location.reload();
       }
       else {
@@ -167,5 +176,11 @@ export class SignupComponent implements OnInit {
   public showPassword(checkboxModel) {
     // this.phoneNumber = checkboxModel ? '' : this.mobileNumber;
     this.mobileNumber = checkboxModel ? '' : this.phoneNumber;
+  }
+  toggleShow() {
+
+  }
+  toggleShow11() {
+    this.router.navigate(['/home/login']);
   }
 }

@@ -54,4 +54,11 @@ export class HeaderlinkComponent implements OnInit {
   public myFunctionaa() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
+  public signup() {
+    this.router.navigate(['/home']);
+  }
+  public account()
+  {
+    this.router.navigate(['/home/myaccount']);
+  }
 }

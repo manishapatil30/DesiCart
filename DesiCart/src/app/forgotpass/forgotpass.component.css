@@ -1,0 +1,146 @@
+.top
+  {
+      position: absolute;
+      margin-top:114px;
+      width: 100%;
+  }
+  .modal
+  {
+    width: 100%;
+    height: 100%;
+    margin: 20px auto;
+    border-radius:20px;
+    max-height: 100%;
+    padding-bottom: 50px; 
+    
+  }
+  /* .modal::-webkit-scrollbar {
+    display: none;
+  } */
+  
+  .close
+  {
+    float: right;
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  .close:hover
+  {
+    transform: rotate(360deg);
+  }
+  .close:focus
+  {
+    outline: none;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .center
+  {
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  .center .btn
+  {
+    background: #F7CD26;
+    color:white;
+    width: 150px;
+    height: 50px;
+  }
+  .center .btn:hover
+  {
+    background: #303030;
+    color:white;
+    width: 150px;
+    height: 50px;
+  }
+  .center .btn1
+  {
+    background: red;
+    color:white;
+    width: 150px;
+    height: 50px;
+  }
+  .center .btn1:focus
+  {
+    outline: none;
+    border: 1px solid red;
+  }
+  h3{
+    margin-top:-20px;
+    margin-bottom: 30px;
+  }
+  input[type='text'],
+  input[type='password']
+  {
+    outline: none;
+  }
+  .numberCircle
+  {
+      /* border-radius: 50%;
+      width:40px;
+      height: 40px;
+      padding: 20px;
+      margin-left: 25px;
+      background: black;
+      border: 1px solid black;
+      color: black;
+      text-align: center;
+      transition: transform .2s;
+      font: 16px Arial, sans-serif; */
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      font-size: 14px;
+      color: black;
+      text-align: center;
+      border: 1px solid black;
+      /* background: #000 */
+  }
+  @media screen and (max-width: 600px) {
+    .modal
+    {
+      width: 100%;
+      height: 100%;
+      overflow-y:auto;
+      scrollbar-width: none;
+    }
+    .modal::-webkit-scrollbar {
+      display: none;
+    }
+    .example-form {
+      min-width: 100%;
+      max-width: 100%;
+      width: 100%;
+    }
+    
+   
+  }
+  .questionNumbers {
+    display: flex;
+    align-items: center;
+  }
+  .questionNumberIcon {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+  }
+  .questionNumberLine {
+    flex: 1 0 auto;
+    height: 0;
+    border-top: 1px solid black;
+  }

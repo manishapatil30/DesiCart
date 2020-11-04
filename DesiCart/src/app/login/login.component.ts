@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
   logname: any;
   dataa: any;
   showModal = false;
+  hide = true;
+  isShown: boolean = false;
+  isShownlog: boolean = false;
   form: FormGroup = new FormGroup({});
 
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
@@ -39,12 +42,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.showModal = true;
+    this.isShownlog = true;
 
   }
 
   public signInWithGoogle() {
     let socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-    this.authService.signIn(socialPlatformProvider,{ prompt: 'select_account' })
+    this.authService.signIn(socialPlatformProvider, { prompt: 'select_account' })
       .then((userData) => {
         this.user = userData;
         this.lemail = userData.email,
@@ -81,7 +85,7 @@ export class LoginComponent implements OnInit {
     // });
   }
   sendToRestApiMethod(token: string): void {
-    localStorage.setItem('userid', this.lemail);
+    // localStorage.setItem('userid', this.lemail);
     localStorage.setItem('username', this.lname);
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     const body = {
@@ -91,6 +95,8 @@ export class LoginComponent implements OnInit {
 
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/user-signup-social', body, { headers }).subscribe((data => {
       console.log(data);
+      this.userID = data.UserID;
+      localStorage.setItem('usersid', this.userID);
       if (data.Status === 1) {
         this.router.navigateByUrl('/home');
         // location.reload();
@@ -122,6 +128,7 @@ export class LoginComponent implements OnInit {
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users', body, { headers }).subscribe((data => {
       console.log(data);
       this.userID = data.UserID;
+      localStorage.setItem('usersid', this.userID);
       if (data.Status === 1) {
         // this.router.navigate(['/home/homepage']);
 
@@ -135,7 +142,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('username', this.logname);
         this.router.navigateByUrl('/home');
         // location.reload();
-        
+
       }
       else {
         this.Message = data.Message;
@@ -155,5 +162,12 @@ export class LoginComponent implements OnInit {
   onDialogClick(event: UIEvent) {
     event.stopPropagation();
     event.cancelBubble = true;
+  }
+  toggleShow() {
+    this.router.navigate(['/home/signup']);
+  }
+  toggleShow11() {
+    this.isShown = false;
+    this.isShownlog = true;
   }
 }

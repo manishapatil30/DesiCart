@@ -1,0 +1,43 @@
+<div class="top">
+    <app-homepage></app-homepage>
+    <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+    <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog"
+        tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+        <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
+            <div class="modal-content">
+                <button type="button" class="close" (click)="onClose()" aria-label="Close"><span class="spin"
+                        aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <h4 align="center">Forgot Your Password?</h4>
+                    <p align="center">Don't worry! Resetting your password is easy.Just type in the email you regeisterd to <b>yourDesiCart</b></p>
+                    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+                        <mat-form-field class="example-full-width border-white" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Enter your email address" formControlName="email" id="email"
+                                [(ngModel)]="email" type="text" required />
+                            <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="f.email.errors?.required">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <br><br>
+                        <!-- <p style="color: red;" align="center">{{Message}}</p> -->
+                        <div class="center">
+                            <button mat-raised-button color="dark" class="btn button-style float-none"
+                                type="submit">SEND</button>
+                            <!-- [disabled]="!form.valid" -->
+                        </div>
+                    </form>
+                    <div>
+                        <p style="margin: 15px;text-align: center;">Did you remembered your password?<a [routerLink]="[]" (click)="signup()"> Try loging in</a>
+                        </p>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
