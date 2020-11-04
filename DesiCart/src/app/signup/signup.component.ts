@@ -183,4 +183,8 @@ export class SignupComponent implements OnInit {
   toggleShow11() {
     this.router.navigate(['/home/login']);
   }
+  public terms(){
+    this.router.navigate(['/home/terms']);
+    window.scrollTo(0, 0);
+  }
 }

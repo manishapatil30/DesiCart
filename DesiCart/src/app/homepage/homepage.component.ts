@@ -31,4 +31,25 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['/home/contact']);
   }
 
+  public provibited(){
+    this.router.navigate(['/home/prohibited']);
+    window.scrollTo(0, 0);
+  }
+  public terms(){
+    this.router.navigate(['/home/terms']);
+    window.scrollTo(0, 0);
+  }
+  public personal(){
+    this.router.navigate(['/home/personal']);
+    window.scrollTo(0, 0);
+  }
+  public onamshopping(){
+    this.router.navigate(['/home/onamshopping']);
+    window.scrollTo(0, 0);
+  }
+  public tosis(){
+    this.router.navigate(['/home/tosis']);
+    window.scrollTo(0, 0);
+  }
+
 }

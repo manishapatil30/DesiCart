@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'angularx-social-login';
+declare var $: any;
 
 @Component({
   selector: 'app-headerlink',
@@ -19,6 +20,7 @@ export class HeaderlinkComponent implements OnInit {
     this.useremail = localStorage.getItem('username');
     this.username = localStorage.getItem('name');
     console.log(localStorage.getItem('name'));
+
   }
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class HeaderlinkComponent implements OnInit {
     //   localStorage.removeItem('foo');
     // }
     this.display = false;
+
   }
 
   public myFunction() {
@@ -57,8 +60,7 @@ export class HeaderlinkComponent implements OnInit {
   public signup() {
     this.router.navigate(['/home']);
   }
-  public account()
-  {
+  public account() {
     this.router.navigate(['/home/myaccount']);
   }
 }

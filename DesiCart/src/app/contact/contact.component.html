@@ -2,29 +2,38 @@
     <div class="box">
         <h1 align="center" style="margin-bottom:25px; ">Contact Us</h1>
         <div>
-            <!-- <label>Work email</label>
-            <input type="text" class="form-control input-lg">
-            <label>Subject</label>
-            <select id="selectedValue" class="form-control input-lg">
-                <option>Select</option>
-            </select>
-            <label>Message</label>
-            <textarea rows="4" class="form-control"></textarea> -->
-            <mat-form-field class="example-full-width" appearance="outline">
-                <mat-label>Work email</mat-label>
-                <input matInput placeholder="Work email" type="text">
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="outline">
-                <mat-label>Subject</mat-label>
-                <input matInput placeholder="Subject" type="text">
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="outline">
-                <mat-label>Message</mat-label>
-                <textarea matInput placeholder="Message" rows="5"></textarea>
-            </mat-form-field>
-            <div class="center">
-                <button mat-raised-button color="dark" class="btn button-style" type="submit">Submit</button>
-            </div>
+            <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Work email</mat-label>
+                    <input matInput placeholder="Work email" type="text" [(ngModel)]="email" formControlName="email">
+                    <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="f.email.errors?.required">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Subject</mat-label>
+                    <input matInput placeholder="Subject" type="text" [(ngModel)]="subject" formControlName="subject">
+                    <mat-error *ngIf="f.subject.errors?.required">
+                        Subject is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Message</mat-label>
+                    <textarea matInput placeholder="Message" rows="5" [(ngModel)]="message"
+                        formControlName="message"></textarea>
+                    <mat-error *ngIf="f.message.errors?.required">
+                        Message is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <p style="color: red;" align="center">{{Messageerror}}</p>
+                <div class="center">
+                    <button mat-raised-button color="dark" class="btn button-style" type="submit">Submit</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </div>

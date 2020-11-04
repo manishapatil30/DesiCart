@@ -2,21 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-shop',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  selector: 'app-onamshopp',
+  templateUrl: './onamshopp.component.html',
+  styleUrls: ['./onamshopp.component.css']
 })
-export class ShopComponent implements OnInit {
+export class OnamshoppComponent implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  public contactUs()
-  {
+
+  public contactUs() {
     this.router.navigate(['/home/contact']);
   }
-  public provibited(){
+ public provibited(){
     this.router.navigate(['/home/prohibited']);
     window.scrollTo(0, 0);
   }

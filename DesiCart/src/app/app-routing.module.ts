@@ -14,6 +14,11 @@ import { HowComponent } from './how/how.component';
 import { CommentComponent } from './comment/comment.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { MyaccountComponent } from './myaccount/myaccount.component';
+import { PersonalshopperComponent } from './personalshopper/personalshopper.component';
+import { TermsconditionsComponent } from './termsconditions/termsconditions.component';
+import { ProhibteditemsComponent } from './prohibteditems/prohibteditems.component';
+import { OnamshoppComponent } from './onamshopp/onamshopp.component';
+import { TosisComponent } from './tosis/tosis.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,6 +35,11 @@ const routes: Routes = [
       { path: 'comment', component: CommentComponent },
       { path: 'contact', component: ContactComponent },
       { path: 'how', component: HowComponent },
+      { path: 'personal', component: PersonalshopperComponent },
+      { path: 'terms', component: TermsconditionsComponent },
+      { path: 'prohibited', component: ProhibteditemsComponent },
+      { path: 'onamshopping', component: OnamshoppComponent },
+      { path: 'tosis', component: TosisComponent },
       { path: 'signup', component: SignupComponent },
       {
         path: 'shipping', component: ShippingcalculatorComponent

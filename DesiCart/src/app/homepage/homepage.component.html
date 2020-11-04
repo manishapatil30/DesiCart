@@ -86,7 +86,7 @@
             <div class="col-sm-1"></div>
             <div class="col-xs-12 col-sm-2 col-md-2" float="center" id="myDIV1">
                 <div class="numberCircle">1</div>
-                <p>Signup</p>
+                <p align="center">Signup</p>
                 <span style="text-align: center;" class="hide1">Get yourDesiCart India Locker
                     Address to store all your
                     shopping items.</span>
@@ -94,7 +94,7 @@
             <div class="col-sm-1 dash" align="center">-----</div>
             <div class="col-xs-12 col-sm-2 col-md-2" float="center" id="myDIV2">
                 <div class="numberCircle">2</div>
-                <p>Shop</p>
+                <p style="margin-left: 25px;">Shop</p>
                 <span style="text-align: center;" class="hide2">Shop from any store in India & ship to your Locker. Get package picked
                     up from
                     friends/family in
@@ -103,7 +103,7 @@
             <div class="col-sm-1 dash">-----</div>
             <div class="col-xs-12 col-sm-2 col-md-2" float="center" id="myDIV3">
                 <div class="numberCircle">3</div>
-                <p>Relax</p>
+                <p style="margin-left: 25px;">Relax</p>
                 <span style="text-align: center;" class="hide3">We will Track your Indian shopping orders, Inspect them, Consolidate
                     into one
                     package to save
@@ -128,7 +128,7 @@
             <table>
                 <tbody>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -136,7 +136,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -145,7 +145,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -153,7 +153,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -161,7 +161,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -169,7 +169,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -177,7 +177,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -185,7 +185,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -193,7 +193,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -201,7 +201,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -209,7 +209,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -217,7 +217,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -225,7 +225,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -233,7 +233,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td valign="top">
                             <p><img src="assets\Images\Grogggup.png" height="18" width="18"></p>
                         </td>
                         <td>
@@ -580,25 +580,25 @@
                     <h4 class="title" style="margin-left: 15px;">Quick Links</h4>
                     <ul>
                         <li>
-                            <a href="http://yourdesicart.com/personal-shopper-from-india/" target="_blank">Personal
+                            <a [routerLink]="[]" (click)="personal()">Personal
                                 Shopper from India</a>
                         </li>
                         <li>
-                            <a href="http://yourdesicart.com/onam-shopping-from-india/" target="_blank">Onam
+                            <a [routerLink]="[]" (click)="onamshopping()">Onam
                                 Shopping from India</a>
                         </li>
                         <li>
-                            <a href="http://yourdesicart.com/to-sis-with-love/" target="_blank">To Sis, With
+                            <a [routerLink]="[]" (click)="tosis()">To Sis, With
                                 Love</a>
                         </li>
                         <li>
-                            <a href="https://yourdesicart.com/prohibited-items" target="_blank">Prohibited
+                            <a [routerLink]="[]" (click)="provibited()">Prohibited
                                 Items</a>
                         </li>
 
 
                         <li>
-                            <a href="https://yourdesicart.com/terms-of-use" target="_blank">Terms of
+                            <a [routerLink]="[]" (click)="terms()">Terms of
                                 Use</a>
                         </li>
                     </ul>

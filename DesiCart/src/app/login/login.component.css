@@ -282,11 +282,11 @@
     color: #ff8209;
     background-color: #f6f6f6;
   }
-  .column .buttons .btn:hover
+  /* .column .buttons .btn:hover
   {
     color: #ffc635;
     background-color: #f6f6f6;
-  }
+  } */
 
   .column .buttons .btn:focus
   {

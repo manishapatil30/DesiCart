@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-shop',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  selector: 'app-termsconditions',
+  templateUrl: './termsconditions.component.html',
+  styleUrls: ['./termsconditions.component.css']
 })
-export class ShopComponent implements OnInit {
+export class TermsconditionsComponent implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  public contactUs()
-  {
+  public contactUs() {
     this.router.navigate(['/home/contact']);
   }
   public provibited(){
@@ -36,4 +34,5 @@ export class ShopComponent implements OnInit {
     this.router.navigate(['/home/tosis']);
     window.scrollTo(0, 0);
   }
+
 }

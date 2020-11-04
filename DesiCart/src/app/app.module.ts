@@ -37,6 +37,11 @@ import { HowComponent } from './how/how.component';
 import { CommentComponent } from './comment/comment.component';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { MyaccountComponent } from './myaccount/myaccount.component';
+import { PersonalshopperComponent } from './personalshopper/personalshopper.component';
+import { TermsconditionsComponent } from './termsconditions/termsconditions.component';
+import { ProhibteditemsComponent } from './prohibteditems/prohibteditems.component';
+import { OnamshoppComponent } from './onamshopp/onamshopp.component';
+import { TosisComponent } from './tosis/tosis.component';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -72,7 +77,12 @@ export function provideConfig() {
     HowComponent,
     CommentComponent,
     ForgotpassComponent,
-    MyaccountComponent
+    MyaccountComponent,
+    PersonalshopperComponent,
+    TermsconditionsComponent,
+    ProhibteditemsComponent,
+    OnamshoppComponent,
+    TosisComponent
   ],
   imports: [
     BrowserModule,
