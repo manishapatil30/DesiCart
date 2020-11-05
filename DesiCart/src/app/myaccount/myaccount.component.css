@@ -20,3 +20,168 @@
       font-size: 16px;
       font-weight: bold;
   }
+@media screen and (max-width: 600px) {
+  .col-sm 
+  {
+    display: flex;
+    width: 100%;
+  }
+  .col-xs 
+  {
+    display: flex;
+    width: 100%;
+  }
+
+
+}
+@media screen and (max-width: 800px) {
+.col-sm 
+  {
+    display: flex;
+    width: 100%;
+  }
+  .col-xs 
+  {
+    display: flex;
+    width: 100%;
+  } 
+.vertical-line
+{
+  display: none;
+}
+
+   
+
+}
+
+
+ footer{
+    width: 100%;
+    height: 340px;
+    left: 0px;
+    background: black;
+    /* margin-left: -15px; */
+    color: white;
+  }
+  div.vertical-line{
+    margin-top: 40px;
+    color: silver;
+    width: 0.1px;
+    background: silver; 
+    height: 100%; 
+    float: left;
+  }
+  footer
+  {
+      margin-top: 40px;
+      margin-left: -20px;
+  }
+  footer .title
+  {
+    margin-top: 30px;
+  }
+  #footer
+  {
+    padding-top: 30px;
+    /* margin-left: 20px; */
+  }
+  #footer p 
+  {
+    color: silver;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+  }
+  #footer a
+  {
+    color: silver;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+  }
+  #footer ul
+  {
+    list-style-type: none;
+    margin-left: -25px;
+    margin-top: 20px;
+  }
+  .icon-flipped:hover {
+    transform: rotate(180deg);
+}
+.flip-icon-holder{
+ padding: 10px 10px 10px 0px;;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+/* .row {margin: 0 -5px;padding-left: 60px;} */
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+
+
+/* Responsive columns - one column layout (vertical) on small screens */
+
+ 
+
+   
+  @media screen and (max-width: 600px) {
+    .col-sm 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-xs 
+    {
+      display: flex;
+      width: 100%;
+    }
+  footer
+  {
+    width: 100%;
+    height: 100%;
+  }  
+  .vertical-line
+  {
+    display: none;
+  }
+  .row {margin: 0;padding-left:0;}
+  
+}
+@media screen and (max-width: 800px) {
+  .col-sm 
+    {
+      display: flex;
+      width: 100%;
+    }
+    .col-xs 
+    {
+      display: flex;
+      width: 100%;
+    }
+  footer
+  {
+    width: 100%;
+    height: 100%;
+  }  
+  .vertical-line
+  {
+    display: none;
+  }
+  
+    .row {margin: 0;padding-left:0;}
+}
+#cvvv
+{
+  float:none;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}

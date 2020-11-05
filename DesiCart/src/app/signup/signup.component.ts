@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ControlContainer } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -39,14 +39,19 @@ export class SignupComponent implements OnInit {
       name: ['', Validators.required],
       phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9 ]{10}$'), Validators.maxLength(10)]],
       password: ['', [Validators.required, Validators.maxLength(8)]],
-      checkbox: ['', Validators.required]
+      checkbox: ['', Validators.required],
+      checkboxModel:['', Validators.required]
       // confirmPass: ['', Validators.required]
       // ^((\\+91-?)|0)?[0-9]{10}$
     });
   }
 
   ngOnInit(): void {
+    console.log(this.form.get('mobileNumber').value);
+    console.log(this.form.value);
+    console.log(this.form.value.mobileNumber);
     this.showModal = true;
+    console.log({mobilenumber: this.form.get('mobileNumber').value})
     // this.authService.authState.subscribe((user) => {
     //   this.user = user;
     //   this.lemail = user.email,
@@ -84,8 +89,10 @@ export class SignupComponent implements OnInit {
       this.userID = data.UserID;
 
       if (data.Status === 1) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home/myaccount']);
+       
         localStorage.setItem('usersid', this.userID);
+        this.ngOnInit();
         // location.reload();
       }
       else {
@@ -140,7 +147,7 @@ export class SignupComponent implements OnInit {
       console.log(data.Message);
       if (data.Status === 1) {
         alert('Your Account Created Successfully.');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home/myaccount']);
         localStorage.setItem('usersid', this.userID);
         // location.reload();
       }
@@ -183,7 +190,7 @@ export class SignupComponent implements OnInit {
   toggleShow11() {
     this.router.navigate(['/home/login']);
   }
-  public terms(){
+  public terms() {
     this.router.navigate(['/home/terms']);
     window.scrollTo(0, 0);
   }

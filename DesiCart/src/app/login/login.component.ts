@@ -98,7 +98,8 @@ export class LoginComponent implements OnInit {
       this.userID = data.UserID;
       localStorage.setItem('usersid', this.userID);
       if (data.Status === 1) {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home/myaccount');
+        this.ngOnInit();
         // location.reload();
       }
       else {
@@ -140,7 +141,7 @@ export class LoginComponent implements OnInit {
         })
         alert('login Successfully.');
         localStorage.setItem('username', this.logname);
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home/myaccount');
         // location.reload();
 
       }

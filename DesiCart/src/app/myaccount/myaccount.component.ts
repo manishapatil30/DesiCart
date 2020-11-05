@@ -17,13 +17,40 @@ export class MyaccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload');
+      location.reload();
+    } else {
+      localStorage.removeItem('foo');
+    }
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     this.http.get<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users?UserID=' + this.UserID, { headers }).subscribe(data => {
       console.log(data);
       this.tableData = data.Users;
       console.log(this.tableData);
-
     })
   }
-
+  public contactUs() {
+    this.router.navigate(['/home/contact']);
+  }
+  public provibited(){
+    this.router.navigate(['/home/prohibited']);
+    window.scrollTo(0, 0);
+  }
+  public terms(){
+    this.router.navigate(['/home/terms']);
+    window.scrollTo(0, 0);
+  }
+  public personal(){
+    this.router.navigate(['/home/personal']);
+    window.scrollTo(0, 0);
+  }
+  public onamshopping(){
+    this.router.navigate(['/home/onamshopping']);
+    window.scrollTo(0, 0);
+  }
+  public tosis(){
+    this.router.navigate(['/home/tosis']);
+    window.scrollTo(0, 0);
+  }
 }

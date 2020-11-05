@@ -49,13 +49,125 @@ export class HeaderlinkComponent implements OnInit {
       this.x.className = 'topnav';
     }
   }
-  public logout() {
-    this.authService.signOut();
-    this.router.navigate(['/home']);
-    localStorage.clear();
-    location.reload();
+
+  public onHome() {
+    this.router.navigate(['home/homepage']);
+
+    const home = document.querySelector('.home-link');
+    const how = document.querySelector('.how-link');
+    const pricing = document.querySelector('.pricing-link');
+    const shop = document.querySelector('.shop-link');
+    const signup = document.querySelector('.signup-link');
+
+    home.classList.add('active-link');
+    how.classList.remove('active-link');
+    pricing.classList.remove('active-link');
+    shop.classList.remove('active-link');
+    signup.classList.remove('active-link');
+
+    this.x = document.getElementById('myTopnav');
+    if (this.x.className === 'topnav') {
+      this.x.className += ' responsive';
+    } else {
+      this.x.className = 'topnav';
+    }
   }
 
+  public onHow() {
+    this.router.navigate(['home/how']);
+
+    const home = document.querySelector('.home-link');
+    const how = document.querySelector('.how-link');
+    const pricing = document.querySelector('.pricing-link');
+    const shop = document.querySelector('.shop-link');
+    const signup = document.querySelector('.signup-link');
+
+    home.classList.remove('active-link');
+    how.classList.add('active-link');
+    pricing.classList.remove('active-link');
+    shop.classList.remove('active-link');
+    signup.classList.remove('active-link');
+
+    this.x = document.getElementById('myTopnav');
+    if (this.x.className === 'topnav') {
+      this.x.className += ' responsive';
+    } else {
+      this.x.className = 'topnav';
+    }
+  }
+  public onPricing() {
+    this.router.navigate(['home/pricing']);
+
+    const home = document.querySelector('.home-link');
+    const how = document.querySelector('.how-link');
+    const pricing = document.querySelector('.pricing-link');
+    const shop = document.querySelector('.shop-link');
+    const signup = document.querySelector('.signup-link');
+
+    home.classList.remove('active-link');
+    how.classList.remove('active-link');
+    pricing.classList.add('active-link');
+    shop.classList.remove('active-link');
+    signup.classList.remove('active-link');
+
+    this.x = document.getElementById('myTopnav');
+    if (this.x.className === 'topnav') {
+      this.x.className += ' responsive';
+    } else {
+      this.x.className = 'topnav';
+    }
+  }
+  public onShop() {
+    this.router.navigate(['home/shop']);
+
+    const home = document.querySelector('.home-link');
+    const how = document.querySelector('.how-link');
+    const pricing = document.querySelector('.pricing-link');
+    const shop = document.querySelector('.shop-link');
+    const signup = document.querySelector('.signup-link');
+
+    home.classList.remove('active-link');
+    how.classList.remove('active-link');
+    pricing.classList.remove('active-link');
+    shop.classList.add('active-link');
+    signup.classList.remove('active-link');
+
+    this.x = document.getElementById('myTopnav');
+    if (this.x.className === 'topnav') {
+      this.x.className += ' responsive';
+    } else {
+      this.x.className = 'topnav';
+    }
+  }
+  public onSign() {
+    this.router.navigate(['home/login']);
+
+    const home = document.querySelector('.home-link');
+    const how = document.querySelector('.how-link');
+    const pricing = document.querySelector('.pricing-link');
+    const shop = document.querySelector('.shop-link');
+    const signup = document.querySelector('.signup-link');
+
+    home.classList.remove('active-link');
+    how.classList.remove('active-link');
+    pricing.classList.remove('active-link');
+    shop.classList.remove('active-link');
+    signup.classList.add('active-link');
+
+    this.x = document.getElementById('myTopnav');
+    if (this.x.className === 'topnav') {
+      this.x.className += ' responsive';
+    } else {
+      this.x.className = 'topnav';
+    }
+  }
+
+  
+  public logout() {
+    this.authService.signOut();
+    this.router.navigate(['/home/homepage']);
+    localStorage.clear();
+  }
   public myPopupbox() {
 
     this.popup = document.getElementById('myPopup');

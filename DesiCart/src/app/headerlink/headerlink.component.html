@@ -11,36 +11,55 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <div class="topnav" id="myTopnav">
-                        <a [routerLink]="['homepage']" routerLinkActive="active">Home</a>
-                        <a [routerLink]="['how']" routerLinkActive="active">How</a>
-                        <a [routerLink]="['pricing']" routerLinkActive="active">Pricing & Services</a>
+                        <a routerLinkActive="active" class="home-link" (click)="onHome()">Home</a>
+                        <a routerLinkActive="active" class="how-link" (click)="onHow()">How</a>
+                        <a routerLinkActive="active" class="pricing-link" (click)="onPricing()">Pricing &
+                            Services</a>
                         <!-- <a [routerLink]="['shipping']" routerLinkActive="active">Shipping Calculator</a> -->
                         <!-- <a [routerLink]="['contact']"  routerLinkActive="active">ContactUs</a> -->
                         <!-- <a  href="#contact" routerLinkActive="active">Login</a> -->
                         <!-- <a [routerLink]="['login']" routerLinkActive="active">Login</a> -->
-                        <a [routerLink]="['shop']" routerLinkActive="active">Shop</a>
-                        <a *ngIf="!useremail" [routerLink]="['login']" routerLinkActive="active" data-backdrop="static"
-                            data-keyboard="false">SignUp/Login
-                        </a>
-                        <a *ngIf="useremail" [routerLink]="[]" data-backdrop="static"
-                            data-keyboard="false">{{useremail}}
-                        </a>
-                        <span>
-                            <a *ngIf="useremail" [routerLink]="[]">
-                                <span>
-                                    <div class="popup" (click)="myPopupbox()"><a [routerLink]="[]"><i
-                                                class="fa fa-angle-down" style="color: white;margin-left: -50px;"></i>
-                                        </a>
-                                        <span class="popuptext" id="myPopup">
-                                            <a [routerLink]="['myaccount']" (click)="account()"><i class="fa fa-user"
-                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Account</i></a>
-                                            <a [routerLink]="[]" (click)="logout()"><i class="fa fa-power-off"
-                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Logout</i></a>
-                                        </span>
-                                    </div>
-                                </span>
+                        <a routerLinkActive="active" class="shop-link" (click)="onShop()">Shop</a>
+                        <a class="signup-link" routerLinkActive="active"
+                                data-backdrop="static" data-keyboard="false" id="new-signup" (click)="onSign()">SignUp/Login
                             </a>
-                        </span>
+                        <!-- <a *ngIf="!useremail" [routerLink]="['login']" class="signup-link" routerLinkActive="active"  data-backdrop="static"
+                            data-keyboard="false" class="float-right">SignUp/Login
+                        </a> -->
+                        <div class="center" *ngIf="!useremail">
+                            <button mat-raised-button class="btn button-style float-right"> 
+                                <a class="signup-link" routerLinkActive="active"
+                                data-backdrop="static" data-keyboard="false" class="float-right" (click)="onSign()">SignUp/Login
+                            </a>
+                        </button>
+                            <!-- <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
+                                style="margin-top: 50px;">Login</button> -->
+                        </div>
+
+                        <span (click)="myPopupbox()">
+                                <a *ngIf="useremail" [routerLink]="[]" data-backdrop="static" data-keyboard="false" id="left"
+                                    class="float-right">{{useremail}}
+
+                                    <span>
+                                            <a *ngIf="useremail" [routerLink]="[]">
+                                                <span>
+                                                    <div class="popup"><a [routerLink]="[]"><i class="fa fa-angle-down"
+                                                                style="color: white;margin-left: 150px;"></i>
+                                                        </a>
+                                                        <span class="popuptext" id="myPopup">
+                                                            <a [routerLink]="['myaccount']" (click)="account()"><i
+                                                                    class="fa fa-user"
+                                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Account</i></a>
+                                                            <a [routerLink]="[]" (click)="logout()"><i class="fa fa-power-off"
+                                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Logout</i></a>
+                                                        </span>
+                                                    </div>
+                                                </span>
+                                            </a>
+                                        </span>
+                                </a>
+                            </span>
+                     
 
                         <a href="javascript:void(0);" class="icon" (click)="myFunction()">
                             <i class="fa fa-bars"></i>
