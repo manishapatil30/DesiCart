@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { SocialUser, GoogleLoginProvider } from 'angularx-social-login';
 import { AuthService } from 'angularx-social-login';
+import { BehaviorSubject } from 'rxjs';
 
 declare var $: any;
 @Component({
@@ -31,6 +32,8 @@ export class LoginComponent implements OnInit {
   isShown: boolean = false;
   isShownlog: boolean = false;
   form: FormGroup = new FormGroup({});
+
+  signedin$ = new BehaviorSubject<boolean>(null);
 
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
     this.form = fb.group({
