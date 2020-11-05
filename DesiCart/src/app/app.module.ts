@@ -1,3 +1,4 @@
+import { AccountService } from './myaccount/myaccount.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -107,7 +108,8 @@ export function provideConfig() {
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
-    }
+    },
+    AccountService
   ],
   bootstrap: [AppComponent]
 })

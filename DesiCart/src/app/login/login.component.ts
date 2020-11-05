@@ -33,8 +33,6 @@ export class LoginComponent implements OnInit {
   isShownlog: boolean = false;
   form: FormGroup = new FormGroup({});
 
-  signedin$ = new BehaviorSubject<boolean>(null);
-
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
     this.form = fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -55,6 +53,7 @@ export class LoginComponent implements OnInit {
       .then((userData) => {
         this.user = userData;
         this.lemail = userData.email,
+        console.log(this.lemail)
           this.lname = userData.name,
           //on success
           //this will return user data from google. What you need is a user token which you will send it to the server
