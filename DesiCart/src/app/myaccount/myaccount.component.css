@@ -3,7 +3,12 @@
       position: absolute;
       margin-top:114px;
       width: 100%;
-      margin-left:20px;
+      /* margin-left:20px; */
+  }
+  .top11
+  {
+    width: 90%;
+    margin: auto;
   }
   h3
   {

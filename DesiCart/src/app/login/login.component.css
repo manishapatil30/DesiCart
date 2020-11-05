@@ -65,8 +65,9 @@
   {
     background: red;
     color:white;
-    width: 150px;
-    height: 50px;
+    width: 230px;
+    
+    height: 45px;
   }
   .center .btn1:focus
   {

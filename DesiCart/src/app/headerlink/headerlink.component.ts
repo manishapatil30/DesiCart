@@ -15,11 +15,7 @@ export class HeaderlinkComponent implements OnInit {
   useremail: any;
   username: any;
   constructor(private router: Router, private authService: AuthService) {
-    this.useremail = localStorage.getItem('username');
-    console.log(localStorage.getItem('username'));
-    this.useremail = localStorage.getItem('username');
-    this.username = localStorage.getItem('name');
-    console.log(localStorage.getItem('name'));
+    
 
     $('.topnav .topnav a').on('click', function () {
       if ($('.topnav').hasClass('in')) {
@@ -36,6 +32,12 @@ export class HeaderlinkComponent implements OnInit {
     // } else {
     //   localStorage.removeItem('foo');
     // }
+
+    this.useremail = localStorage.getItem('username');
+    console.log(localStorage.getItem('username'));
+    this.useremail = localStorage.getItem('username');
+    this.username = localStorage.getItem('name');
+    console.log(localStorage.getItem('name'));
     this.display = false;
     
 

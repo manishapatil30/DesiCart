@@ -79,20 +79,22 @@
 
                         </div>
                     </form>
-                    <div class="center">
+                    <form class="example-form">
+                        <div class="center">
+                            <button mat-raised-button color="dark" class="btn1 button-style float-none"
+                                style="margin-top: 30px;"  (click)="signInWithGoogle()">  <i class="fa fa-google" style="margin-right: 10px;"></i>Sign in with Google</button>
+
+                        </div>
+                    </form>
+                    <!-- <div class="center">
                         <div class="row example-button-container btn-group float-none">
                             <button mat-mini-fab style="background-color: #ff7800;border: 1px solid #ff7800;width: 30px;
                             height: 30px;" aria-label="Example icon button with a menu icon"
                                 (click)="signInWithGoogle()">
                                 <i class="fa fa-google" style="font-size: 12px;margin-top: -10px;"></i>
                             </button>
-                            <!-- <span style="margin-top: 3px;margin-left:5px;">Google</span> -->
                         </div>
-                        <!-- <button mat-raised-button color="primary" style="background-color: red;border: 1px solid red;"
-                            class="btn3 btn-social-icon btn-google-mx-1 float-none" (click)="signInWithGoogle()">
-                            <i class="fa fa-google-plus"></i>Google
-                        </button> -->
-                    </div>
+                    </div> -->
 
                     <div id="hidest">
                         <p style="margin: 15px;text-align: center;"><a [routerLink]="[]" (click)="toggleShow()"
