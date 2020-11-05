@@ -79,7 +79,8 @@
   footer
   {
       margin-top: 40px;
-      margin-left: -20px;
+      padding-left: 20px;
+      width:100%;
   }
   footer .title
   {

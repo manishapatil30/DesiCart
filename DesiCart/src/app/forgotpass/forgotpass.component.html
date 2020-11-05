@@ -1,17 +1,15 @@
 <div class="top">
-    <app-homepage></app-homepage>
-    <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
-    <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog"
-        tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
-        <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
-            <div class="modal-content">
-                <button type="button" class="close" (click)="onClose()" aria-label="Close"><span class="spin"
-                        aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal-body">
-                    <h4 align="center">Forgot Your Password?</h4>
-                    <p align="center">Don't worry! Resetting your password is easy.Just type in the email you regeisterd to <b>yourDesiCart</b></p>
-                    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="dynamic">
+        <div class="row">
+            <div class="column1">
+                <div class="innerbox">
+
+                    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()" *ngIf="!display">
+                        <h2 align="center" style="margin-top: 10px;margin-bottom: 20px;">Login</h2>
+
+                        <h4 align="center">Forgot Your Password?</h4>
+                        <p align="center">Don't worry! Resetting your password is easy.Just type in the email you
+                            regeisterd to <b>yourDesiCart</b></p>
                         <mat-form-field class="example-full-width border-white" appearance="outline">
                             <mat-label>Email</mat-label>
                             <input matInput placeholder="Enter your email address" formControlName="email" id="email"
@@ -30,14 +28,47 @@
                                 type="submit">SEND</button>
                             <!-- [disabled]="!form.valid" -->
                         </div>
+                        <div>
+                            <p style="margin: 15px;text-align: center;">Did you remembered your password?<a
+                                    [routerLink]="[]" (click)="signup()"> Try loging in</a>
+                            </p>
+                        </div>
                     </form>
-                    <div>
-                        <p style="margin: 15px;text-align: center;">Did you remembered your password?<a [routerLink]="[]" (click)="signup()"> Try loging in</a>
-                        </p>
-                      </div>
-                </div>
+                    <form class="example-form" [formGroup]="form" (ngSubmit)="reset()" *ngIf="display">
+                        <h2 align="center" style="margin-top: 10px;margin-bottom: 20px;">Login</h2>
 
+                        <h4 align="center">Reset Your Password?</h4>
+                        <p align="center">Don't worry! Resetting your password is easy.Just type in the new Password you
+                            regeisterd to <b>yourDesiCart</b></p>
+                        <mat-form-field class="example-full-width border-white" appearance="outline">
+                            <mat-label>Enter New Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="password" [(ngModel)]="password"
+                                [type]="hide ? 'password' : 'text'" required />
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="!f.password.errors?.required && f.password.errors?.maxlength">
+                                Please, Enter 8 character Password.
+                            </mat-error>
+                            <mat-error *ngIf="f.password.errors?.required">
+                                Password is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                        <br><br>
+                        <!-- <p style="color: red;" align="center">{{Message}}</p> -->
+                        <div class="center">
+                            <button mat-raised-button color="dark" class="btn button-style float-none"
+                                type="submit">SEND</button>
+                            <!-- [disabled]="!form.valid" -->
+                        </div>
+                        <div>
+                            <p style="margin: 15px;text-align: center;">Did you remembered your password?<a
+                                    [routerLink]="[]" (click)="signup()"> Try loging in</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>

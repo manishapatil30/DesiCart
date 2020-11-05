@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
       name: ['', Validators.required],
       phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9 ]{10}$'), Validators.maxLength(10)]],
       password: ['', [Validators.required, Validators.maxLength(8)]],
-      checkbox: ['', Validators.required],
+      checkbox: [false, Validators.required],
       checkboxModel:['', Validators.required]
       // confirmPass: ['', Validators.required]
       // ^((\\+91-?)|0)?[0-9]{10}$

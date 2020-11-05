@@ -119,6 +119,8 @@
  .black a
  {
      color: #ffc515;
+     text-align: center;
+     word-wrap : break-word;
  }
  .black a:hover
  {
@@ -219,6 +221,7 @@
     .black
     {
         height: 100%;
+        text-align:center;
     }
   }
   @media screen and (max-width: 600px) {
@@ -266,8 +269,20 @@
   .black
     {
         height: 100%;
+        text-align:center;
     }
   
+}
+@media screen and (min-width:665px)
+{
+  .black a
+  {
+      height: 100%;
+      width:80%;
+      text-align:center;
+      margin: auto;
+      word-wrap : break-word;
+  }
 }
 #cvvv
 {

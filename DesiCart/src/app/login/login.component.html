@@ -30,7 +30,7 @@
                 <div class="innerbox">
                     <h2 align="center" style="margin-top: 10px;margin-bottom: 20px;">Login</h2>
                     <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-                        <mat-form-field class="example-full-width border-white">
+                        <mat-form-field class="example-full-width border-white" color="warn">
                             <mat-label>Email</mat-label>
                             <input matInput placeholder="  Email id" formControlName="email" id="email"
                                 [(ngModel)]="email" type="text" required />
@@ -42,7 +42,7 @@
                                 Email is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field class="example-full-width">
+                        <mat-form-field class="example-full-width" color="warn">
                             <mat-label>Password</mat-label>
                             <input matInput placeholder="Password" formControlName="password" id="password"
                                 [(ngModel)]="password" [type]="hide ? 'password' : 'text'" required />
@@ -82,7 +82,9 @@
                     <form class="example-form">
                         <div class="center">
                             <button mat-raised-button color="dark" class="btn1 button-style float-none"
-                                style="margin-top: 30px;"  (click)="signInWithGoogle()">  <i class="fa fa-google" style="margin-right: 10px;"></i>Sign in with Google</button>
+                                style="margin-top: 30px;" (click)="signInWithGoogle()"> <i class="fa fa-google"
+                                    style="margin-right: 10px;font-size: 20px;margin-left: -20px;"></i>Sign in with
+                                Google</button>
 
                         </div>
                     </form>

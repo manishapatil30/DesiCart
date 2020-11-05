@@ -23,12 +23,12 @@ export class MyaccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (!localStorage.getItem('foo')) {
-    //   localStorage.setItem('foo', 'no reload');
-    //   location.reload();
-    // } else {
-    //   localStorage.removeItem('foo');
-    // }
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload');
+      location.reload();
+    } else {
+      localStorage.removeItem('foo');
+    }
     // const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     // this.http.get<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users?UserID=' + this.UserID, { headers }).subscribe(data => {
     //   console.log(data);

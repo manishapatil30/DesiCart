@@ -1,4 +1,5 @@
-.top
+
+  .top
   {
       position: absolute;
       margin-top:114px;
@@ -36,8 +37,8 @@
   .example-form {
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
-    margin-top: 30px;
+    width: 90%;
+    margin: auto;
   }
   
   .example-full-width {
@@ -53,22 +54,21 @@
   {
     background: black;
     color:white;
-    width: 150px;
+    width: 160px;
     height: 45px;
   }
   /* .center .btn:hover
   {
     background: #303030;
     color:white;
-    width: 150px;
-    height: 50px;
   } */
   .center .btn1
   {
     background: red;
     color:white;
-    width: 150px;
-    height: 50px;
+    width: 230px;
+    
+    height: 45px;
   }
   .center .btn1:focus
   {
@@ -110,7 +110,7 @@
   @media screen and (max-width: 600px) {
     .modal
     {
-      width: 100%;
+      width: 90%;
       height: 100%;
       overflow-y:auto;
       scrollbar-width: none;
@@ -118,13 +118,65 @@
     .modal::-webkit-scrollbar {
       display: none;
     }
-    .example-form {
+    /* .example-form {
       min-width: 100%;
       max-width: 100%;
       width: 100%;
+    } */
+    .innerbox1
+  {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    margin: 7% auto;
+    justify-content: center;
+    justify-items: center;
+    margin-left:5%;
+  }
+  .dynamic .column1
+  {
+    /* float: left; */
+    width: 100%;
+    height: 900px;
+    padding: 0 10px;
+    background-color: #f6f6f6;
+  }
+   .column .buttons
+  {
+   display: none;
+  }
+   #hidest
+  {
+    display: block;
+  }
+
+  }
+  @media screen and (max-width: 800px) {
+    .dynamic .row .column
+    {
+      /* float: left; */
+      width: 100%;
+      height: 100%;
+      padding: 0 10px;
+      background-color: #ffc635;
+      background-image: linear-gradient(-45deg, #ffc635, #ff8209  );
     }
-    
-   
+    .dynamic .row .column1
+    {
+      /* float: left; */
+      width: 100%;
+      height: 900px;
+      padding: 0 10px;
+      background-color: #f6f6f6;
+    }
+   .column .buttons
+  {
+   display: none;
+  }
+  .top .dynamic .row .column1 .innerbox #hidest
+  {
+    display: block;
+  }
   }
   .questionNumbers {
     display: flex;
@@ -143,4 +195,77 @@
     flex: 1 0 auto;
     height: 0;
     border-top: 1px solid black;
+  }
+
+  /* .leftpanel
+  {
+    height:600px;
+    background-color: #ff8611;
+    background-image: linear-gradient(180deg, #ff8611, #ff9515  );
+  } */
+  .dynamic
+  {
+    /* margin: 50px auto; */
+    width: 100%;
+    /* height:900px; */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+    /* background-size: 100% 100%; */
+    /* position: fixed; */
+  }
+  .dynamic .column
+  {
+    float: left;
+    width: 33%;
+    height: 900px;
+    padding: 0 10px;
+    background-color: #ffc635;
+    background-image: linear-gradient(-45deg, #ffc635, #ff8209  );
+  }
+  .dynamic .column1
+  {
+    /* float: left; */
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    background-color: #f6f6f6;
+  } 
+  .dynamic .row .column .buttons1
+  {
+   display: none;
+  }
+
+  .innerbox
+  {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 7% auto;
+    justify-content: center;
+    justify-items: center;
+    /* margin-left:25%; */
+  }
+  .example-button-container {
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    margin: 20px auto;
+    width: 120px;
+  }
+  .innerbox1
+  {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    margin: 7% auto;
+    justify-content: center;
+    justify-items: center;
+    margin-left:25%;
+  }
+  #hidest
+  {
+    display: block;
   }

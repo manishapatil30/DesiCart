@@ -22,6 +22,24 @@ export class HomepageComponent implements OnInit {
   public moreSites() {
     this.router.navigate(['/home/shop']);
     window.scrollTo(0, 0);
+    const home = document.querySelector('.home-link');
+    const how = document.querySelector('.how-link');
+    const pricing = document.querySelector('.pricing-link');
+    const shop = document.querySelector('.shop-link');
+    const signup = document.querySelector('.signup-link');
+
+    home.classList.remove('active-link');
+    how.classList.remove('active-link');
+    pricing.classList.remove('active-link');
+    shop.classList.add('active-link');
+    signup.classList.remove('active-link');
+
+    // this.x = document.getElementById('myTopnav');
+    // if (this.x.className === 'topnav') {
+    //   this.x.className += ' responsive';
+    // } else {
+    //   this.x.className = 'topnav';
+    // }
   }
   public comment() {
     this.router.navigate(['/home/comment']);

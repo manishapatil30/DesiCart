@@ -18,27 +18,25 @@
                         <div class="card">
                             <div class="card-body" height="400">
                                 <label>Locker #344,</label><br>
-                                <span> Flat G1, Reliance Kamal Apartment,
-                                    84 High Street, Gauthami Enclave Society,
-                                    Kondapur, K.V.Rangareddy District
+                                <span> {{tableData.DeliveryAddress}}
                                 </span><br><br>
-                                <label>City/State:</label>
-                                <span>Hyderabad, Telangana, India</span><br>
-                                <label>PinCode:</label>
-                                <span> 500084</span><br>
-                                <label>Address Type:</label>
-                                <span> Home</span><br>
+                                <!-- <label>City/State:</label>
+                                <span>Hyderabad, Telangana, India</span><br> -->
+                                <!-- <label>PinCode:</label>
+                                <span> 500084</span><br> -->
+                                <!-- <label>Address Type:</label>
+                                <span> Home</span><br> -->
                                 <label>Phone:</label>
-                                <span> +91-8328579397</span><br>
+                                <span> {{tableData.PhoneNo}}</span><br>
                                 <label>Email Address:</label>
-                                <span> yourDesiCart@gmail.com</span>
+                                <span> {{tableData.EmailID}}</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div>
                             <h5 align="center" style="margin-top: 30px;">Yourdesicart Current Balance</h5>
-                            <h3 align="center" style="color:green;"><span style="font-size: 18px;">₹</span>750</h3>
+                            <h3 align="center" style="color:green;"><span style="font-size: 18px;">₹</span>{{tableData.CurrentWalletBalance}}</h3>
                         </div>
                     </div>
                 </div>

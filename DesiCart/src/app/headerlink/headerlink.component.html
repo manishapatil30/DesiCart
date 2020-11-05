@@ -36,16 +36,19 @@
                                 style="margin-top: 50px;">Login</button> -->
                         </div>
 
-                        <span (click)="myPopupbox()">
+                        <span (click)="myPopupbox()" class="user__details">
                                 <a *ngIf="useremail" [routerLink]="[]" data-backdrop="static" data-keyboard="false" id="left"
-                                    class="float-right">{{useremail}}
-
+                                    >{{useremail}} <i class="fa fa-angle-down"
+                                    ></i> 
+                                    <!-- class="float-right" -->
                                     <span>
                                             <a *ngIf="useremail" [routerLink]="[]">
                                                 <span>
-                                                    <div class="popup"><a [routerLink]="[]"><i class="fa fa-angle-down"
-                                                                style="color: white;margin-left: 150px;"></i>
-                                                        </a>
+                                                    <div class="popup">
+                                                        <!-- <a [routerLink]="[]"><i class="fa fa-angle-down user_info_icon"
+                                                                ></i>
+                                                               
+                                                        </a> -->
                                                         <span class="popuptext" id="myPopup">
                                                             <a [routerLink]="['myaccount']" (click)="account()"><i
                                                                     class="fa fa-user"
