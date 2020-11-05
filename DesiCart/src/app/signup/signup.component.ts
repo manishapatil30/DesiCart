@@ -90,9 +90,10 @@ export class SignupComponent implements OnInit {
 
       if (data.Status === 1) {
         this.router.navigate(['/home/myaccount']);
-       
+      
         localStorage.setItem('usersid', this.userID);
         this.ngOnInit();
+        window.scrollTo(0, 0);
         // location.reload();
       }
       else {
@@ -148,6 +149,7 @@ export class SignupComponent implements OnInit {
       if (data.Status === 1) {
         alert('Your Account Created Successfully.');
         this.router.navigate(['/home/myaccount']);
+        window.scrollTo(0, 0);
         localStorage.setItem('usersid', this.userID);
         // location.reload();
       }

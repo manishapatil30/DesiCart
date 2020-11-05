@@ -14,6 +14,7 @@ export class TosisComponent implements OnInit {
   
   public contactUs() {
     this.router.navigate(['/home/contact']);
+    window.scrollTo(0, 0);
   }
   public provibited(){
     this.router.navigate(['/home/prohibited']);

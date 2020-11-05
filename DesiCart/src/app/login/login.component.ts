@@ -100,6 +100,7 @@ export class LoginComponent implements OnInit {
       if (data.Status === 1) {
         this.router.navigateByUrl('/home/myaccount');
         this.ngOnInit();
+        window.scrollTo(0, 0);
         // location.reload();
       }
       else {
@@ -142,6 +143,7 @@ export class LoginComponent implements OnInit {
         alert('login Successfully.');
         localStorage.setItem('username', this.logname);
         this.router.navigateByUrl('/home/myaccount');
+        window.scrollTo(0, 0);
         // location.reload();
 
       }

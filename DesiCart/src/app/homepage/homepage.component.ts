@@ -29,6 +29,7 @@ export class HomepageComponent implements OnInit {
   }
   public contactUs() {
     this.router.navigate(['/home/contact']);
+    window.scrollTo(0, 0);
   }
 
   public provibited(){
