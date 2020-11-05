@@ -63,16 +63,16 @@
   }
   .center .btn
   {
-    background: #F7CD26;
+    background: black;
     color:white;
     width: 100%;
-    height: 40px;
+    height: 45px;
   }
-  .center .btn:hover
+  /* .center .btn:hover
   {
     background: #303030;
     color:white;
-  }
+  } */
   .center .btn1
   {
     background: red;

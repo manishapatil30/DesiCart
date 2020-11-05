@@ -32,18 +32,18 @@
   }
   .center .btn
   {
-    background: #F7CD26;
+    background: black;
     color:white;
     width: 150px;
     height: 50px;
     /* margin-top: 20px; */
   }
-  .center .btn:hover
+  /* .center .btn:hover
   {
     background: #303030;
     color:white;
-    /* margin-top: 20px; */
-  }
+  
+  } */
   .center .btn:focus
   {
     outline: none;
