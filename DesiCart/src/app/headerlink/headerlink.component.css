@@ -258,10 +258,11 @@ header
   color: #F7CD26 !important;
 }
 .center button{
-  background-color: #F7CD26;
+  /* background-color: #F7CD26; */
   color:white;
   width:170px;
   height:40px;
+  border: 1px solid #F7CD26;
 }
 .center button a{
   color:white;

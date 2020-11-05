@@ -51,18 +51,18 @@
   }
   .center .btn
   {
-    background: #F7CD26;
+    background: black;
     color:white;
     width: 150px;
-    height: 50px;
+    height: 45px;
   }
-  .center .btn:hover
+  /* .center .btn:hover
   {
     background: #303030;
     color:white;
     width: 150px;
     height: 50px;
-  }
+  } */
   .center .btn1
   {
     background: red;

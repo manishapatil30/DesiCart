@@ -46,7 +46,7 @@
   .example-form {
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
+    width: 90%;
     margin:auto;
     
   }
@@ -110,12 +110,12 @@
   .modal::-webkit-scrollbar {
     display: none;
   }
-  .example-form {
+  /* .example-form {
     min-width: 100%;
     max-width: 100%;
     width: 100%;
     
-  }
+  } */
   .dynamic .column
   {
     display: none;
@@ -137,11 +137,11 @@
   .modal::-webkit-scrollbar {
     display: none;
   }
-  .example-form {
+  /* .example-form {
     min-width: 100%;
     max-width: 100%;
-    width: 100%;
-  }
+    width: 50%;
+  } */
   .dynamic .row .column
   {
     /* float: left; */
