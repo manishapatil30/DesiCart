@@ -18,6 +18,7 @@ export class ForgotpassComponent implements OnInit {
   form: FormGroup = new FormGroup({});
 
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) {
+    
     this.form = fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.maxLength(8)]],
