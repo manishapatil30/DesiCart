@@ -9,7 +9,7 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./shippingcalculator.component.css']
 })
 export class ShippingcalculatorComponent implements OnInit {
-
+  high:any;
   CountryZones = [];
   selectCountry: boolean = true;
   weightType: string;
@@ -71,9 +71,10 @@ export class ShippingcalculatorComponent implements OnInit {
          this.shippingService.getShippingPrice(newObj).subscribe((res: any) => {
            if(res.Status == 1) {
              alert('Shipping Price is ' + res.ShippingPrice);
-             this.shippingForm.reset();
+            
              this.selectCountry = !this.selectCountry;
-             this.openDialog();
+             this.router.navigate(['/home/opend/'+ res.ShippingPrice + '/' + weigth]);
+             this.shippingForm.reset();
            }
            else if(res.Status == 0) {
               alert(res.Message);
@@ -87,23 +88,10 @@ export class ShippingcalculatorComponent implements OnInit {
    }
 
 
-   openDialog() {
-    const dialogRef = this.dialog.open(ShippingcalculatorComponent,{
-      height: '400px',
-      width: '600px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+   signup() {
+    this.router.navigate(['/home/signup']);
+    window.scrollTo(0, 0);
   }
-
-
-
-
-
-
-
   public contactUs()
   {
     this.router.navigate(['/home/contact']);
@@ -135,3 +123,4 @@ export class ShippingcalculatorComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 }
+export class DialogContentExampleDialog {}

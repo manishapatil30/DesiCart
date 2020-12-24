@@ -1,1 +1,46 @@
-<p>opendialog works!</p>
+<app-shippingcalculator></app-shippingcalculator>
+<div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+    <div class="modal d-block fade" 
+      [ngClass]="{ show: showModal }"
+      (click)="onClose()"
+      id="listing-dialog" 
+      tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+        <div class="modal-dialog modal-lg" role="document" (click)="onDialogClick($event)">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Shipping Calculation
+                    </h5>
+                    <button type="button"
+                        class="close"
+                        (click)="onClose()"
+                        aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <table width="100%" border="1">
+                      <thead>
+                         <th>Title</th>
+                         <th>Price</th>
+                      </thead>
+                      <tbody>
+                          <tr style="background-color:whitesmoke;">
+                              <td>Estimated Shipping Price</td>
+                              <td><b>INR {{price}}</b></td>
+                          </tr>
+                          <tr>
+                            <td>Shipper Name</td>
+                            <td><b>FedEx International Priority</b></td>
+                        </tr>
+                        <tr style="background-color:whitesmoke;">
+                            <td>Weight in kg</td>
+                            <td><b>{{weight}} Kg</b></td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>

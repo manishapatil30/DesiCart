@@ -487,3 +487,22 @@
   height: 200px;
   overflow-y: scroll;
 }
+
+.box
+{
+  width: 85%;
+  margin: auto;
+  border: 1px solid gainsboro;
+}
+.midest
+{
+  margin: auto;
+}
+.midest button
+{
+  background-color: black;
+}
+.test_view_more_btn:hover {
+  transform: translateY(-3px);
+  background-color:#3d434b;
+}

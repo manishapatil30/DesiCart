@@ -20,7 +20,7 @@ import { TermsconditionsComponent } from './termsconditions/termsconditions.comp
 import { ProhibteditemsComponent } from './prohibteditems/prohibteditems.component';
 import { OnamshoppComponent } from './onamshopp/onamshopp.component';
 import { TosisComponent } from './tosis/tosis.component';
-
+import { OpendialogComponent } from './opendialog/opendialog.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
   {
@@ -30,6 +30,7 @@ const routes: Routes = [
         path: 'homepage', component: HomepageComponent
       },
       { path: 'headerlink', component: HeaderlinkComponent },
+      { path: 'opend/:pr/:wet', component: OpendialogComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'shop', component: ShopComponent },
       { path: 'myaccount', canActivate: [AuthGuardService] , component: MyaccountComponent },
