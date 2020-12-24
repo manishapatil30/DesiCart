@@ -64,13 +64,17 @@
         justify-items: right;
         margin-top: -35px;
         margin-bottom: 10px;
+        margin-left:40px;
+        /* margin-top: 30px; */
     }
     .center1 button
     {
       height: 40px;
       background: white;
+      font-size: 14px;
       border-radius: 10px;
       color: black;
+      width:160px;
     }
     .center1 button:focus{
         outline: none;
@@ -505,4 +509,9 @@
 .test_view_more_btn:hover {
   transform: translateY(-3px);
   background-color:#3d434b;
+}
+@media screen and (max-width:990px) {
+ #shiprate {
+    width: 30px;
+  }
 }

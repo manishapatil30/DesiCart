@@ -6,6 +6,7 @@
     border-radius:20px;
     max-height: 100%;
     padding-bottom: 50px; 
+    overflow-y: scroll;
     
   }
   .modal::-webkit-scrollbar {
@@ -16,6 +17,7 @@
     table-layout: fixed;
     border-color: silver;
     border: 1px solid silver;
+    margin-bottom: 30px;
   }
   thead th {
     padding: 10px 8px 10px 8px;
@@ -36,4 +38,15 @@ td {
     padding-top: 15px;
     padding-left: 5px;
     padding-right: 5px;
+}
+.modal-header
+{
+    /* position: sticky;
+    top: 0;
+    z-index: 20; */
+}
+.ui-tabs-nav span
+{
+    color: grey;
+    font-size: 15px;
 }

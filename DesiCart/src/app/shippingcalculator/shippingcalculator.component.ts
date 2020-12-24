@@ -70,7 +70,7 @@ export class ShippingcalculatorComponent implements OnInit {
 
          this.shippingService.getShippingPrice(newObj).subscribe((res: any) => {
            if(res.Status == 1) {
-             alert('Shipping Price is ' + res.ShippingPrice);
+            //  alert('Shipping Price is ' + res.ShippingPrice);
             
              this.selectCountry = !this.selectCountry;
              this.router.navigate(['/home/opend/'+ res.ShippingPrice + '/' + weigth]);
