@@ -1,6 +1,6 @@
 <div class="top">
     <div class="top11">
-            <h3>Namaste {{tableData.Name}}</h3>
+            <h3>Namaste {{username}}</h3>
             <p>Welcome to yourDesiCart, your shopping friend from India!
                 Thank you for choosing us for your hassle-free shopping needs in India. Shop & Ship anything from India.</p>
         
@@ -17,27 +17,27 @@
                     <div class=" col-xs-12 col-sm-6 col-md-6">
                         <div class="card">
                             <div class="card-body" height="400">
-                                <label>Locker #344,</label><br>
-                                <span> {{tableData.DeliveryAddress}}
-                                </span><br><br>
+                                <label> Locker #{{tableData?.UserLockerNo}},</label><br>
+                                <!-- <span> {{tableData?.DeliveryAddress}}
+                                </span><br><br> -->
                                 <!-- <label>City/State:</label>
-                                <span>Hyderabad, Telangana, India</span><br> -->
-                                <!-- <label>PinCode:</label>
+                                <span>Hyderabad, Telangana, India</span><br>
+                                <label>PinCode:</label>
                                 <span> 500084</span><br> -->
-                                <!-- <label>Address Type:</label>
-                                <span> Home</span><br> -->
+                                <label>Address:</label>
+                                <span>  {{ LokerInfo?.FullAddress }} </span><br><br>
                                 <label>Phone:</label>
-                                <span> {{tableData.PhoneNo}}</span><br>
+                                <span> {{LokerInfo?.ContactNo}}</span><br>
                                 <label>Email Address:</label>
-                                <span> {{tableData.EmailID}}</span>
+                                <span> {{LokerInfo?.EmailID}}</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
-                        <div>
+                        <!-- <div>
                             <h5 align="center" style="margin-top: 30px;">Yourdesicart Current Balance</h5>
-                            <h3 align="center" style="color:green;"><span style="font-size: 18px;">₹</span>{{tableData.CurrentWalletBalance}}</h3>
-                        </div>
+                            <h3 align="center" style="color:green;"><span style="font-size: 18px;">₹</span>{{tableData?.CurrentWalletBalance}}</h3>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -62,7 +62,8 @@
             </div> -->
             <div class="vc_empty_space" style="height: 12px"><span class="vc_empty_space_inner"></span>
             </div>
-            <div>
+            <!-- col-md-6 col-lg-6 col-xl-6 -->
+            <!-- <div>
                 <h3>yourDesiCart Locker Terms</h3>
                 <div class="row col-xs-12 col-sm-12 col-md-12">
                     <div class=" col-xs-12 col-sm-5 col-md-5">
@@ -76,7 +77,30 @@
                     </div>
                     <div class="col-xs-12 col-sm-7 col-md-7">
                         <div class="fluidvids">
-                            <iframe title="Shop From India Ship Worldwide" width="700" height="300"
+                            <iframe title="Shop From India Ship Worldwide" width="100%" height="300"
+                                src="https://www.youtube.com/embed/fAFXkcxXPtQ?feature=oembed" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen="" class="fluidvids-item" data-fluidvids="loaded">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="container-fluid" style="padding: 2rem 0;">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                        <h3 class="text-center">yourDesiCart Locker Terms</h3>
+                        <p> You would get a DesiCart India Locker assigned for all your orders.
+                                This locker is yours for lifetime for free of charge!
+                                You get locker free of charge for 20 days from the day your first
+                                package arrives in the locker. After that we charge Rs.200 per week.
+                                Locker clock and all fees will reset once the package is shipped to
+                                your doorstep.</p>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                        <div class="fluidvids">
+                            <iframe title="Shop From India Ship Worldwide" width="100%" height="300"
                                 src="https://www.youtube.com/embed/fAFXkcxXPtQ?feature=oembed" frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen="" class="fluidvids-item" data-fluidvids="loaded">
@@ -85,153 +109,134 @@
                     </div>
                 </div>
             </div>
+            <div>
+            </div>
     </div>
     
-    <footer>
-        <div class="row col-xs-12 col-sm-12 col-md-12" id="footer">
-            <div class="col-xs-12 col-sm-4">
-                <div id="cvvv">
-                    <h4 class="title">yourDesiCart</h4>
-                    <div class="textwidget">
-                        <div class="vc_empty_space" style="height: 12px"><span class="vc_empty_space_inner"></span>
+    <!-- <footer> 
+        <div class="container-fluid">
+            <div class="row" id="footer">
+                <div class="col-xs-12 col-sm-4">
+                    <div id="cvvv">
+                        <h4 class="title">yourDesiCart</h4>
+                        <div class="textwidget">
+                            <div class="vc_empty_space" style="height: 12px"><span class="vc_empty_space_inner"></span>
+                            </div>
+                            <p>84 High street, Kondapur Hyderabad 500084</p>
+                            <p>Email: yourDesiCart@gmail.com</p>
+                            <p>Phone: +91 8328579397</p>
+                            <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span>
+                            </div>
+                            <span style="margin: 0px 5px 0px 0px">
+                                <a itemprop="url" class="" href="https://www.facebook.com/yourDesiCart" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="flip-icon-holder">
+                                        <span class="icon-normal"><i
+                                                class="qodef-icon-font-awesome fa fa-facebook qodef-icon-element"
+                                                style="color:#ffff;font-size:22px"
+                                                onMouseOver="this.style.color='rgb(0, 211, 243)'"
+                                                onMouseOut="this.style.color='#ffffff'"></i></span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span style="margin: 0px 5px 0px 5px">
+                                <a itemprop="url" class="" href="https://twitter.com/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="flip-icon-holder">
+                                        <span class="icon-normal"><i
+                                                class="qodef-icon-font-awesome fa fa-twitter qodef-icon-element"
+                                                style="color:#ffff;font-size:22px"
+                                                onMouseOver="this.style.color='rgb(0, 211, 243)'"
+                                                onMouseOut="this.style.color='#ffffff'"></i></span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span style="margin: 0px 5px 0px 5px">
+                                <a itemprop="url" class="" href="https://www.linkedin.com/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="flip-icon-holder">
+                                        <span class="icon-normal"><i
+                                                class="qodef-icon-font-awesome fa fa-linkedin qodef-icon-element"
+                                                style="color:#ffff;font-size:22px"
+                                                onMouseOver="this.style.color='rgb(0, 211, 243)'"
+                                                onMouseOut="this.style.color='#ffffff'"></i></span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span style="margin: 0px 5px 0px 5px">
+                                <a itemprop="url" class="" href="https://www.instagram.com/yourDesiCart" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="flip-icon-holder">
+                                        <span class="icon-normal"><i
+                                                class="qodef-icon-font-awesome fa fa-instagram qodef-icon-element"
+                                                style="color:#ffff;font-size:22px"
+                                                onMouseOver="this.style.color='rgb(0, 211, 243)'"
+                                                onMouseOut="this.style.color='#ffffff'"></i></span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span style="margin: 0px 5px 0px 5px">
+                                <a itemprop="url" class="" href="https://in.pinterest.com/yourDesiCart/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="flip-icon-holder">
+                                        <span class="icon-normal"><i
+                                                class="qodef-icon-font-awesome fa fa-pinterest qodef-icon-element"
+                                                style="color:#ffff;font-size:22px"
+                                                onMouseOver="this.style.color='rgb(0, 211, 243)'"
+                                                onMouseOut="this.style.color='#ffffff'"></i></span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span style="margin: 0px 5px 0px 5px">
+                                <a itemprop="url" class="" href="https://www.youtube.com" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="flip-icon-holder">
+                                        <span class="icon-normal"><i
+                                                class="qodef-icon-font-awesome fa fa-youtube-play qodef-icon-element"
+                                                style="color:#ffff;font-size:22px"
+                                                onMouseOver="this.style.color='rgb(0, 211, 243)'"
+                                                onMouseOut="this.style.color='#ffffff'"></i></span>
+                                    </span>
+                                </a>
+                            </span>
                         </div>
-
-
-                        <p>84 High street, Kondapur Hyderabad 500084</p>
-                        <p>Email: yourDesiCart@gmail.com</p>
-                        <p>Phone: +91 8328579397</p>
-                        <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span>
-                        </div>
-                        <span style="margin: 0px 5px 0px 0px">
-                            <a itemprop="url" class="" href="https://www.facebook.com/yourDesiCart" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="flip-icon-holder">
-                                    <span class="icon-normal"><i
-                                            class="qodef-icon-font-awesome fa fa-facebook qodef-icon-element"
-                                            style="color:#ffff;font-size:22px"
-                                            onMouseOver="this.style.color='rgb(0, 211, 243)'"
-                                            onMouseOut="this.style.color='#ffffff'"></i></span>
-                                </span>
-                            </a>
-                        </span>
-                        <span style="margin: 0px 5px 0px 5px">
-                            <a itemprop="url" class="" href="https://twitter.com/" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="flip-icon-holder">
-                                    <span class="icon-normal"><i
-                                            class="qodef-icon-font-awesome fa fa-twitter qodef-icon-element"
-                                            style="color:#ffff;font-size:22px"
-                                            onMouseOver="this.style.color='rgb(0, 211, 243)'"
-                                            onMouseOut="this.style.color='#ffffff'"></i></span>
-                                </span>
-                            </a>
-                        </span>
-                        <span style="margin: 0px 5px 0px 5px">
-                            <a itemprop="url" class="" href="https://www.linkedin.com/" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="flip-icon-holder">
-                                    <span class="icon-normal"><i
-                                            class="qodef-icon-font-awesome fa fa-linkedin qodef-icon-element"
-                                            style="color:#ffff;font-size:22px"
-                                            onMouseOver="this.style.color='rgb(0, 211, 243)'"
-                                            onMouseOut="this.style.color='#ffffff'"></i></span>
-                                </span>
-                            </a>
-                        </span>
-                        <span style="margin: 0px 5px 0px 5px">
-                            <a itemprop="url" class="" href="https://www.instagram.com/yourDesiCart" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="flip-icon-holder">
-                                    <span class="icon-normal"><i
-                                            class="qodef-icon-font-awesome fa fa-instagram qodef-icon-element"
-                                            style="color:#ffff;font-size:22px"
-                                            onMouseOver="this.style.color='rgb(0, 211, 243)'"
-                                            onMouseOut="this.style.color='#ffffff'"></i></span>
-                                </span>
-                            </a>
-                        </span>
-                        <span style="margin: 0px 5px 0px 5px">
-                            <a itemprop="url" class="" href="https://in.pinterest.com/yourDesiCart/" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="flip-icon-holder">
-                                    <span class="icon-normal"><i
-                                            class="qodef-icon-font-awesome fa fa-pinterest qodef-icon-element"
-                                            style="color:#ffff;font-size:22px"
-                                            onMouseOver="this.style.color='rgb(0, 211, 243)'"
-                                            onMouseOut="this.style.color='#ffffff'"></i></span>
-                                </span>
-                            </a>
-                        </span>
-                        <span style="margin: 0px 5px 0px 5px">
-                            <a itemprop="url" class="" href="https://www.youtube.com" target="_blank"
-                                rel="noopener noreferrer">
-                                <span class="flip-icon-holder">
-                                    <span class="icon-normal"><i
-                                            class="qodef-icon-font-awesome fa fa-youtube-play qodef-icon-element"
-                                            style="color:#ffff;font-size:22px"
-                                            onMouseOver="this.style.color='rgb(0, 211, 243)'"
-                                            onMouseOut="this.style.color='#ffffff'"></i></span>
-                                </span>
-                            </a>
-                        </span>
                     </div>
                 </div>
-            </div>
-            <!-- <div class="vertical-line" style="height: 200px;width:0.1px; color: silver"></div>
+               
+                <div class="vertical-line" style="height: 200px;"></div>
+                <div class="col-xs-12 col-sm-4">
+    
+                    <div id="cvvv">
+                        <h4 class="title" style="margin-left: 15px;">Quick Links</h4>
+                        <ul>
+                           
+                            <li>
+                                <a [routerLink]="[]" (click)="provibited()">Prohibited
+                                    Items</a>
+                            </li>
+    
+    
+                            <li>
+                                <a [routerLink]="[]" (click)="terms()">Terms of
+                                    Use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="vertical-line" style="height: 200px;"></div>
                 <div class="col-xs-12 col-sm-3">
-                    <div class="qodef-column" style="margin-top: 40px;margin-left: 15px;">
-    
-                        <div class="textwidget custom-html-widget"><a href="terms-of-use">Terms of
-                                Use</a></div>
-    
-                        <div id="custom_html-3" class="widget_text widget qodef-footer-column-2 widget_custom_html">
-                            <div class="textwidget custom-html-widget"><a href="prohibited-items">Prohibited
-                                    Items</a></div>
-                        </div>
+                    <div id="cvvv">
+                        <h4 class="title" style="margin-left: 15px;">ContactUs</h4>
+                        <ul>
+                            <li>
+                                <a [routerLink]="[]" (click)="contactUs()">ContactUs</a>
+                            </li>
+                        </ul>
                     </div>
-                </div> -->
-            <div class="vertical-line" style="height: 200px;"></div>
-            <div class="col-xs-12 col-sm-4">
-
-                <div id="cvvv">
-                    <h4 class="title" style="margin-left: 15px;">Quick Links</h4>
-                    <ul>
-                        <!-- <li>
-                            <a [routerLink]="[]" (click)="personal()">Personal
-                                Shopper from India</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="[]" (click)="onamshopping()">Onam
-                                Shopping from India</a>
-                        </li>
-                        <li>
-                            <a [routerLink]="[]" (click)="tosis()">To Sis, With
-                                Love</a>
-                        </li> -->
-                        <li>
-                            <a [routerLink]="[]" (click)="provibited()">Prohibited
-                                Items</a>
-                        </li>
-
-
-                        <li>
-                            <a [routerLink]="[]" (click)="terms()">Terms of
-                                Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="vertical-line" style="height: 200px;"></div>
-            <div class="col-xs-12 col-sm-3">
-                <div id="cvvv">
-                    <h4 class="title" style="margin-left: 15px;">ContactUs</h4>
-                    <ul>
-                        <li>
-                            <a [routerLink]="[]" (click)="contactUs()">ContactUs</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
+
+    <app-footer></app-footer>
 </div>

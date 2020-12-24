@@ -1,207 +1,79 @@
 <div class="top">
-
-    <div class="dynamic">
+    <div class="container">
         <div class="row">
-            <!-- <div class="column">
-                <div class="buttons">
-                    <div>
-                        <button color="dark" class="btn1 button-style float-right" type="submit" [routerLink]="[]"
-                            routerLinkActive="active" (click)="toggleShow11()">Login</button>
-                    </div><br><br>
-                    <div>
-                        <button color="dark" class="btn button-style float-right" [routerLink]="[]"
-                            routerLinkActive="active" type="submit" (click)="toggleShow()">Sign
-                            up</button>
+            <div class="col-md-6 mx-auto">
+                <h2 align="center" style="margin-top: 50px;margin-bottom: 20px;">Login</h2>
+                <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+                    <mat-form-field class="example-full-width border-white" color="warn">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="  Email id" formControlName="email" id="email"
+                            [(ngModel)]="email" type="text" required maxlength="40"/>
+                        <span matPrefix></span>
+                        <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="f.email.errors?.required">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" color="warn">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password" id="password"
+                            [(ngModel)]="password" [type]="hide ? 'password' : 'text'" required maxlength="40"/>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="f.password.errors?.required">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="float-right"><a [routerLink]="['forgot']" style="color: black;">Forgot password
+                            ?</a></div>
+                    <br><br>
+                    <p style="color: red;" align="center">{{Message}}</p>
+                    <div class="center">
+                        <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
+                            style="margin-top: 50px;">Login</button>
+    
                     </div>
-                </div>
-                <div class="buttons1">
-                    <div>
-                        <button color="dark" class="btn1 button-style" type="submit" [routerLink]="[]"
-                            routerLinkActive="active" (click)="toggleShow11()">Login</button>
-                    </div><br><br>
-                    <div>
-                        <button color="dark" class="btn button-style" [routerLink]="[]" routerLinkActive="active"
-                            type="submit" (click)="toggleShow()">Sign
-                            up</button>
-                    </div>
-                </div>
-            </div> -->
-            <div class="column1">
-                <div class="innerbox">
-                    <h2 align="center" style="margin-top: 10px;margin-bottom: 20px;">Login</h2>
-                    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-                        <mat-form-field class="example-full-width border-white" color="warn">
-                            <mat-label>Email</mat-label>
-                            <input matInput placeholder="  Email id" formControlName="email" id="email"
-                                [(ngModel)]="email" type="text" required />
-                            <span matPrefix></span>
-                            <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
-                                Please enter a valid email address
-                            </mat-error>
-                            <mat-error *ngIf="f.email.errors?.required">
-                                Email is <strong>required</strong>
-                            </mat-error>
-                        </mat-form-field>
-                        <mat-form-field class="example-full-width" color="warn">
-                            <mat-label>Password</mat-label>
-                            <input matInput placeholder="Password" formControlName="password" id="password"
-                                [(ngModel)]="password" [type]="hide ? 'password' : 'text'" required />
-                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                                [attr.aria-pressed]="hide">
-                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button>
-                            <mat-error *ngIf="f.password.errors?.required">
-                                Password is <strong>required</strong>
-                            </mat-error>
-                        </mat-form-field>
-                        <div class="float-right"><a [routerLink]="['forgot']" style="color: black;">Forgot password
-                                ?</a></div>
-                        <br><br>
-                        <p style="color: red;" align="center">{{Message}}</p>
-                        <div class="center">
-                            <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
-                                style="margin-top: 50px;">Login</button>
-
-                        </div>
-                        <!-- <div class="center">
-                            <button mat-raised-button color="dark" class="btn button-style float-none"
-                                style="margin-top: 50px;" (click)="toggleShow()">Login</button>
-
-                        </div> -->
-                        <div style="margin-top: 20px;">
-                            <main class="questionNumbers">
-                                <div class="questionNumberLine"></div>
-                                <div class="questionNumberIcon">
-                                    OR
-                                </div>
-                                <div class="questionNumberLine"></div>
-                            </main>
-
-                        </div>
-                    </form>
-                    <form class="example-form">
-                        <div class="center">
-                            <button mat-raised-button color="dark" class="btn1 button-style float-none"
-                                style="margin-top: 30px;" (click)="signInWithGoogle()"><img src="assets\Images\Group.svg" width="30" height="20">Sign in with
-                                Google</button>
-
-                        </div>
-                    </form>
                     <!-- <div class="center">
-                        <div class="row example-button-container btn-group float-none">
-                            <button mat-mini-fab style="background-color: #ff7800;border: 1px solid #ff7800;width: 30px;
-                            height: 30px;" aria-label="Example icon button with a menu icon"
-                                (click)="signInWithGoogle()">
-                                <i class="fa fa-google" style="font-size: 12px;margin-top: -10px;"></i>
-                            </button>
-                        </div>
+                        <button mat-raised-button color="dark" class="btn button-style float-none"
+                            style="margin-top: 50px;" (click)="toggleShow()">Login</button>
+    
                     </div> -->
-
-                    <div id="hidest">
-                        <p style="margin: 15px;text-align: center;"><a [routerLink]="[]" (click)="toggleShow()"
-                                style="color: grey;">
-                                Create new Account
-                                <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg></a></p>
+                    <div style="margin-top: 20px;">
+                        <main class="questionNumbers">
+                            <div class="questionNumberLine"></div>
+                            <div class="questionNumberIcon">
+                                OR
+                            </div>
+                            <div class="questionNumberLine"></div>
+                        </main>
+    
                     </div>
+                </form>
+                <form class="example-form">
+                    <div class="center">
+                        <button mat-raised-button color="dark" class="btn1 button-style float-none"
+                            style="margin-top: 30px;" (click)="signInWithGoogle()"><img src="assets\Images\g_b.jpg" width="30" style="margin-right: 10px;">Sign in with
+                            Gmail</button>
+                            <!-- C:\Users\Renee Systems\Desktop\Projects\MTL-Projects\descartweb\src\assets\Images\g_b.jpg -->
+    
+                    </div>
+                </form>
+    
+                <div id="hidest">
+                    <p style="margin: 15px;text-align: center;"><a [routerLink]="[]" (click)="toggleShow()"
+                            style="color: grey;">
+                            Create new Account
+                            <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                            </svg></a></p>
                 </div>
-                <!-- <div class="innerbox1" *ngIf="isShown">
-                    <app-signup></app-signup>
-                </div> -->
             </div>
         </div>
     </div>
-    <!-- <app-homepage></app-homepage>
-    <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
-    <div class="modal d-block fade" [ngClass]="{ show: showModal }" (click)="onClose()" id="listing-dialog"
-        tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
-        <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
-            <div class="modal-content">
-                <button type="button" class="close" (click)="onClose()" aria-label="Close"><span class="spin"
-                        aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal-body">
-                    <h3 align="center">Login</h3>
-                    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-                        <mat-form-field class="example-full-width border-white" appearance="outline">
-                            <mat-label>Email</mat-label>
-                            <input matInput placeholder="Email id" formControlName="email" id="email"
-                                [(ngModel)]="email" type="text" required />
-                            <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
-                                Please enter a valid email address
-                            </mat-error>
-                            <mat-error *ngIf="f.email.errors?.required">
-                                Email is <strong>required</strong>
-                            </mat-error>
-                        </mat-form-field>
-                        <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label>Password</mat-label>
-                            <input matInput placeholder="Password" formControlName="password" id="password"
-                                [(ngModel)]="password" type="password" required />
-
-                            <mat-error *ngIf="f.password.errors?.required">
-                                Password is <strong>required</strong>
-                            </mat-error>
-                        </mat-form-field>
-                        <div class="float-right"><a [routerLink]="['forgot']" style="color: black;">Forgot password
-                                ?</a></div>
-                        <br><br>
-                        <p style="color: red;" align="center">{{Message}}</p>
-                        <div class="center">
-                            <button mat-raised-button color="dark" class="btn button-style float-none"
-                                type="submit">Login</button>
-
-                        </div>
-                        <div style="margin-top: 20px;">
-                            <main class="questionNumbers">
-                                <div class="questionNumberLine"></div>
-                                <div class="questionNumberIcon">
-                                    OR
-                                </div>
-                                <div class="questionNumberLine"></div>
-                            </main>
-
-                        </div>
-
-
-
-                    </form>
-                    <div class="center" style="margin-top: 20px;">
-                        <button mat-raised-button color="primary" style="background-color: red;border: 1px solid red;"
-                            class="btn1 btn-social-icon btn-google-mx-1 float-none" (click)="signInWithGoogle()">Login
-                            with
-                            Gmail</button>
-                    </div>
-                    <div>
-                        <p style="margin: 15px;text-align: center;"><a [routerLink]="['signup']"> Create new Account
-                                <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg></a></p>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div> -->
 </div>
-
-<!-- <mat-error *ngIf="f.password.errors.password && !f.password.errors.required">
-                                Please enter a valid Password
-                            </mat-error> -->
-<!-- [disabled]="!form.valid" -->
-<!-- <div class="center">
-                            <button mat-raised-button color="primary" class="btn2 btn-social-icon btn-google-mx-1 float-none">Login with
-                                Gmail</button>
-                        </div> -->
-<!-- <div align="center">
-                            
-                        </div> -->
-<!-- <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
-                </div> -->

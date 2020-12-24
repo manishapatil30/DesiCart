@@ -1,9 +1,9 @@
-.top
+/* .top
   {
       position: absolute;
-      margin-top:114px;
+    
       width: 100%;
-  }
+  } */
   .header
   {
       background-color: #f2f3f7;
@@ -155,10 +155,11 @@
   {
     padding-top: 30px;
     /* margin-left: 20px; */
+    padding-left: 8rem;
   }
   #footer p 
   {
-    color: silver;
+  color: silver;
     padding: 0px;
     margin: 0px;
     font-size: 18px;
@@ -292,4 +293,14 @@
   justify-content: center;
   justify-items: center;
   text-align: center;
+}
+
+@media screen and (max-width:800px) {
+  #footer {
+    padding-left: 2rem;
+  }
+}
+
+.navigate {
+  cursor: pointer;
 }

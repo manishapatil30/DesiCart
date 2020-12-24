@@ -1,7 +1,8 @@
 .top
   {
       position: absolute;
-      margin-top:114px;
+      /* margin-top:114px; */
+      /* margin-top: 90px; */
       width: 100%;
   }
   .header
@@ -29,7 +30,7 @@
   }
   .header1 li{
       font-size: 18px;
-      color: gray;
+      /* color: gray; */
   }
   .card-container {
     display: flex;
@@ -154,7 +155,9 @@
   {
     padding-top: 30px;
     /* margin-left: 20px; */
+    padding-left: 8rem;
   }
+
   #footer p 
   {
     color: silver;
@@ -279,3 +282,41 @@
   justify-items: center;
   text-align: center;
 }
+
+@media screen and (max-width:800px) {
+  #footer {
+    padding-left: 2rem;
+  }
+  }
+
+  .navigate {
+    cursor: pointer;
+  }
+
+  .user_guide {
+    margin: 40px 0 20px 0;
+  }
+
+  .service_tersm{
+    margin: 40px 0 20px 0;
+  }
+
+  .cancellation {
+    margin: 40px 0 20px 0; 
+  }
+
+  .seller_policy {
+    margin: 20px 0 10px 0; 
+  }
+
+  .liquid_lists li{
+      font-size: 1rem;
+  }
+
+  .explosive_lists li {
+    font-size: 1rem;
+  }
+
+  .acidic_lsts li {
+    font-size: 1rem;
+  }

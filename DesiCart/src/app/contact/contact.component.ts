@@ -15,12 +15,14 @@ export class ContactComponent implements OnInit {
   message: any;
   subject: any;
   Messageerror: any;
+  emailPattern = "^[a-zA-Z]{1}[a-zA-Z0-9.\-_]*@[a-zA-Z]{1}[a-zA-Z.-]*[a-zA-Z]{1}[.][a-zA-Z]{3}$";
   form: FormGroup = new FormGroup({});
   constructor(private router: Router, private http: HttpClient, private fb: FormBuilder) {
     this.form = fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
-      subject: ['', Validators.required]
+      
+      email: ['', [Validators.required, Validators.email, Validators.pattern(this.emailPattern)]],
+      message: ['', [Validators.required, Validators.pattern(".*\\S.*[a-zA-z0-9 ]")]],
+      subject: ['', [Validators.required, Validators.pattern(".*\\S.*[a-zA-z0-9 ]")]]
 
     });
   }
@@ -40,9 +42,12 @@ export class ContactComponent implements OnInit {
     this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/userenquires', body, { headers }).subscribe((data => {
       console.log(data);
       if (data.Status === 1) {
-        alert('updated Successfully.');
+       
+        
+        alert('Form submitted Successfully.');
+
         this.router.navigateByUrl('/home');
-      }
+    }
       else {
         this.Messageerror = data.Message;
       }

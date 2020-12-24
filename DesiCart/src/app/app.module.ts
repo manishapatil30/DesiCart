@@ -1,4 +1,3 @@
-import { AccountService } from './myaccount/myaccount.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -43,6 +42,11 @@ import { TermsconditionsComponent } from './termsconditions/termsconditions.comp
 import { ProhibteditemsComponent } from './prohibteditems/prohibteditems.component';
 import { OnamshoppComponent } from './onamshopp/onamshopp.component';
 import { TosisComponent } from './tosis/tosis.component';
+import { LoginService } from './login/login.service';
+import { NumberDirective } from './validators/numbersOnly.directive';
+import { FooterComponent } from './footer/footer.component';
+import { ShippingCalculator } from './shippingcalculator/shippingcalculator.service';
+import { OpendialogComponent } from './opendialog/opendialog.component';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -55,7 +59,7 @@ export function provideConfig() {
   const config = new AuthServiceConfig([
     {
       id: GoogleLoginProvider.PROVIDER_ID,
-      provider: new GoogleLoginProvider('149669804064-dr29dh613dr5dmug6k2oj4f9nf3efj5u.apps.googleusercontent.com')
+      provider: new GoogleLoginProvider('151054949592-0f70n4pa04j1007140i7r9bc6dji3it0.apps.googleusercontent.com')
     }
   ]);
   return config;
@@ -83,7 +87,10 @@ export function provideConfig() {
     TermsconditionsComponent,
     ProhibteditemsComponent,
     OnamshoppComponent,
-    TosisComponent
+    TosisComponent,
+    NumberDirective,
+    FooterComponent,
+    OpendialogComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +116,8 @@ export function provideConfig() {
       provide: AuthServiceConfig,
       useFactory: provideConfig
     },
-    AccountService
+    LoginService,
+    ShippingCalculator
   ],
   bootstrap: [AppComponent]
 })

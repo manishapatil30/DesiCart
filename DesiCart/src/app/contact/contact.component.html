@@ -1,39 +1,56 @@
-<div class="top">
+<!-- <div class="top">
     <div class="box">
-        <h1 align="center" style="margin-bottom:25px; ">Contact Us</h1>
-        <div>
-            <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-                <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="Email" type="text" [(ngModel)]="email" formControlName="email">
-                    <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
-                        Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="f.email.errors?.required">
-                        Email is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Subject</mat-label>
-                    <input matInput placeholder="Subject" type="text" [(ngModel)]="subject" formControlName="subject">
-                    <mat-error *ngIf="f.subject.errors?.required">
-                        Subject is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="outline">
-                    <mat-label>Message</mat-label>
-                    <textarea matInput placeholder="Message" rows="5" [(ngModel)]="message"
-                        formControlName="message"></textarea>
-                    <mat-error *ngIf="f.message.errors?.required">
-                        Message is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-                <!-- <p style="color: red;" align="center">{{Messageerror}}</p> -->
-                <div class="center">
-                    <button mat-raised-button color="dark" class="btn button-style" type="submit">Submit</button>
-                </div>
-            </form>
-
-        </div>
+        
     </div>
+</div> -->
+
+
+<div class="contact_us_form">
+    <h1 class="text-center" style="margin-bottom:25px;">Contact Us</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div>
+                        <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Email" type="text" [(ngModel)]="email" formControlName="email" required>
+                                <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required && f.email.errors?.pattern">
+                                    Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="f.email.errors?.required">
+                                    Email is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Subject</mat-label>
+                                <input matInput placeholder="Subject" type="text" [(ngModel)]="subject" formControlName="subject" required>
+                                <mat-error *ngIf="!f.subject.errors?.required && f.subject.errors?.pattern">
+                                    Please enter a valid text
+                                </mat-error>
+                                <mat-error *ngIf="f.subject.errors?.required">
+                                    Subject is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width" appearance="outline" >
+                                <mat-label>Message</mat-label>
+                                <textarea matInput placeholder="Message" rows="5" [(ngModel)]="message"
+                                    formControlName="message" required></textarea>
+                                    <mat-error *ngIf="!f.email.errors?.required && f.message.errors?.pattern">
+                                        Please enter a valid text
+                                    </mat-error>
+                                <mat-error *ngIf="f.message.errors?.required">
+                                    Message is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                            <!-- <p style="color: red;" align="center">{{Messageerror}}</p> -->
+                            <div class="center">
+                                <button mat-raised-button color="dark" class="btn button-style" type="submit" [disabled]="!form.valid">Submit</button>
+                            </div>
+                        </form>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
 </div>

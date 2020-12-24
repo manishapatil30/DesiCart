@@ -1,8 +1,180 @@
 <div class="top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <form class="example-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+          <h3 align="center" style="margin-top: 40px;">Create account</h3>
+          <mat-form-field class="example-full-width border-white">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email id" formControlName="email" id="email" [(ngModel)]="email" type="text"
+              required maxlength="40"/>
+            <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="f.email.errors?.required">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" formControlName="name" [(ngModel)]="name" type="text" required maxlength="40"/>
+            <mat-error *ngIf="f.name.errors?.required">
+              Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone number" numbersOnly formControlName="phoneNumber" [(ngModel)]="phoneNumber"
+              type="text" required minlength="10" maxlength="10"/>
+            <mat-error
+              *ngIf="f.phoneNumber.errors?.pattern && f.phoneNumber.errors?.maxlength && !f.phoneNumber.errors?.required">
+              Please, Enter 10 digit Mobile Number.
+            </mat-error>
+            <mat-error *ngIf="f.phoneNumber.errors?.required">
+              Mobile Number is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <!-- <div class="float-left">
+                            <mat-checkbox class="example-margin " [(ngModel)]="checkboxModel" (click)="showHidePassword(checkboxModel)"
+                            style="float: left;margin-top:-20px;">
+                            </mat-checkbox>
+                          </div> -->
+  
+  
+          <!-- <input type="checkbox" [(ngModel)]="checkboxModel" (click)="showHidePassword(checkboxModel)"
+                          style="float: left;" /> -->
+          <mat-form-field class="example-full-width">
+            <mat-label for="mobileNumber">Whatsapp Number</mat-label>
+            <input matInput placeholder="Whatsapp number" formControlName="mobileNumber" [(ngModel)]="mobileNumber" id="mobileNumber"
+              [(ngModel)]="mobileNumber" type="text" minlength="10" maxlength="10" required numbersOnly />
+            <mat-error
+              *ngIf="f.mobileNumber.errors?.pattern && f.mobileNumber.errors?.maxlength && !f.mobileNumber.errors?.required">
+              Please, Enter 10 digit Mobile Number.
+            </mat-error>
+            <mat-error *ngIf="f.mobileNumber.errors?.required">
+              Whatsapp Number is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <div class="float-left">
+            <!-- <mat-checkbox class="example-margin" [(ngModel)]="checkboxModel" (click)="showPassword(checkboxModel)"  formControlName="checkboxModel"
+              style="float: left;margin-top:-5px;color: #666666;font-size: 11px;">Same as Phone Number
+            </mat-checkbox> -->
+            <mat-checkbox class="example-margin" [(ngModel)]="checkboxModel"  formControlName="checkboxModel"
+              style="float: left;margin-top:-5px;color: #666666;font-size: 11px;" (click)="showPassword(checkboxModel)">Same as Phone Number
+            </mat-checkbox>
+          </div>
+  
+          <!-- <input type="checkbox" [(ngModel)]="checkboxModel" (click)="showPassword(checkboxModel)"
+                          style="float: left;" /> -->
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password" [(ngModel)]="password"
+              [type]="hide ? 'password' : 'text'" required />
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="!f.password.errors?.required && f.password.errors?.maxlength">
+              Please, Enter 8 character Password.
+            </mat-error>
+            <mat-error *ngIf="f.password.errors?.required">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+  
+          <!-- <mat-form-field class="example-full-width" appearance="outline">
+                          <mat-label>Confirm password</mat-label>
+                          <input matInput placeholder="Confirm password" formControlName="confirmPass" [(ngModel)]="confirmPass" type="password" required/>
+                        </mat-form-field> -->
+  
+          <div class="float-left" style="font-size: 14px;">
+            <mat-checkbox class="example-margin" formControlName="checkbox" [(ngModel)]="checkbox" required>&nbsp;I
+              agree all <a [routerLink]="[]" (click)="terms()">Terms and conditions</a>
+            </mat-checkbox>
+            <mat-error *ngIf="!f.checkbox.valid && f.checkbox.touched">
+              required
+            </mat-error>
+            <!-- &nbsp;&nbsp;I agree all <a href="">Terms and conditions</a> -->
+            <!-- <mat-error *ngIf="f.checkbox.errors?.required">
+                           <strong>required</strong>
+                          </mat-error> -->
+          </div>
+          <br><br><br>
+          <!-- <p style="color: red;text-align: center;" align="center">{{Message}}</p> -->
+          <div class="center">
+            <!-- <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
+              [disabled]="!form.valid">CREATE
+              ACCOUNT</button> -->
+            <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
+              >CREATE
+              ACCOUNT</button>
+  
+          </div>
+          <div style="margin-top: 20px;">
+            <main class="questionNumbers">
+              <div class="questionNumberLine"></div>
+              <div class="questionNumberIcon">
+                OR
+              </div>
+              <div class="questionNumberLine"></div>
+            </main>
+            <!-- <hr style="color: black;border:1px solid black;width: 50%; line-height: 2em;"><div class="numberCircle">OR</div><hr style="color: black;border:1px solid black;width: 50%;"> -->
+          </div>
+  
+          <!-- <button mat-raised-button color="primary" class="btn1 btn-social-icon btn-google-mx-1 float-none"
+                          (click)="signInWithGoogle()" style="background-color: red;">SignUp
+                          with
+                          Gmail</button> -->
+        </form>
+  
+        <form class="example-form">
+          <div class="center">
+            <button mat-raised-button color="dark" class="btn1 button-style float-none" style="margin-top: 30px;"
+              (click)="signInWithGoogle()"><img src="assets\Images\g_b.jpg" width="30" style="margin-right: 10px;">Sign up with
+              Gmail</button>
+  
+          </div>
+          <!-- <div class="center" style="margin-top: 10px;">
+            <div class="row example-button-container btn-group float-none">
+              <button mat-mini-fab style="background-color: #ff7800;border: 1px solid #ff7800;width: 30px;
+                                            height: 30px;" aria-label="Example icon button with a menu icon"
+                (click)="signInWithGoogle()">
+                <i class="fa fa-google" style="font-size: 12px;margin-top: -10px;"></i>
+              </button>
+            
+            </div>
+          </div> -->
+        </form>
+        <div style="padding-bottom: 100px !important;">
+          <p style="margin: 15px;text-align: center;">Already have an account?<a [routerLink]="[]"
+              (click)="toggleShow11()" style="color: grey;">
+              Login here
+            </a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="top">
 
   <div class="dynamic">
     <div class="row">
-      <!-- <div class="column">
+      <div class="column">
         <div class="buttons">
           <div>
             <button color="dark" class="btn button-style float-right" type="submit" [routerLink]="[]"
@@ -14,164 +186,23 @@
               up</button>
           </div>
         </div>
-      </div> -->
+      </div>
       <div class="column1">
         <div class="innerbox">
-          <form class="example-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
-            <h3 align="center">Create account</h3>
-            <mat-form-field class="example-full-width border-white">
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="Email id" formControlName="email" id="email" [(ngModel)]="email" type="text"
-                required />
-              <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="f.email.errors?.required">
-                Email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <mat-label>Name</mat-label>
-              <input matInput placeholder="Name" formControlName="name" [(ngModel)]="name" type="text" required />
-              <mat-error *ngIf="f.name.errors?.required">
-                Name is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <mat-label>Phone Number</mat-label>
-              <input matInput placeholder="Phone number" formControlName="phoneNumber" [(ngModel)]="phoneNumber"
-                type="text" min="0" required />
-              <mat-error
-                *ngIf="f.phoneNumber.errors?.pattern && f.phoneNumber.errors?.maxlength && !f.phoneNumber.errors?.required">
-                Please, Enter 10 digit Mobile Number.
-              </mat-error>
-              <mat-error *ngIf="f.phoneNumber.errors?.required">
-                Mobile Number is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-
-            <!-- <div class="float-left">
-                              <mat-checkbox class="example-margin " [(ngModel)]="checkboxModel" (click)="showHidePassword(checkboxModel)"
-                              style="float: left;margin-top:-20px;">
-                              </mat-checkbox>
-                            </div> -->
-
-
-            <!-- <input type="checkbox" [(ngModel)]="checkboxModel" (click)="showHidePassword(checkboxModel)"
-                            style="float: left;" /> -->
-            <mat-form-field class="example-full-width">
-              <mat-label for="mobileNumber">Whatsapp Number</mat-label>
-              <input matInput placeholder="Whatsapp number" formControlName="mobileNumber" [(ngModel)]="mobileNumber"
-                id="mobileNumber" [(ngModel)]="mobileNumber" type="text" min="0" required />
-              <mat-error
-                *ngIf="f.mobileNumber.errors?.pattern && f.mobileNumber.errors?.maxlength && !f.mobileNumber.errors?.required">
-                Please, Enter 10 digit Mobile Number.
-              </mat-error>
-              <mat-error *ngIf="f.mobileNumber.errors?.required">
-                Whatsapp Number is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <div class="float-left">
-              <mat-checkbox class="example-margin" [(ngModel)]="checkboxModel" (click)="showPassword(checkboxModel)"
-                formControlName="checkboxModel" style="float: left;margin-top:-5px;color: #666666;font-size: 11px;">Same
-                as Phone Number
-              </mat-checkbox>
-            </div>
-
-            <!-- <input type="checkbox" [(ngModel)]="checkboxModel" (click)="showPassword(checkboxModel)"
-                            style="float: left;" /> -->
-            <mat-form-field class="example-full-width">
-              <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" formControlName="password" [(ngModel)]="password"
-                [type]="hide ? 'password' : 'text'" required />
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-              <mat-error *ngIf="!f.password.errors?.required && f.password.errors?.maxlength">
-                Please, Enter 8 character Password.
-              </mat-error>
-              <mat-error *ngIf="f.password.errors?.required">
-                Password is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-
-            <!-- <mat-form-field class="example-full-width" appearance="outline">
-                            <mat-label>Confirm password</mat-label>
-                            <input matInput placeholder="Confirm password" formControlName="confirmPass" [(ngModel)]="confirmPass" type="password" required/>
-                          </mat-form-field> -->
-
-            <div class="float-left" style="font-size: 14px;">
-              <mat-checkbox class="example-margin" formControlName="checkbox" [(ngModel)]="checkbox" required>&nbsp;I
-                agree all <a [routerLink]="[]" (click)="terms()">Terms and conditions</a>
-              </mat-checkbox>
-              <!-- &nbsp;&nbsp;I agree all <a href="">Terms and conditions</a> -->
-              <mat-error *ngIf="!f.checkbox.valid && f.checkbox.touched">
-                required
-              </mat-error>
-            </div>
-            <br><br><br>
-            <p style="color: red;text-align: center;" align="center">{{Message}}</p>
-            <div class="center">
-              <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
-                [disabled]="!form.valid">CREATE
-                ACCOUNT</button>
-
-            </div>
-            <div style="margin-top: 20px;">
-              <main class="questionNumbers">
-                <div class="questionNumberLine"></div>
-                <div class="questionNumberIcon">
-                  OR
-                </div>
-                <div class="questionNumberLine"></div>
-              </main>
-              <!-- <hr style="color: black;border:1px solid black;width: 50%; line-height: 2em;"><div class="numberCircle">OR</div><hr style="color: black;border:1px solid black;width: 50%;"> -->
-            </div>
-
-            <!-- <button mat-raised-button color="primary" class="btn1 btn-social-icon btn-google-mx-1 float-none"
-                            (click)="signInWithGoogle()" style="background-color: red;">SignUp
-                            with
-                            Gmail</button> -->
-          </form>
-          <form class="example-form">
-            <div class="center">
-              <button mat-raised-button color="dark" class="btn1 button-style float-none" style="margin-top: 30px;"
-                (click)="signInWithGoogle()"><img src="assets\Images\Group.svg" width="30" height="20">Sign in with
-                Google</button>
-
-            </div>
-            <!-- <div class="center" style="margin-top: 10px;">
-              <div class="row example-button-container btn-group float-none">
-                <button mat-mini-fab style="background-color: #ff7800;border: 1px solid #ff7800;width: 30px;
-                                              height: 30px;" aria-label="Example icon button with a menu icon"
-                  (click)="signInWithGoogle()">
-                  <i class="fa fa-google" style="font-size: 12px;margin-top: -10px;"></i>
-                </button>
-              
-              </div>
-            </div> -->
-          </form>
-          <div id="hidest">
-            <p style="margin: 15px;text-align: center;">Already have an account?<a [routerLink]="[]"
-                (click)="toggleShow11()" style="color: grey;">
-                Login here
-              </a></p>
-          </div>
-          <!-- <div>
+          
+       
+          <div>
                         <p style="margin: 15px;text-align: center;"><a [routerLink]="['signup']"> Create new Account
                                 <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
                                         d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                 </svg></a></p>
-                    </div> -->
+                    </div>
         </div>
       </div>
     </div>
   </div>
 
 
-</div>
+</div> -->

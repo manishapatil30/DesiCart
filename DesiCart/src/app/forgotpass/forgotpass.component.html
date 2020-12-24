@@ -10,10 +10,10 @@
                         <h4 align="center">Forgot Your Password?</h4>
                         <p align="center">Don't worry! Resetting your password is easy.Just type in the email you
                             regeisterd to <b>yourDesiCart</b></p>
-                        <mat-form-field class="example-full-width border-white" appearance="outline">
+                        <mat-form-field class="example-full-width border-white">
                             <mat-label>Email</mat-label>
                             <input matInput placeholder="Enter your email address" formControlName="email" id="email"
-                                [(ngModel)]="email" type="text" required />
+                                [(ngModel)]="email" type="text" required maxlength="40"/>
                             <mat-error *ngIf="f.email.errors?.email && !f.email.errors?.required">
                                 Please enter a valid email address
                             </mat-error>
@@ -40,10 +40,10 @@
                         <h4 align="center">Reset Your Password?</h4>
                         <p align="center">Don't worry! Resetting your password is easy.Just type in the new Password you
                             regeisterd to <b>yourDesiCart</b></p>
-                        <mat-form-field class="example-full-width border-white" appearance="outline">
+                        <mat-form-field class="example-full-width border-white">
                             <mat-label>Enter New Password</mat-label>
                             <input matInput placeholder="Password" formControlName="password" [(ngModel)]="password"
-                                [type]="hide ? 'password' : 'text'" required />
+                                [type]="hide ? 'password' : 'text'" required maxlength="40"/>
                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                                 [attr.aria-pressed]="hide">
                                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

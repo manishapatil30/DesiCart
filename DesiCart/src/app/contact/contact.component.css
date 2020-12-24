@@ -1,12 +1,18 @@
+.contact_us_form{
+  margin-top: 50px;
+      width: 100%;
+}
+
 .top
   {
       position: absolute;
-      margin-top:114px;
+      /* margin-top:114px; */
+      margin-top: 90px;
       width: 100%;
   }
   .box
   {
-      width: 40%;
+      width: 20%;
       height: 100%;
       /* text-align: center; */
       /* justify-content: center;

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ShippingCalculator } from './shippingcalculator.service';
+import {MatDialog} from '@angular/material/dialog';
 @Component({
   selector: 'app-shippingcalculator',
   templateUrl: './shippingcalculator.component.html',
@@ -8,10 +10,100 @@ import { Router } from '@angular/router';
 })
 export class ShippingcalculatorComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  CountryZones = [];
+  selectCountry: boolean = true;
+  weightType: string;
+
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private shippingService: ShippingCalculator,
+    public dialog: MatDialog,
+    ) { }
+
+  shippingForm: FormGroup;
 
   ngOnInit(): void {
+    this.shippingForm = this.fb.group({
+      ZoneNumber: ['', Validators.required],
+      WeightKgs: ['', Validators.required],
+      weightType: ['' , Validators.required]
+    })
+
+    this.shippingService.getCountryZones().subscribe((res: any) => {
+      this.CountryZones = res.CountryZonesms;
+      console.log(this.CountryZones);
+    })
+
   }
+
+  onTypeWeigth(type: any) {
+    this.weightType = type;
+  }
+
+   getShippingRates() {
+     if(this.shippingForm.get('ZoneNumber').invalid) {
+        alert("Country is required.")
+     }
+     else if(this.shippingForm.get('weightType').invalid) {
+      alert("Please select Weight Type.")
+     }
+     else if(this.shippingForm.get('WeightKgs').invalid) {
+      alert("Weight is required.")
+     }
+     else {
+       if(this.shippingForm.valid) {
+         const countryZone = parseInt(this.shippingForm.get('ZoneNumber').value);
+        if(this.shippingForm.get('weightType').value == 'lbs') {
+           const lbsWeight = this.shippingForm.get('WeightKgs').value;
+           const weigthKgs = lbsWeight * 0.453592;
+           var weigth = Math.round(weigthKgs);
+         }
+         else if(this.shippingForm.get('weightType').value == 'kgs') {
+          var weigth = Math.round(this.shippingForm.get('WeightKgs').value);
+         }
+         
+         const newObj = {
+          ZoneNumber: countryZone,
+          WeightKgs: weigth
+         }
+
+         this.shippingService.getShippingPrice(newObj).subscribe((res: any) => {
+           if(res.Status == 1) {
+             alert('Shipping Price is ' + res.ShippingPrice);
+             this.shippingForm.reset();
+             this.selectCountry = !this.selectCountry;
+             this.openDialog();
+           }
+           else if(res.Status == 0) {
+              alert(res.Message);
+           }
+         })
+       }
+       else {
+         alert("Fields are required.")
+       }
+     }
+   }
+
+
+   openDialog() {
+    const dialogRef = this.dialog.open(ShippingcalculatorComponent,{
+      height: '400px',
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+
+
+
+
+
+
   public contactUs()
   {
     this.router.navigate(['/home/contact']);

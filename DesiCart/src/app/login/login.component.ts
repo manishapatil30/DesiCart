@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { SocialUser, GoogleLoginProvider } from 'angularx-social-login';
 import { AuthService } from 'angularx-social-login';
 import { BehaviorSubject } from 'rxjs';
+import { LoginService } from './login.service';
 
 declare var $: any;
 @Component({
@@ -33,9 +34,11 @@ export class LoginComponent implements OnInit {
   isShownlog: boolean = false;
   form: FormGroup = new FormGroup({});
 
-  constructor(private router: Router, private fb: FormBuilder, private http: HttpClient, private authService: AuthService) {
+  constructor(private router: Router, 
+    private fb: FormBuilder, private http: HttpClient, 
+    private authService: AuthService, private loginService: LoginService) {
     this.form = fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z]{1}[a-zA-Z0-9.\-_]*@[a-zA-Z]{1}[a-zA-Z.-]*[a-zA-Z]{1}[.][a-zA-Z]{3}$')]],
       password: ['', Validators.required]
 
     });
@@ -44,13 +47,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.showModal = true;
     this.isShownlog = true;
-
+    // if (!localStorage.getItem('foo')) {
+    //   localStorage.setItem('foo', 'no reload');
+    //   location.reload();
+    // } else {
+    //   localStorage.removeItem('foo');
+    // }
   }
 
-  public signInWithGoogle() {
+  public signInWithGoogle() { 
     let socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     this.authService.signIn(socialPlatformProvider, { prompt: 'select_account' })
       .then((userData) => {
+        localStorage.setItem("LoggedIn" , "true");
         this.user = userData;
         this.lemail = userData.email,
         console.log(this.lemail)
@@ -123,39 +132,47 @@ export class LoginComponent implements OnInit {
     // console.log(this.password);
     // localStorage.setItem('username', this.name);
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
-    const body = {
-      EmailID: this.email,
-      Password: this.password,
-      Type: 'Login'
 
-    };
-    this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users', body, { headers }).subscribe((data => {
-      console.log(data);
-      this.userID = data.UserID;
-      localStorage.setItem('usersid', this.userID);
-      if (data.Status === 1) {
-        // this.router.navigate(['/home/homepage']);
-
-        this.http.get<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users?UserID=' + this.userID, { headers }).subscribe(data => {
-          console.log(data);
-          this.dataa = data.Users;
-          this.logname = this.dataa.Name;
+    if(this.form.valid){
+      const body = {
+        EmailID: this.email,
+        Password: this.password,
+        Type: 'Login'
+  
+      };
+      this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users', body, { headers }).subscribe((data => {
+        console.log(data);
+        this.userID = data.UserID;
+        localStorage.setItem('usersid', this.userID);
+        localStorage.setItem("LoggedIn" , "true");
+        if (data.Status === 1) {
+          // this.router.navigate(['/home/homepage']);
+  
+          this.http.get<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/users?UserID=' + this.userID, { headers }).subscribe(data => {
+            console.log(data);
+            this.dataa = data.Users;
+            this.logname = this.dataa.Name;
+            localStorage.setItem('username', this.logname);
+          })
+          alert('login Successfully.');
           localStorage.setItem('username', this.logname);
-        })
-        alert('login Successfully.');
-        localStorage.setItem('username', this.logname);
-        this.router.navigateByUrl('/home/myaccount');
-        window.scrollTo(0, 0);
-        // location.reload();
-
-      }
-      else {
-        this.Message = data.Message;
-      }
-    }), (error) => {
-      console.log(error);
-    });
+          this.router.navigateByUrl('/home/myaccount');
+          window.scrollTo(0, 0);
+          // location.reload();
+  
+        }
+        else {
+          this.Message = data.Message;
+        }
+      }), (error) => {
+        console.log(error);
+      });
+    }
+    else {
+      alert("Invalid Fields")
+    }
   }
+
   onClose() {
     this.showModal = false;
     setTimeout(

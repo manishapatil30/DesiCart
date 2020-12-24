@@ -1,4 +1,50 @@
-<header>
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-dark">
+    <a class="navbar-brand" (click)="onHome();$event.stoppropagation"> <img src="assets\Images\Group 23.png" routerLink="homepage" class="desi_cart_logo"> </a>
+    <button class="navbar-toggler btn-white collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars text-white"></i>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active" (click)="onHome();$event.stoppropagation">
+          <a class="nav-link text-white ml-3" routerLink="homepage" routerLinkActive="active_yellow">Home</a>
+        </li>
+        <li class="nav-item" (click)="onHow();$event.stoppropagation">
+            <a class="nav-link text-white ml-3" routerLink="how" routerLinkActive="active_yellow">How</a>
+        </li>
+        <li class="nav-item" (click)="onPricing();$event.stoppropagation">
+            <a class="nav-link text-white ml-3" routerLink="pricing" routerLinkActive="active_yellow">Pricing & Services</a>
+        </li>
+        <li class="nav-item" (click)="onShipping();$event.stoppropagation">
+            <a class="nav-link text-white ml-3" routerLink="shipping" routerLinkActive="active_yellow">Shipping calculator</a>
+        </li>
+        <li class="nav-item" (click)="onShop();$event.stoppropagation">
+            <a class="nav-link text-white ml-3" routerLink="shop" routerLinkActive="active_yellow">Shop</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <div class="nav-item dropdown user_dropDown" *ngIf="Auth">
+            <p class="nav-link dropdown-toggle text-white" [ngClass]="useremail.length <= 7 ? 'dropdown_content' : 'noMargin'" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{useremail}}
+            </p>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div (click)="onAccount();$event.stoppropagation">
+                <a class="dropdown-item" routerLink="myaccount" routerLinkActive="active_yellow"> <i class="fa fa-user"></i> Account</a>
+              </div>
+              <!-- <a class="dropdown-item" href="#">Another action</a> -->
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="logout()" style="cursor: pointer;"> <i class="fa fa-power-off"></i> Logout</a>
+            </div>
+          </div>
+        <button type="button" class="btn text-white login_btn" (click)="onSign()" *ngIf="!Auth">Login</button>
+      </form>
+    </div>
+  </nav>
+
+
+
+
+  <!-- <header>
     <div class="container-fluid">
         <div class="branding adjust-left">
             <div class="row hide-in-mob">
@@ -15,43 +61,34 @@
                         <a routerLinkActive="active" class="how-link" (click)="onHow()">How</a>
                         <a routerLinkActive="active" class="pricing-link" (click)="onPricing()">Pricing &
                             Services</a>
-                        <!-- <a [routerLink]="['shipping']" routerLinkActive="active">Shipping Calculator</a> -->
-                        <!-- <a [routerLink]="['contact']"  routerLinkActive="active">ContactUs</a> -->
-                        <!-- <a  href="#contact" routerLinkActive="active">Login</a> -->
-                        <!-- <a [routerLink]="['login']" routerLinkActive="active">Login</a> -->
+                        
                         <a routerLinkActive="active" class="shop-link" (click)="onShop()">Shop</a>
-                        <a class="signup-link" routerLinkActive="active"
-                                data-backdrop="static" data-keyboard="false" id="new-signup" (click)="onSign()">SignUp/Login
+                        <a class="signup-link" routerLinkActive="active" *ngIf="!Auth"
+                                data-backdrop="static" data-keyboard="false" id="new-signup" (click)="onSign()">Login
                             </a>
-                        <!-- <a *ngIf="!useremail" [routerLink]="['login']" class="signup-link" routerLinkActive="active"  data-backdrop="static"
-                            data-keyboard="false" class="float-right">SignUp/Login
-                        </a> -->
-                        <div class="center" *ngIf="!useremail">
+                      
+                        <div class="center" *ngIf="!Auth">
                             <button mat-raised-button class="btn button-style float-right"> 
-                                <a class="signup-link" routerLinkActive="active"
-                                data-backdrop="static" data-keyboard="false" class="float-right" (click)="onSign()">SignUp/Login
+                                <a class="signup-link"
+                                data-backdrop="static" data-keyboard="false" class="float-right" (click)="onSign()">Login
                             </a>
                         </button>
-                            <!-- <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
-                                style="margin-top: 50px;">Login</button> -->
+                            
                         </div>
 
                         <span (click)="myPopupbox()" class="user__details">
-                                <a *ngIf="useremail" [routerLink]="[]" data-backdrop="static" data-keyboard="false" id="left"
+                                <a *ngIf="Auth" [routerLink]="[]" data-backdrop="static" data-keyboard="false" id="left"
                                     >{{useremail}} <i class="fa fa-angle-down"
                                     ></i> 
-                                    <!-- class="float-right" -->
+                                   
                                     <span>
-                                            <a *ngIf="useremail" [routerLink]="[]">
+                                            <a *ngIf="Auth" [routerLink]="[]">
                                                 <span>
                                                     <div class="popup">
-                                                        <!-- <a [routerLink]="[]"><i class="fa fa-angle-down user_info_icon"
-                                                                ></i>
-                                                               
-                                                        </a> -->
+                                                       
                                                         <span class="popuptext" id="myPopup">
                                                             <a [routerLink]="['myaccount']" (click)="account()"><i
-                                                                    class="fa fa-user"
+                                                                    class="fa fa-user active-link"
                                                                     style="margin-right: 10px;margin-left: 0;">&nbsp;Account</i></a>
                                                             <a [routerLink]="[]" (click)="logout()"><i class="fa fa-power-off"
                                                                     style="margin-right: 10px;margin-left: 0;">&nbsp;Logout</i></a>
@@ -72,4 +109,100 @@
             </div>
         </div>
     </div>
-</header>
+</header> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <header>
+    <div class="container-fluid">
+        <div class="branding adjust-left">
+            <div class="row hide-in-mob">
+                <div class="col-sm-2">
+                    <div class="logo">
+                        <a [routerLink]="['home']" (click)="signup()"> <img src="assets\Images\Group 23.png" width="69"
+                                height="69"></a>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="topnav" id="myTopnav">
+                        <a routerLinkActive="active" class="home-link" (click)="onHome()">Home</a>
+                        <a routerLinkActive="active" class="how-link" (click)="onHow()">How</a>
+                        <a routerLinkActive="active" class="pricing-link" (click)="onPricing()">Pricing &
+                            Services</a>
+                        <a [routerLink]="['shipping']" routerLinkActive="active">Shipping Calculator</a>
+                        <a [routerLink]="['contact']"  routerLinkActive="active">ContactUs</a>
+                        <a  href="#contact" routerLinkActive="active">Login</a>
+                        <a [routerLink]="['login']" routerLinkActive="active">Login</a>
+                        <a routerLinkActive="active" class="shop-link" (click)="onShop()">Shop</a>
+                        <a class="signup-link" routerLinkActive="active" *ngIf="!Auth"
+                                data-backdrop="static" data-keyboard="false" id="new-signup" (click)="onSign()">Login
+                            </a>
+                        <a *ngIf="!useremail" [routerLink]="['login']" class="signup-link" routerLinkActive="active"  data-backdrop="static"
+                            data-keyboard="false" class="float-right">SignUp/Login
+                        </a>
+                        <div class="center" *ngIf="!Auth">
+                            <button mat-raised-button class="btn button-style float-right"> 
+                                <a class="signup-link"
+                                data-backdrop="static" data-keyboard="false" class="float-right" (click)="onSign()">Login
+                            </a>
+                        </button>
+                            <button mat-raised-button color="dark" class="btn button-style float-none" type="submit"
+                                style="margin-top: 50px;">Login</button>
+                        </div>
+
+                        <span (click)="myPopupbox()" class="user__details">
+                                <a *ngIf="Auth" [routerLink]="[]" data-backdrop="static" data-keyboard="false" id="left"
+                                    >{{useremail}} <i class="fa fa-angle-down"
+                                    ></i> 
+                                    class="float-right"
+                                    <span>
+                                            <a *ngIf="Auth" [routerLink]="[]">
+                                                <span>
+                                                    <div class="popup">
+                                                        <a [routerLink]="[]"><i class="fa fa-angle-down user_info_icon"
+                                                                ></i>
+                                                               
+                                                        </a>
+                                                        <span class="popuptext" id="myPopup">
+                                                            <a [routerLink]="['myaccount']" (click)="account()"><i
+                                                                    class="fa fa-user active-link"
+                                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Account</i></a>
+                                                            <a [routerLink]="[]" (click)="logout()"><i class="fa fa-power-off"
+                                                                    style="margin-right: 10px;margin-left: 0;">&nbsp;Logout</i></a>
+                                                        </span>
+                                                    </div>
+                                                </span>
+                                            </a>
+                                        </span>
+                                </a>
+                            </span>
+                     
+
+                        <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> -->
+
+
+
+
+

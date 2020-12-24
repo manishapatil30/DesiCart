@@ -1,8 +1,11 @@
 .top
   {
-      position: absolute;
-      margin-top:114px;
+      /* position: absolute; */
+      /* margin-top:114px; */
+      /* margin-top: 90px; */
       width: 100%;
+      background-color: #f6f6f6;
+      height: 90vh !important;
   }
   .modal
   {
@@ -63,7 +66,7 @@
   } */
   .center .btn1
   {
-    background: red;
+    background: black;
     color:white;
     width: 100%;
     

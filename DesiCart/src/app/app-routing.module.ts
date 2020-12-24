@@ -22,7 +22,7 @@ import { OnamshoppComponent } from './onamshopp/onamshopp.component';
 import { TosisComponent } from './tosis/tosis.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
   {
     path: 'home', component: HomeComponent, children: [
       { path: '', redirectTo: 'homepage', pathMatch: 'full' },

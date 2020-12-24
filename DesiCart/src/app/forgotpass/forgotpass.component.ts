@@ -20,7 +20,7 @@ export class ForgotpassComponent implements OnInit {
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) {
     
     this.form = fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z]{1}[a-zA-Z0-9.\-_]*@[a-zA-Z]{1}[a-zA-Z.-]*[a-zA-Z]{1}[.][a-zA-Z]{3}$')]],
       password: ['', [Validators.required, Validators.maxLength(8)]],
     });
   }
@@ -48,16 +48,24 @@ export class ForgotpassComponent implements OnInit {
       EmailID: this.email
 
     };
-    this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/resetpassword', body, { headers }).subscribe((data => {
-      console.log(data);
-      if (data.Status === 1) {
-        this.display = !this.display;
-        this.token = data.Token;
-        console.log(this.token);
-      }
-    }), (error) => {
-      console.log(error);
-    });
+    if(this.form.get('email').valid) {
+      this.http.post<any>('https://aban7ul865.execute-api.ap-south-1.amazonaws.com/dev/resetpassword', body, { headers }).subscribe((data => {
+        console.log(data);
+        if (data.Status === 1) {
+          this.display = !this.display;
+          this.token = data.Token;
+          console.log(this.token);
+        }
+        else if(data.Status === 0) {
+          alert(data.Message)
+        }
+      }), (error) => {
+        console.log(error);
+      });
+    }
+    else {
+      alert("Invalid Email")
+    }
   }
   public signup() {
     this.router.navigate(['/home/login']);

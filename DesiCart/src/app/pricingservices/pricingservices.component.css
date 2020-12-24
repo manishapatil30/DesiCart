@@ -1,7 +1,6 @@
-.top
+/* .top
   {
       position: absolute;
-      margin-top:114px;
       width: 100%;
   }
   h5{
@@ -10,7 +9,7 @@
   p{
       font-size: 18px;
       color:darkslategray;
-  }
+  } */
   .review
   {
     width: 100%;
@@ -82,8 +81,8 @@
   }
 /* Float four columns side by side */
 .review1 .column {
-  float: left;
-  width: 32%;
+  /* float: left; */
+  /* width: 32%; */
   padding: 0 10px;
 }
 .review1 .row {
@@ -224,6 +223,7 @@
   {
     padding-top: 30px;
     /* margin-left: 20px; */
+    padding-left: 8rem;
   }
   #footer p 
   {
@@ -442,3 +442,91 @@
   text-align: center;
 }
   
+.shopping_cards {
+  padding: 2rem 0;
+}
+
+@media screen and (max-width:1200px) {
+  #shopping_card_three{
+    margin-top: 2rem !important;
+  }
+}
+
+@media screen and (max-width:767px) {
+  #shopping_card_two{
+    margin-top: 2rem !important;
+  }
+}
+
+.by_any_text {
+  padding: 2rem 0;
+}
+
+@media screen and (max-width:900px) {
+  .by_any_text{
+    padding: 0 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.pricing_title {
+  padding: 2rem 0;
+}
+ @media screen and (max-width:767px) {
+   .table__content {
+     margin-top: 2rem;
+   }
+ }
+
+
+ .add_on_services {
+   padding: 2rem;
+ }
+
+ @media screen and (max-width:800px) {
+  #footer {
+    padding-left: 2rem;
+  }
+}
+
+.navigate{
+  cursor: pointer;
+}
+
+.pricing_section p {
+  font-size: 1.05rem;
+}
+
+.table__content p {
+  font-size: 3rem;
+}
+
+@media screen and (max-width:800px) {
+  .shop_mart_one {
+     font-size: 1.3rem;
+  }
+
+  .buy_any_para {
+    font-size: 1rem;
+  }
+
+  .shopping_single_card h5 {
+    font-size: 1.1rem;
+  }
+
+  .shopping_single_card p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .pricing_title {
+    padding: 0 0 0.8rem 0;
+    font-size: 1.4rem;
+  }
+
+  .pricing_section p {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
