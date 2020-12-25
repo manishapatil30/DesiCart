@@ -22,7 +22,57 @@
                                                 <!-- <option>Select Country</option> -->
                                                 <option selected>India</option>
                                             </select>
+                                           
+                                            <!-- <label>To Country/Territory*</label><br>
+                                            <select id="selectcountry"
+                                                formControlName="ZoneNumber">
+                                                <option value=""
+                                                    *ngIf="selectCountry">Select
+                                                    Country</option>
+                                                <option value=""
+                                                    *ngIf="!selectCountry">Select
+                                                    Country</option>
+                                                <option *ngFor="let country of
+                                                    CountryZones"
+                                                    [value]="country.ZoneNumber">
+                                                    {{ country.CountryName }}
+                                                </option>
+                                            </select> -->
                                             <br><br>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4
+                                            col-md-4">
+                                            <label>City</label><br>
+                                            <input type="text"
+                                                placeholder="City" size="20">
+                                            <!-- <img src="assets\Images\Group 1117.png" height="18" width="20"
+                                                style="margin-left: 15px;"> -->
+                                            <br><br>
+                                            <!-- <label>City</label><br>
+                                            <input type="text"
+                                                placeholder="City" size="20"><br><br> -->
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4
+                                            col-md-4">
+                                            <label>Postal Code</label><br>
+                                            <input type="text" size="20"
+                                                placeholder="postal code">
+                                            <br><br>
+                                            <!-- <label>Postal Code</label><br>
+                                            <input type="text" size="20"
+                                                placeholder="postal code"> -->
+                                        </div>
+                                    </div>
+                                    <div class="row col-xs-12 col-sm-12
+                                        col-md-12">
+                                        <div class="col-xs-12 col-sm-4
+                                            col-md-4">
+                                            <!-- <label>From Country/Territory</label><br>
+                                            <select id="selectcountry">
+                                              
+                                                <option selected>India</option>
+                                            </select>
+                                            <br><br> -->
                                             <label>To Country/Territory*</label><br>
                                             <select id="selectcountry"
                                                 formControlName="ZoneNumber">
@@ -42,22 +92,22 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-4
                                             col-md-4">
-                                            <label>City</label><br>
+                                            <!-- <label>City</label><br>
                                             <input type="text"
-                                                placeholder="City" size="20">
+                                                placeholder="City" size="20"> -->
                                             <!-- <img src="assets\Images\Group 1117.png" height="18" width="20"
                                                 style="margin-left: 15px;"> -->
-                                            <br><br>
+                                           
                                             <label>City</label><br>
                                             <input type="text"
                                                 placeholder="City" size="20"><br><br>
                                         </div>
                                         <div class="col-xs-12 col-sm-4
                                             col-md-4">
-                                            <label>Postal Code</label><br>
+                                            <!-- <label>Postal Code</label><br>
                                             <input type="text" size="20"
-                                                placeholder="postal code">
-                                            <br><br>
+                                                placeholder="postal code"> -->
+                                          
                                             <label>Postal Code</label><br>
                                             <input type="text" size="20"
                                                 placeholder="postal code">
@@ -316,7 +366,7 @@
         </div>
         <div class="box" style="margin-top: 30px;">
             <div style="padding: 25px;">
-                <h4 align="center"><b>open a dialog and explain details about physical weight vs volumetric weight</b></h4>
+                <h4 align="center"><b>How is final chargeable weight calculated?</b></h4>
                 <p align="center">Click here to to know how to calculate
                     volumetric weight</p>
                 <div class="test_view_more_btn_container text-center"
