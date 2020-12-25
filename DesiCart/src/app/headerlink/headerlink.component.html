@@ -6,7 +6,7 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item active" (click)="onHome();$event.stoppropagation">
+        <!-- <li class="nav-item active" (click)="onHome();$event.stoppropagation">
           <a class="nav-link text-white ml-3" routerLink="homepage" routerLinkActive="active_yellow">Home</a>
         </li>
         <li class="nav-item" (click)="onHow();$event.stoppropagation">
@@ -14,13 +14,13 @@
         </li>
         <li class="nav-item" (click)="onPricing();$event.stoppropagation">
             <a class="nav-link text-white ml-3" routerLink="pricing" routerLinkActive="active_yellow">Pricing & Services</a>
-        </li>
+        </li> -->
         <li class="nav-item" (click)="onShipping();$event.stoppropagation">
             <a class="nav-link text-white ml-3" routerLink="shipping" routerLinkActive="active_yellow">Shipping calculator</a>
         </li>
-        <li class="nav-item" (click)="onShop();$event.stoppropagation">
+        <!-- <li class="nav-item" (click)="onShop();$event.stoppropagation">
             <a class="nav-link text-white ml-3" routerLink="shop" routerLinkActive="active_yellow">Shop</a>
-        </li>
+        </li> -->
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <div class="nav-item dropdown user_dropDown" *ngIf="Auth">
@@ -31,12 +31,12 @@
               <div (click)="onAccount();$event.stoppropagation">
                 <a class="dropdown-item" routerLink="myaccount" routerLinkActive="active_yellow"> <i class="fa fa-user"></i> Account</a>
               </div>
-              <!-- <a class="dropdown-item" href="#">Another action</a> -->
+           
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" (click)="logout()" style="cursor: pointer;"> <i class="fa fa-power-off"></i> Logout</a>
             </div>
           </div>
-        <button type="button" class="btn text-white login_btn" (click)="onSign()" *ngIf="!Auth">Login</button>
+        <!-- <button type="button" class="btn text-white login_btn" (click)="onSign()" *ngIf="!Auth">Login</button> -->
       </form>
     </div>
   </nav>
