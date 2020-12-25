@@ -513,3 +513,80 @@
     width: 30px;
   }
 }
+.qodef-grid-section
+{
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.qodef-pricing-tables .card-header
+{
+  background-color: #ffd636;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.qodef-pricing-tables .card-body
+{
+  color: black;
+  background-color: #f5f6f9;
+  padding: 0;
+  margin: 0;
+  border-bottom-left-radius:20px ;
+  border-bottom-right-radius:20px ;
+}
+.qodef-pricing-tables
+{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+.qodef-pricing-tables .card
+{
+  width: 90%;
+  margin: auto;
+  margin: 10px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+.qodef-pricing-tables .card:hover
+{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.137);
+}
+.qodef-value
+{
+  font-size: 20px;
+  font-weight: bold;
+}
+.qodef-price
+{
+  font-size: 40px;
+  font-weight: bold;
+}
+li{
+  list-style-type: none;
+  text-align: center;
+  font-size: 14px;
+}
+.qodef-mark
+{
+  color: silver;
+  font-size: 14px;
+}
+.condolence
+{
+  background-color: #f6f7fb;
+  width: 100%;
+}
+.inner_condolence
+{
+  width: 90%;
+  margin: auto;
+  padding: 40px 0;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+}

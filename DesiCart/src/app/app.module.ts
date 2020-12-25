@@ -47,6 +47,7 @@ import { NumberDirective } from './validators/numbersOnly.directive';
 import { FooterComponent } from './footer/footer.component';
 import { ShippingCalculator } from './shippingcalculator/shippingcalculator.service';
 import { OpendialogComponent } from './opendialog/opendialog.component';
+import { KnowmoredialogComponent } from './knowmoredialog/knowmoredialog.component';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -90,7 +91,8 @@ export function provideConfig() {
     TosisComponent,
     NumberDirective,
     FooterComponent,
-    OpendialogComponent
+    OpendialogComponent,
+    KnowmoredialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+<app-shippingcalculator></app-shippingcalculator>
+<div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+    <div class="modal d-block fade" 
+      [ngClass]="{ show: showModal }"
+      (click)="onClose()"
+      id="listing-dialog" 
+      tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+        <div class="modal-dialog modal-lg" role="document" (click)="onDialogClick($event)">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Lowest cost shipment via IndiaPost - 15-20 days
+                    </h5>
+                    <button type="button"
+                        class="close"
+                        (click)="onClose()"
+                        aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <ol style="margin-top:10px;" role="tablist" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">
+                    <span>You Can calculate postage charges here - only 20kg allowed in one box, select ""Parcel"" as option. ""SpeedPost"" is more expensive</span><br><br>
+                    <a href="https://www.indiapost.gov.in/VAS/Pages/CalculatePostage.aspx">https://www.indiapost.gov.in/VAS/Pages/CalculatePostage.aspx</a>
+                   <br><br>
+                    
+                    
+                    <b><li>Add the following charges to the rates above :</li></b>
+                    <span>IndiaPost is 45 kms from our warehouse, it takes 4 hours roundtrip in hyderabad to go to indiapost,  so a personal shopper will have to manually go, wait in line and fill documentation and then ship your box.</span><br><br>
+                    <b><li>Hence we will charge the below on top of indiapost rates:</li></b>
+                    <span> Commute charges for 20 kgs and below - Rs.1800 (above 20kg will depend on package size and vehicle needed to carry that package)</span><br><br>
+                  
+                    <span>Personal Shopper service fee - Rs.299"  </span><br><br>
+                </ol>
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                </div> -->
+            </div>
+        </div>
+    </div>

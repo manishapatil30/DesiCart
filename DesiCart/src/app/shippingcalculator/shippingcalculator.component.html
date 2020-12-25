@@ -2,71 +2,101 @@
     <div>
         <div class="shipping">
             <h4 style="margin: 0 0 15px 20px;">Shipping Calculator</h4>
-              <div class="container-fluid">
-                  <form [formGroup]="shippingForm" (ngSubmit)="getShippingRates()">
+            <div class="container-fluid">
+                <form [formGroup]="shippingForm"
+                    (ngSubmit)="getShippingRates()">
                     <div class="row">
                         <div class="col-md-12 col-lg-12 col-xl-12">
-                           <div class="card">
-                               <div class="card-header">
-                                   <h5 align="center">Estimate you Shipping Cost</h5>
-                               </div>
-                               <div class="card-body">
-                                   <div class="row col-xs-12 col-sm-12 col-md-12">
-                                       <div class="col-xs-12 col-sm-4 col-md-4">
-                                           <label>Country/Territory</label><br>
-                                          
-                                           <select id="selectcountry">
-                                               <!-- <option>Select Country</option> -->
-                                               <option selected>India</option>
-                                           </select>
-                                           <br><br>
-                                           <label>Country/Territory</label><br>
-                                          
-                                           <select id="selectcountry" formControlName="ZoneNumber">
-                                               <option value="" *ngIf="selectCountry">Select Country</option>
-                                               <option value="" *ngIf="!selectCountry">Select Country</option>
-                                               <option *ngFor="let country of CountryZones" [value]="country.ZoneNumber"> {{ country.CountryName }} </option>
-                                           </select>
-                                           <br><br>
-                                       </div>
-                                       <div class="right col-xs-12 col-sm-8 col-md-8">
-                                           <label>From</label><br>
-                                           <input type="text" placeholder="Street address, City, Postal code, Country... ">
-                                           <img src="assets\Images\Group 1117.png" height="18" width="20"
-                                               style="margin-left: 15px;">
-                                           <br><br>
-                                           <label>To</label><br>
-                                           <input type="text" placeholder="Street address, City, Postal code, Country... ">
-                                       </div>
-                                   </div>
-                                   <br>
-                                   <div class="row col-xs-12 col-sm-12 col-md-12">
-                                       <div class="col-xs-12 col-sm-5 col-md-5">
-                                           <label>Weight*</label><br>
-                                           <input type="number" min="0" size="12" id="abc" formControlName="WeightKgs">&nbsp;
-                                           <div class="form-check-inline">
-                                               <label class="form-check-label1">
-                                                   <input type="radio" class="form-check-input" name="weightType" value="kgs"
-                                                   formControlName="weightType">kgs
-                                                   <!-- <input type="radio" class="form-check-input" name="weightType" value="kgs"
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 align="center">Estimate you Shipping
+                                        Cost</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row col-xs-12 col-sm-12
+                                        col-md-12">
+                                        <div class="col-xs-12 col-sm-4
+                                            col-md-4">
+                                            <label>Country/Territory</label><br>
+                                            <select id="selectcountry">
+                                                <!-- <option>Select Country</option> -->
+                                                <option selected>India</option>
+                                            </select>
+                                            <br><br>
+                                            <label>Country/Territory</label><br>
+                                            <select id="selectcountry"
+                                                formControlName="ZoneNumber">
+                                                <option value=""
+                                                    *ngIf="selectCountry">Select
+                                                    Country</option>
+                                                <option value=""
+                                                    *ngIf="!selectCountry">Select
+                                                    Country</option>
+                                                <option *ngFor="let country of
+                                                    CountryZones"
+                                                    [value]="country.ZoneNumber">
+                                                    {{ country.CountryName }}
+                                                </option>
+                                            </select>
+                                            <br><br>
+                                        </div>
+                                        <div class="right col-xs-12 col-sm-8
+                                            col-md-8">
+                                            <label>From</label><br>
+                                            <input type="text"
+                                                placeholder="Street address,
+                                                City, Postal code, Country...">
+                                            <img src="assets\Images\Group 1117.png" height="18" width="20"
+                                                style="margin-left: 15px;">
+                                            <br><br>
+                                            <label>To</label><br>
+                                            <input type="text"
+                                                placeholder="Street address,
+                                                City, Postal code, Country...">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row col-xs-12 col-sm-12
+                                        col-md-12">
+                                        <div class="col-xs-12 col-sm-5
+                                            col-md-5">
+                                            <label>Weight*</label><br>
+                                            <input type="number" min="0"
+                                                size="12" id="abc"
+                                                formControlName="WeightKgs">&nbsp;
+                                            <div class="form-check-inline">
+                                                <label
+                                                    class="form-check-label1">
+                                                    <input type="radio"
+                                                        class="form-check-input"
+                                                        name="weightType"
+                                                        value="kgs"
+                                                        formControlName="weightType">kgs
+                                                    <!-- <input type="radio" class="form-check-input" name="weightType" value="kgs"
                                                    formControlName="weightType" checked>kgs -->
-                                               </label>
-                                           </div>
-                                           <div class="form-check-inline">
-                                               <label class="form-check-label">
-                                                   <input type="radio" class="form-check-input" name="weightType" value="lbs"
-                                                   formControlName="weightType">lbs
-                                               </label>
-                                           </div>
-                                           <br><br>
-                                           <label>Length(cm)</label><br>
-                                           <input type="number" min="0" size="12" id="abc">&nbsp;
-                                           <br><br>
-                                           <label>Width(cm)</label><br>
-                                           <input type="number" min="0" size="12"><br><br>
-                                           <label>Height(cm)</label><br>
-                                           <input type="number" min="0" size="12">
-                                           <!-- <p><img src="assets\Images\circle.png" height="18" width="20">&nbsp;No account? No
+                                                </label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="radio"
+                                                        class="form-check-input"
+                                                        name="weightType"
+                                                        value="lbs"
+                                                        formControlName="weightType">lbs
+                                                </label>
+                                            </div>
+                                            <br><br>
+                                            <label>Length(cm)</label><br>
+                                            <input type="number" min="0"
+                                                size="12" id="abc">&nbsp;
+                                            <br><br>
+                                            <label>Width(cm)</label><br>
+                                            <input type="number" min="0"
+                                                size="12"><br><br>
+                                            <label>Height(cm)</label><br>
+                                            <input type="number" min="0"
+                                                size="12">
+                                            <!-- <p><img src="assets\Images\circle.png" height="18" width="20">&nbsp;No account? No
                                                Problem! Pay with Credit card or Cash
                                            </p>
                                            <p><img src="assets\Images\circle.png" height="18" width="20">&nbsp;View packaging and
@@ -75,36 +105,41 @@
                                            <p><img src="assets\Images\circle.png" height="18" width="20">&nbsp;View packaging and
                                                delivery options
                                            </p> -->
-                                       </div>
-                                       <div class="col-xs-12 col-sm-7 col-md-7">
-                                           <br>
-                                        <h6 align="left">Package size sample</h6>
-                                        <div>
-                                            <br>
-                                            <img src="assets\Images\Group 909.png" width="280" height="200">
                                         </div>
-                                        <br>
-                                           <!-- <label>Length(cm)</label><br>
+                                        <div class="col-xs-12 col-sm-7
+                                            col-md-7">
+                                            <br>
+                                            <h6 align="left">Package size sample</h6>
+                                            <div>
+                                                <br>
+                                                <img src="assets\Images\Group 909.png" width="280"
+                                                    height="200">
+                                            </div>
+                                            <br>
+                                            <!-- <label>Length(cm)</label><br>
                                            <input type="number" min="0" size="12" id="abc">&nbsp;
                                            <br><br>
                                            <label>Width(cm)</label><br>
                                            <input type="number" min="0" size="12"><br><br>
                                            <label>Height(cm)</label><br>
                                            <input type="number" min="0" size="12"> -->
-                                           <!-- <div class="center1">
+                                            <!-- <div class="center1">
                                                <a href=""><button class="btn" type="submit">Get Shipping
                                                        Rates</button></a>
                                            </div> -->
-                                       </div>
-                                   </div>
-                                   <div class="center1">
-                                    <a href=""><button class="btn" type="submit">Get DHL Shipping Rates</button></a>
+                                        </div>
+                                    </div>
+                                    <div class="center1">
+                                        <a href=""><button class="btn"
+                                                type="submit">Get DHL Shipping
+                                                Rates</button></a>
+                                    </div>
                                 </div>
-                               </div>
-                           </div>
-                           <p align="right">Packing weight , volumetric weight will be calculated Finally</p> 
+                            </div>
+                            <p align="right">Packing weight , volumetric weight
+                                will be calculated Finally</p>
                         </div>
-       
+
                         <!-- <div class="col-md-6 col-lg-6 col-xl-3 text-center">
                            <label>cm and in Conversion mode</label>
                            <p>1 cm = 0.3937 in (1 in = 2.54 cm)</p>
@@ -119,10 +154,10 @@
                            </div>
                            <br>
                         </div> -->
-                     </div>
-                  </form>
-              </div>
-              <!-- <div class="container-fluid">
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="container-fluid">
                   <form [formGroup]="shippingForm" (ngSubmit)="getShippingRates()">
                     <div class="row">
                         <div class="col-md-6 col-lg-6 col-xl-8">
@@ -253,92 +288,457 @@
             </div>
         </div> -->
         <div class="box" style="margin-top: 30px;">
-           <div style="padding: 25px;">
-            <h4 align="center"><b>India post low cost shipping calculator</b></h4>
-            <p align="center">Click here to to know how to calculate volumetric weight</p>
-            <div class="test_view_more_btn_container text-center" style="margin-top:-30px;">
-                <button class="test_view_more_btn" (click)="comment()">KNOW MORE</button>
+            <div style="padding: 25px;">
+                <h4 align="center"><b>India post low cost shipping calculator</b></h4>
+                <p align="center">Click here to to know how to calculate
+                    volumetric weight</p>
+                <div class="test_view_more_btn_container text-center"
+                    style="margin-top:-30px;">
+                    <button class="test_view_more_btn" (click)="knowmore()">KNOW
+                        MORE</button>
+                </div>
             </div>
-           </div>
         </div>
         <div style="padding: 20px;">
-            <div class="test_view_more_btn_container text-center" style="margin-top:-30px;">
-                <a href="https://forms.gle/XReb2rJ9GCw3EZAJ7" target="_blank"><button class="test_view_more_btn">SIGN UP!</button></a>
-                
+            <div class="test_view_more_btn_container text-center"
+                style="margin-top:-30px;">
+                <a href="https://forms.gle/XReb2rJ9GCw3EZAJ7" target="_blank"><button
+                        class="test_view_more_btn">SIGN UP!</button></a>
+
             </div>
         </div>
-        <div class="testmonial-bg">
-            <div class="testimonial_container">
-                <div class="testmonial_info">
-                    <h3 class="testimonial_title text-center"> What our customers say About us </h3>
-    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-6 col-xl-4 test_one_card">
-                                  <div class="card">
-                                      <div class="card-body">
-                                        <h5 class="text-center">
-                                            <i class="fa fa-quote-left" aria-hidden="true" style="color: #FBBC5D;"></i>
-                                        </h5>
-                                        <p class="test_para">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                                            classical Latin.</p>
-                                        <hr class="test_hr">
-                                        <div id="uicon">
-                                            <img src="assets\Images\Rectangle 50.png" width="70" height="70" class="rounded-circle"
-                                                style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 5px;">
+        <div class="qodef-grid-section">
+            <div class="clearfix">
+                <div class="qodef-section-inner-margin">
+                    <div class="wpb_column vc_column_container
+                        vc_col-sm-12">
+                        <div class="vc_column-inner">
+                            <div class="wpb_wrapper">
+                                <div class="wpb_text_column
+                                    wpb_content_element">
+                                    <div class="wpb_wrapper">
+                                        <h3 align="center" style="padding-top:
+                                            50px;"><span style="color:
+                                                #ffffff;text-align: center;">International
+                                                Shipping Options from India</span></h3>
+                                    </div>
+                                </div>
+                                <div class="vc_empty_space" style="height:
+                                    21px"><span class="vc_empty_space_inner"></span></div>
+                                <div class="wpb_text_column
+                                    wpb_content_element">
+                                    <div class="wpb_wrapper">
+                                        <h6 align="center" style="width:
+                                            80%;margin: auto;"><span
+                                                style="color:
+                                                #ffffff;text-align: center;">To
+                                                cater to the needs of all
+                                                shoppers we came up with
+                                                fantastic shipping choices! Shop
+                                                from India without worrying
+                                                about exorbitant shipping costs!
+                                                Remember we are not courier
+                                                company and we don’t own
+                                                logistics of our own.</span></h6>
+                                    </div>
+                                </div>
+                                <div class="vc_empty_space" style="height:
+                                    21px"><span class="vc_empty_space_inner"></span></div>
+                                <div class="qodef-pricing-tables">
+                                    <div class="row col-xs-12 col-sm-12
+                                        col-md-12 col-xl-12">
+                                        <div class="col-xs-12 col-sm-6
+                                            col-md-6 col-xl-6">
+                                            <div class="card">
+                                                <div
+                                                    class="card-header">
+                                                    <h5 style="padding: 10px;">
+                                                        <span
+                                                            class="qodef-title-content">Option
+                                                            1 - Premium
+                                                            Courier</span>
+                                                    </h5>
+
+                                                </div>
+                                                <div class="card-body">
+                                                    <div
+                                                        class="qodef-price-in-table">
+                                                        <sup
+                                                            class="qodef-value">₹</sup>
+                                                        <span
+                                                            class="qodef-price">₹₹₹</span><br>
+                                                        <span
+                                                            class="qodef-mark">per
+                                                            shipment</span>
+                                                    </div>
+
+                                                    <ul
+                                                        style="color:
+                                                        #000000;padding: 20px 0;margin: 0;width: 100%;">
+                                                        <li
+                                                            style="background-color:
+                                                            #eceef1;padding: 15px;">Ship
+                                                            via
+                                                            DHL
+                                                            or
+                                                            FedEx.
+                                                            Our
+                                                            Preferred
+                                                            Courier
+                                                            Partners</li>
+                                                        <li style="padding: 15px;">Delivery
+                                                            Time
+                                                            3-7
+                                                            days
+                                                            excluding
+                                                            weekends</li>
+                                                        <li style="background-color:
+                                                        #eceef1;padding: 15px;">24/7
+                                                            Customer
+                                                            Service
+                                                            by
+                                                            courier
+                                                            companies</li>
+                                                        <li style="padding: 15px;">On-Time
+                                                            Delivery</li>
+                                                        <li style="background-color:
+                                                        #eceef1;padding: 15px;">Shipment
+                                                            Protection
+                                                            options
+                                                            available</li>
+                                                        <li style="padding: 15px;">&nbsp;yourDesiCart
+                                                            Support
+                                                            – We
+                                                            are
+                                                            proud
+                                                            of
+                                                            our
+                                                            Personalized
+                                                            5-star
+                                                            support,
+                                                            available
+                                                            24/7
+                                                            365
+                                                            days
+                                                            a
+                                                            year.
+                                                            We
+                                                            will
+                                                            help
+                                                            track
+                                                            the
+                                                            package
+                                                            incase
+                                                            of
+                                                            any
+                                                            issues.</li>
+                                                        <li style="background-color:
+                                                        #eceef1;padding: 15px;">We
+                                                            will
+                                                            not
+                                                            be
+                                                            responsible
+                                                            for
+                                                            lost,
+                                                            theft,
+                                                            damage
+                                                            to
+                                                            packages
+                                                            during
+                                                            transit
+                                                            and&nbsp;
+                                                            you
+                                                            will
+                                                            have
+                                                            to
+                                                            raise
+                                                            a
+                                                            claim
+                                                            with
+                                                            courier
+                                                            company
+                                                            yourself</li>
+                                                        <li style="padding: 15px;"><img
+                                                                class="alignnone
+                                                                size-medium
+                                                                wp-image-6618"
+                                                                src="assets\Images\fedx-dhl.jpg"
+                                                                alt=""
+                                                                width="223"
+                                                                height="148"
+                                                                sizes="(max-width:
+                                                                300px)
+                                                                100vw,
+                                                                300px"></li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
                                         </div>
-                                        <h5 class="text-center test_name">Gopinath Appam</h5>
-                                      </div>
-                                  </div>
-                            </div>
-                            <div class="col-md-6 col-lg-6 col-xl-4 test_two_card">
-                                  <div class="card">
-                                      <div class="card-body">
-                                        <h5 class="text-center">
-                                            <i class="fa fa-quote-left" aria-hidden="true" style="color: #FBBC5D;"></i>
-                                        </h5>
-                                        <p class="test_para">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                                            classical Latin.</p>
-                                        <hr class="test_hr">
-                                        <div id="uicon">
-                                            <img src="assets\Images\Rectangle 50.png" width="70" height="70" class="rounded-circle"
-                                                style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 5px;">
+                                        <div class="col-xs-12 col-sm-6
+                                            col-md-6 col-xl-6">
+                                            <div class="card">
+
+                                                <div
+                                                    class="card-header">
+                                                    <h5 style="padding:
+                                                        10px;">
+                                                        <span
+                                                            class="qodef-title-content">Option
+                                                            2 - Low Cost
+                                                            Courier</span>
+                                                    </h5>
+
+                                                </div>
+
+
+                                                <div class="card-body">
+                                                    <div
+                                                        class="qodef-price-in-table">
+                                                        <sup
+                                                            class="qodef-value">₹</sup>
+                                                        <span
+                                                            class="qodef-price">₹</span><br>
+                                                        <span
+                                                            class="qodef-mark">per
+                                                            shipment</span>
+                                                    </div>
+
+                                                    <ul
+                                                    style="color:
+                                                    #000000;padding:20px 0;margin: 0;width: 100%;">
+                                                        <li style="background-color:
+                                                        #eceef1;padding: 15px;">Courier
+                                                            of
+                                                            your
+                                                            Choice
+                                                            –
+                                                            Shipping
+                                                            via
+                                                            Atlantic,
+                                                            IndiaPost,
+                                                            UPS
+                                                            etc.</li>
+                                                        <li style="padding: 15px;">Delivery
+                                                            Timeline
+                                                            –
+                                                            10-20
+                                                            days
+                                                            or
+                                                            more</li>
+                                                        <li style="background-color:
+                                                        #eceef1;padding: 15px;">Limited
+                                                            Customer
+                                                            Support
+                                                            from
+                                                            courier
+                                                            companies</li>
+                                                        <li style="padding: 15px;">Delivery
+                                                            delays
+                                                            expected</li>
+                                                        <li style="background-color:
+                                                        #eceef1;padding: 15px;">Shipment
+                                                            Protection
+                                                            may
+                                                            or
+                                                            may
+                                                            not
+                                                            be
+                                                            available</li>
+                                                        <li style="padding: 15px;" ><strong>No
+                                                                yourDesiCart
+                                                                Support</strong>
+                                                            –
+                                                            You
+                                                            will
+                                                            be
+                                                            tracking
+                                                            your
+                                                            international
+                                                            package
+                                                            yourself.
+                                                            Very
+                                                            minimal
+                                                            support
+                                                            will
+                                                            be
+                                                            provided
+                                                            from
+                                                            our
+                                                            end.</li>
+                                                        <li style="background-color:
+                                                        #eceef1;padding: 15px;">We
+                                                            will
+                                                            not
+                                                            be
+                                                            responsible
+                                                            for
+                                                            lost,
+                                                            theft,
+                                                            damage
+                                                            to
+                                                            packages
+                                                            during
+                                                            transit
+                                                            and&nbsp;
+                                                            you
+                                                            will
+                                                            have
+                                                            to
+                                                            raise
+                                                            a
+                                                            claim
+                                                            with
+                                                            courier
+                                                            company
+                                                            yourself</li>
+                                                        <li style="padding: 15px;"><img
+                                                                class="alignnone
+                                                                wp-image-6635"
+                                                                src="assets\Images\indiapost.png"
+                                                                alt=""
+                                                                width="223"
+                                                                height="149"
+                                                               
+                                                                sizes="(max-width:
+                                                                223px)
+                                                                100vw,
+                                                                223px"></li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
                                         </div>
-                                        <h5 class="text-center test_name">Gopinath Appam</h5>
-                                      </div>
-                                  </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6 col-lg-6 col-xl-4 test_three_card">
-                                  <div class="card">
-                                      <div class="card-body">
-                                        <h5 class="text-center">
-                                            <i class="fa fa-quote-left" aria-hidden="true" style="color: #FBBC5D;"></i>
-                                        </h5>
-                                        <p class="test_para">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                                            classical Latin.</p>
-                                        <hr class="test_hr">
-                                        <div id="uicon">
-                                            <img src="assets\Images\Rectangle 50.png" width="70" height="70" class="rounded-circle"
-                                                style="display: block; margin-left: auto; margin-right: auto; margin-bottom: 5px;">
-                                        </div>
-                                        <h5 class="text-center test_name">Gopinath Appam</h5>
-                                      </div>
-                                  </div>
-                            </div>
-                        </div>
-    
-    
-                        <div class="test_view_more_btn_container text-center">
-                            <button class="test_view_more_btn" (click)="comment()"> View more </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     
-    
-    
-       <app-footer></app-footer>
+
+        <div class="condolence">
+           <div class="inner_condolence">
+               <h2>Consolidate & Save Upto 50%</h2>
+               <h6 style="margin-top: 20px;"><span>Love Savings? Consolidate all your orders from India into one BIG BOX and save upto 50% on International Shipping charges.</span></h6>
+               <div>
+                <img src="assets\Images\consolidate_image.png" width="100%" id="responsive" >
+               </div>
+           </div>
+        </div>
+        <div style="padding: 40px;">
+            <h6 align="center">More details about pricing and services - visit menu</h6>
+            <div class="test_view_more_btn_container text-center"
+                style="margin-top:-30px;">
+                <button class="test_view_more_btn" (click)="pricing()">Pricing & Services</button>
+
+            </div>
+        </div>
+        <div class="testmonial-bg">
+            <div class="testimonial_container">
+                <div class="testmonial_info">
+                    <h3 class="testimonial_title text-center"> What our
+                        customers say About us </h3>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-xl-4
+                                test_one_card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-center">
+                                            <i class="fa fa-quote-left"
+                                                aria-hidden="true" style="color:
+                                                #FBBC5D;"></i>
+                                        </h5>
+                                        <p class="test_para">Contrary to popular
+                                            belief, Lorem Ipsum is not simply
+                                            random text. It has roots in a piece
+                                            of
+                                            classical Latin.</p>
+                                        <hr class="test_hr">
+                                        <div id="uicon">
+                                            <img src="assets\Images\Rectangle 50.png" width="70" height="70"
+                                                class="rounded-circle"
+                                                style="display: block;
+                                                margin-left: auto; margin-right:
+                                                auto; margin-bottom: 5px;">
+                                        </div>
+                                        <h5 class="text-center test_name">Gopinath
+                                            Appam</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4
+                                test_two_card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-center">
+                                            <i class="fa fa-quote-left"
+                                                aria-hidden="true" style="color:
+                                                #FBBC5D;"></i>
+                                        </h5>
+                                        <p class="test_para">Contrary to popular
+                                            belief, Lorem Ipsum is not simply
+                                            random text. It has roots in a piece
+                                            of
+                                            classical Latin.</p>
+                                        <hr class="test_hr">
+                                        <div id="uicon">
+                                            <img src="assets\Images\Rectangle 50.png" width="70" height="70"
+                                                class="rounded-circle"
+                                                style="display: block;
+                                                margin-left: auto; margin-right:
+                                                auto; margin-bottom: 5px;">
+                                        </div>
+                                        <h5 class="text-center test_name">Gopinath
+                                            Appam</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-4
+                                test_three_card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-center">
+                                            <i class="fa fa-quote-left"
+                                                aria-hidden="true" style="color:
+                                                #FBBC5D;"></i>
+                                        </h5>
+                                        <p class="test_para">Contrary to popular
+                                            belief, Lorem Ipsum is not simply
+                                            random text. It has roots in a piece
+                                            of
+                                            classical Latin.</p>
+                                        <hr class="test_hr">
+                                        <div id="uicon">
+                                            <img src="assets\Images\Rectangle 50.png" width="70" height="70"
+                                                class="rounded-circle"
+                                                style="display: block;
+                                                margin-left: auto; margin-right:
+                                                auto; margin-bottom: 5px;">
+                                        </div>
+                                        <h5 class="text-center test_name">Gopinath
+                                            Appam</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="test_view_more_btn_container text-center">
+                            <button class="test_view_more_btn"
+                                (click)="comment()"> View more </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <app-footer></app-footer>
     </div>
 </div>
-

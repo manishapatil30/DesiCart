@@ -88,9 +88,13 @@ export class ShippingcalculatorComponent implements OnInit {
    }
 
 
-   signup() {
-    this.router.navigate(['/home/signup']);
+   pricing() {
+    this.router.navigate(['/home/pricing']);
     window.scrollTo(0, 0);
+  }
+  knowmore()
+  {
+    this.router.navigate(['/home/knowmore']);
   }
   public contactUs()
   {
