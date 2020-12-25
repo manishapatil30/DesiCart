@@ -45,6 +45,7 @@
       border:1px solid darkgray;
       border-radius:50%;
       outline:none;
+      
     }
     .shipping .card .card-body input[type='radio']:before {
       content:'';
@@ -53,6 +54,7 @@
       height:60%;
       margin: 20% auto;    
       border-radius:50%;    
+     
     }
     .shipping .card .card-body input[type='radio']:checked:before {
       background:#9ED226;
@@ -210,7 +212,7 @@
     transform: rotate(180deg);
 }
 .flip-icon-holder{
- padding: 10px 10px 10px 0px;;
+ padding: 10px 10px 10px 0px;
 }
   @media screen and (max-width: 600px) {
     .column {
