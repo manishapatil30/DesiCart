@@ -22,6 +22,7 @@ import { OnamshoppComponent } from './onamshopp/onamshopp.component';
 import { TosisComponent } from './tosis/tosis.component';
 import { OpendialogComponent } from './opendialog/opendialog.component';
 import { KnowmoredialogComponent } from './knowmoredialog/knowmoredialog.component';
+import { KnowmorevolemComponent } from './knowmorevolem/knowmorevolem.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'opend/:pr/:wet', component: OpendialogComponent },
       { path: 'knowmore', component: KnowmoredialogComponent },
+      { path: 'volumetric', component: KnowmorevolemComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'shop', component: ShopComponent },
       { path: 'myaccount', canActivate: [AuthGuardService] , component: MyaccountComponent },

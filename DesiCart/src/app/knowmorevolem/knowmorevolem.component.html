@@ -1,0 +1,79 @@
+<app-shippingcalculator></app-shippingcalculator>
+<div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+<div class="modal d-block fade"
+    [ngClass]="{ show: showModal }"
+    (click)="onClose()"
+    id="listing-dialog"
+    tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+    <div class="modal-dialog modal-lg" role="document"
+        (click)="onDialogClick($event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Volumetric Weight Calculation
+                </h5>
+                <button type="button"
+                    class="close"
+                    (click)="onClose()"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="container clearfix">
+                    <div class="row">
+                        <div class="heading-block nobottomborder left mb-0
+                            clearfix" style="max-width: 550px">
+                            <h3 class="nott ls0 mb-3">How to Calculate
+                                Volumetric Weight</h3>
+                            <p>To calculate the volumetric weight of your
+                                shipment, simply multiply the length (cm) x
+                                height (cm) x width (cm) and divide the result
+                                by 5,000. </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-8">
+                            <div class="heading-block nobottomborder left mb-0
+                                clearfix" style="max-width: 550px">
+                                <h3 class="nott ls0 mb-3">For example...</h3>
+                                <p>You are sending a package that weighs 16kg,
+                                    but the dimensions are 50cm x 65cm x 40cm,
+                                    the volumetric weight will be </p>
+                                <img
+                                    src="https://www.forwardparcel.com/assets/img/calculator/1.png"
+                                    style="max-width: 100%; margin-bottom:
+                                    20px;">
+                            </div>
+                            <div class="heading-block nobottomborder left mb-0
+                                clearfix" style="max-width: 550px">
+                                <p>If you're sending multiple packages,
+                                    calculate each weight separately and this is
+                                    the 'total chargeable weight'. The
+                                    chargeable weight is always the greater of
+                                    the actual or volumetric weight.</p><br>
+                                <p>The cost of a shipment can be affected by the
+                                    amount of space that it occupies on an
+                                    aircraft, rather than the actual weight.
+                                    This is the volumetric weight. Chargeable
+                                    weight may be either volumetric weight or
+                                    gross weight, whichever is greater.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-6">
+                            <div class="center bottommargin topmargin-lg">
+                                <img src="assets\Images\Group 909.png"
+                                    alt="Image" data-animate="fadeInRight"
+                                    class="fadeInRight animated">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                </div> -->
+        </div>
+    </div>
+</div>

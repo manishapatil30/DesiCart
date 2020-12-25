@@ -48,6 +48,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ShippingCalculator } from './shippingcalculator/shippingcalculator.service';
 import { OpendialogComponent } from './opendialog/opendialog.component';
 import { KnowmoredialogComponent } from './knowmoredialog/knowmoredialog.component';
+import { KnowmorevolemComponent } from './knowmorevolem/knowmorevolem.component';
 
 // const config = new AuthServiceConfig([
 //   {
@@ -92,7 +93,8 @@ export function provideConfig() {
     NumberDirective,
     FooterComponent,
     OpendialogComponent,
-    KnowmoredialogComponent
+    KnowmoredialogComponent,
+    KnowmorevolemComponent
   ],
   imports: [
     BrowserModule,
