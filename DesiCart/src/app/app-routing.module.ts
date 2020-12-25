@@ -24,13 +24,17 @@ import { OpendialogComponent } from './opendialog/opendialog.component';
 import { KnowmoredialogComponent } from './knowmoredialog/knowmoredialog.component';
 import { KnowmorevolemComponent } from './knowmorevolem/knowmorevolem.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
+  { path: '', redirectTo: '/home/shipping', pathMatch: 'full' },
   {
     path: 'home', component: HomeComponent, children: [
-      { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+      { path: '', redirectTo: 'shipping', pathMatch: 'full' },
       {
-        path: 'homepage', component: HomepageComponent
+        path: 'shipping', component: ShippingcalculatorComponent
       },
+      // { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+      // {
+      //   path: 'homepage', component: HomepageComponent
+      // },
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'opend/:pr/:wet', component: OpendialogComponent },
       { path: 'knowmore', component: KnowmoredialogComponent },
@@ -47,9 +51,9 @@ const routes: Routes = [
       { path: 'onamshopping', component: OnamshoppComponent },
       { path: 'tosis', component: TosisComponent },
       { path: 'signup', component: SignupComponent },
-      {
-        path: 'shipping', component: ShippingcalculatorComponent
-      },
+      // {
+      //   path: 'shipping', component: ShippingcalculatorComponent
+      // },
       {
         path: 'login', children: [
           { path: '', component: LoginComponent },
