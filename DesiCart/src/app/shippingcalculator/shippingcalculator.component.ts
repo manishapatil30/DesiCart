@@ -63,6 +63,7 @@ export class ShippingcalculatorComponent implements OnInit {
           var weigth = Math.round(this.shippingForm.get('WeightKgs').value);
          }
          
+      
          const newObj = {
           ZoneNumber: countryZone,
           WeightKgs: weigth
