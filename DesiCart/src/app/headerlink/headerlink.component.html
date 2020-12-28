@@ -1,30 +1,30 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-dark">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
     <a class="navbar-brand" (click)="onHome();$event.stoppropagation"> <img src="assets\Images\Group 23.png" routerLink="homepage" class="desi_cart_logo"> </a>
     <button class="navbar-toggler btn-white collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa fa-bars text-white"></i>
+      <i class="fa fa-bars text-black"></i>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <!-- <li class="nav-item active" (click)="onHome();$event.stoppropagation">
-          <a class="nav-link text-white ml-3" routerLink="homepage" routerLinkActive="active_yellow">Home</a>
+          <a class="nav-link text-black ml-3" routerLink="homepage" routerLinkActive="active_yellow">Home</a>
         </li>
         <li class="nav-item" (click)="onHow();$event.stoppropagation">
-            <a class="nav-link text-white ml-3" routerLink="how" routerLinkActive="active_yellow">How</a>
+            <a class="nav-link text-black ml-3" routerLink="how" routerLinkActive="active_yellow">How</a>
         </li>
         <li class="nav-item" (click)="onPricing();$event.stoppropagation">
-            <a class="nav-link text-white ml-3" routerLink="pricing" routerLinkActive="active_yellow">Pricing & Services</a>
+            <a class="nav-link text-black ml-3" routerLink="pricing" routerLinkActive="active_yellow">Pricing & Services</a>
         </li> -->
         <li class="nav-item" (click)="onShipping();$event.stoppropagation">
-            <a class="nav-link text-white ml-3" routerLink="shipping" routerLinkActive="active_yellow">Shipping calculator</a>
+            <a class="nav-link text-black ml-3" routerLink="shipping" routerLinkActive="active_yellow">Shipping calculator</a>
         </li>
         <!-- <li class="nav-item" (click)="onShop();$event.stoppropagation">
-            <a class="nav-link text-white ml-3" routerLink="shop" routerLinkActive="active_yellow">Shop</a>
+            <a class="nav-link text-black ml-3" routerLink="shop" routerLinkActive="active_yellow">Shop</a>
         </li> -->
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <div class="nav-item dropdown user_dropDown" *ngIf="Auth">
-            <p class="nav-link dropdown-toggle text-white" [ngClass]="useremail.length <= 7 ? 'dropdown_content' : 'noMargin'" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p class="nav-link dropdown-toggle text-black" [ngClass]="useremail.length <= 7 ? 'dropdown_content' : 'noMargin'" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{useremail}}
             </p>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
