@@ -27,7 +27,7 @@ export class ShippingcalculatorComponent implements OnInit {
     this.shippingForm = this.fb.group({
       ZoneNumber: ['', Validators.required],
       WeightKgs: ['', Validators.required],
-      weightType: ['' , Validators.required]
+      // weightType: ['' , Validators.required]
     })
 
     this.shippingService.getCountryZones().subscribe((res: any) => {
@@ -45,23 +45,24 @@ export class ShippingcalculatorComponent implements OnInit {
      if(this.shippingForm.get('ZoneNumber').invalid) {
         alert("Country is required.")
      }
-     else if(this.shippingForm.get('weightType').invalid) {
-      alert("Please select Weight Type.")
-     }
+    //  else if(this.shippingForm.get('weightType').invalid) {
+    //   alert("Please select Weight Type.")
+    //  }
      else if(this.shippingForm.get('WeightKgs').invalid) {
       alert("Weight is required.")
      }
      else {
        if(this.shippingForm.valid) {
          const countryZone = parseInt(this.shippingForm.get('ZoneNumber').value);
-        if(this.shippingForm.get('weightType').value == 'lbs') {
-           const lbsWeight = this.shippingForm.get('WeightKgs').value;
-           const weigthKgs = lbsWeight * 0.453592;
-           var weigth = Math.round(weigthKgs);
-         }
-         else if(this.shippingForm.get('weightType').value == 'kgs') {
-          var weigth = Math.round(this.shippingForm.get('WeightKgs').value);
-         }
+         const weigth = Math.round(this.shippingForm.get('WeightKgs').value);
+        // if(this.shippingForm.get('weightType').value == 'lbs') {
+        //    const lbsWeight = this.shippingForm.get('WeightKgs').value;
+        //    const weigthKgs = lbsWeight * 0.453592;
+        //    var weigth = Math.round(weigthKgs);
+        //  }
+        //  else if(this.shippingForm.get('weightType').value == 'kgs') {
+        //   var weigth = Math.round(this.shippingForm.get('WeightKgs').value);
+        //  }
          
       
          const newObj = {
