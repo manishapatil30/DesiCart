@@ -56,15 +56,16 @@ td {
   color: #fff;
   border: none;
   outline: none;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 5px;
+  letter-spacing: 2px;
 }
 
 @media screen and (max-width:800px) {
  .test_view_more_btn {
    margin: 2rem 0 40px 0;
    font-size: 0.9rem;
-   padding: 0.5rem 1.5rem;
+   padding: 0.5rem 1.2rem;
  }
 }
 
@@ -72,7 +73,7 @@ td {
  .test_view_more_btn {
    margin: 2rem 0 40px 0;
    font-size: 0.7rem;
-   padding: 0.5rem 1.5rem;
+   padding: 0.5rem 1.2rem;
  }
 }
 .test_view_more_btn:hover {
