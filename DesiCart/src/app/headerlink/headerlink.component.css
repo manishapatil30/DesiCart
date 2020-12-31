@@ -450,3 +450,76 @@
 .noMargin {
   margin-right: 0rem;
 }
+.qodef-top-bar
+{
+  display: inline-block;
+}
+header
+{
+  background-color: #24262a;
+}
+.header1
+{
+  width: 100%;
+  padding: 7px;
+}
+
+
+/* Style the search field */
+.example input[type='text'] {
+  font-size: 12px;
+  /* float: left; */
+  width: 30%;
+  background-color: #505155;
+  border-top-left-radius:20px ;
+  border-bottom-left-radius: 20px;
+  border-right: none;
+  border: none;
+  margin-left: 10px;
+  height: 30px;
+  text-indent: 1em;
+  color: silver;
+}
+.example input[type='text']:focus {
+ border: none;
+ outline: none;
+}
+
+/* Style the submit button */
+.example button {
+  /* float: left; */
+  width: 10%;
+  background-color: #505155;
+  color: white;
+  font-size: 12px;
+  border-left: none; /* Prevent double borders */
+  border: none;
+  cursor: pointer;
+  border-top-right-radius:20px ;
+  border-bottom-right-radius: 20px;
+  height: 30px;
+}
+.example button:focus
+{
+  border: none;
+ outline: none;
+}
+
+@media screen and (max-width:1000px)
+{
+  .hide1
+  {
+    display: none;
+  }
+}
+@media screen and (max-width:600px)
+{
+  .hide2
+  {
+    display: none;
+  }
+  header
+  {
+    height: 45px;
+  }
+}
