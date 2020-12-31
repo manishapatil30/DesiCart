@@ -105,6 +105,7 @@
       font-size: 16px;
       border-radius: 10px;
       color: black;
+      letter-spacing: 2px;
     }
     .center1 button:focus{
         outline: none;
@@ -376,7 +377,9 @@
   .center1 .btn
   {
     font-size: 14px;
+    
   }
+
   footer
   {
     width: 100%;
