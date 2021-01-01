@@ -49,3 +49,13 @@ div.vertical-line{
         display: none;
     }
   }
+  .test_view_more_btn {
+    margin: 3rem 0 1rem 0;
+    background: #25262A;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    letter-spacing: 2px;
+  }

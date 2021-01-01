@@ -26,4 +26,8 @@ export class FooterComponent implements OnInit {
     this.router.navigate(['/home/contact']);
     window.scrollTo(0, 0);
   }
+  public payment()
+  {
+    this.router.navigate(['/home/payment']);
+  }
 }
