@@ -23,6 +23,7 @@ import { TosisComponent } from './tosis/tosis.component';
 import { OpendialogComponent } from './opendialog/opendialog.component';
 import { KnowmoredialogComponent } from './knowmoredialog/knowmoredialog.component';
 import { KnowmorevolemComponent } from './knowmorevolem/knowmorevolem.component';
+import { PaymentComponent } from './payment/payment.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home/shipping', pathMatch: 'full' },
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: 'knowmore', component: KnowmoredialogComponent },
       { path: 'volumetric', component: KnowmorevolemComponent },
       { path: 'pricing', component: PricingservicesComponent },
+      { path: 'payment', component: PaymentComponent },
       { path: 'shop', component: ShopComponent },
       { path: 'myaccount', canActivate: [AuthGuardService] , component: MyaccountComponent },
       { path: 'comment', component: CommentComponent },

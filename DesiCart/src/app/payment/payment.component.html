@@ -1,0 +1,41 @@
+<div class="payment">
+    <div class="box">
+        <form class="example-form" [formGroup]="form" (ngSubmit)="pay(30)">
+            <h2 align="center" style="margin-top: 10px;margin-bottom: 20px;">Payments</h2>
+            <!-- <mat-form-field class="example-full-width border-white" appearance="outline">
+                <mat-label>card number</mat-label>
+                <input matInput placeholder="Enter your card number" formControlName="cardnumber" id="cardnumber"
+                    [(ngModel)]="cardnumber" type="text" required maxlength="16"/>
+                <mat-error *ngIf="f.cardnumber.errors?.required">
+                    cardnumber is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field class="example-full-width border-white" appearance="outline">
+                  <mat-label>MM/YY</mat-label>
+                  <input matInput placeholder="MM/YY" formControlName="exdate" id="exdate"
+                  [(ngModel)]="exdate" type="text" required>
+                  <mat-error *ngIf="f.exdate.errors?.required">
+                    cardnumber is <strong>required</strong>
+                </mat-error>
+                </mat-form-field></td>
+
+                <td><mat-form-field class="example-full-width border-white" appearance="outline">
+                  <mat-label>CVC</mat-label>
+                  <input matInput placeholder="CVC" formControlName="cvcnumber" id="cvcnumber"
+                  [(ngModel)]="cvcnumber" type="text" required>
+                  <mat-error *ngIf="f.cvcnumber.errors?.required">
+                    cardnumber is <strong>required</strong>
+                </mat-error>
+                </mat-form-field></td>
+              </tr></table> -->
+            <br><br>
+            <!-- <p style="color: red;" align="center">{{Message}}</p> -->
+            <div class="center">
+                <button mat-raised-button color="primary" class="btn button-style"
+                    type="submit">Pay $30</button>
+                <!-- [disabled]="!form.valid" -->
+            </div>
+        </form>
+    </div>
+</div>

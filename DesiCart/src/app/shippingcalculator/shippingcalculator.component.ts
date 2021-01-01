@@ -136,5 +136,9 @@ public onhome()
     this.router.navigate(['/home/tosis']);
     window.scrollTo(0, 0);
   }
+  public payment()
+  {
+    this.router.navigate(['/home/payment']);
+  }
 }
 export class DialogContentExampleDialog {}

@@ -532,6 +532,7 @@
   margin: auto;
   border: 1px solid gainsboro;
   margin-bottom: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 .midest
 {
@@ -634,4 +635,5 @@ li{
   background-color:#f2f3f7;
   width: 85%;
   margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
