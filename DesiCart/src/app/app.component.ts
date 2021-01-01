@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DesiCart';
+  public phone = "83285 79397"
+  public title11 = "Hello, What would you like to get from India today?";
 }

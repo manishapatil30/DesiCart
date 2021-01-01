@@ -44,8 +44,8 @@ export class PaymentComponent implements OnInit {
     });
 
     handler.open({
-      name: 'Demo Site',
-      description: '2 widgets',
+      name: 'Payment',
+      description: 'shopping payment',
       amount: amount * 100
     });
 
