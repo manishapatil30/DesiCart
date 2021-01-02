@@ -50,7 +50,7 @@
             </mat-form-field>
             <div class="center">
                 <button mat-raised-button color="primary" class="btn button-style"
-                    type="submit" [disabled]="!form.valid">Pay &#8377;{{ammount}}</button>
+                    type="submit" [disabled]="!form.valid">Pay {{ammount | currency:'&#8377;'}}</button>
                 <!-- [disabled]="!form.valid" -->
             </div>
         </form>

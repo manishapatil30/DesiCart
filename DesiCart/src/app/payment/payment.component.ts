@@ -48,8 +48,8 @@ export class PaymentComponent implements OnInit {
     });
 
     handler.open({
-      name: 'Payment',
-      description: 'shopping payment',
+      name: 'yourDesiCart',
+      description: 'yourDesiCart Payment',
       amount: amount * 100,
       currency: 'INR',
     });
