@@ -39,6 +39,7 @@ export class PaymentComponent implements OnInit {
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51HtoOfBBFzdG14PeoslQ8nZSUo0q9zt09rtHw1KVm7bNzVAYPbOAboBQ9GSLn3UTLFpq1ZrTvH5yzRGx3R70ZFly00PTsHosdP',
       locale: 'auto',
+      
       token: function (token: any) {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
@@ -49,6 +50,7 @@ export class PaymentComponent implements OnInit {
 
     handler.open({
       name: 'yourDesiCart',
+      image: '/assets/Images/Group 23.png',
       description: 'yourDesiCart Payment',
       amount: amount * 100,
       currency: 'INR',
