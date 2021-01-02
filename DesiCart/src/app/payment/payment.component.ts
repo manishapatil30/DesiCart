@@ -45,7 +45,7 @@ export class PaymentComponent implements OnInit {
         // Get the token ID to your server-side code for use.
         console.log(token)
 
-        alert('Token Created!!');
+        // alert('Token Created!!');
         if (token != '') {
           const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
           const body = {
@@ -56,6 +56,11 @@ export class PaymentComponent implements OnInit {
       
           self.http.post(environment.baseURL + '/stripepayment', body, { headers }).subscribe((data => {
             console.log(data);
+           
+            if(data!='')
+            {
+                alert("Payment successfull");
+            }
           }), (error) => {
             console.log(error);
           });
