@@ -12,15 +12,19 @@ export class PaymentComponent implements OnInit {
   cardnumber: any;
   cvcnumber: any;
   exdate: any;
+  locknumber:any;
+  ammount:any;
   handler: any = null;
   form: FormGroup = new FormGroup({});
 
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient) {
 
     this.form = fb.group({
-      cardnumber: ['', Validators.required],
-      cvcnumber: ['', Validators.required],
-      exdate: ['', Validators.required],
+      // cardnumber: ['', Validators.required],
+      // cvcnumber: ['', Validators.required],
+      // exdate: ['', Validators.required],
+      locknumber: ['', Validators.required],
+      ammount: ['', Validators.required],
 
     });
   }
@@ -46,7 +50,8 @@ export class PaymentComponent implements OnInit {
     handler.open({
       name: 'Payment',
       description: 'shopping payment',
-      amount: amount * 100
+      amount: amount * 100,
+      currency: 'INR',
     });
 
   }

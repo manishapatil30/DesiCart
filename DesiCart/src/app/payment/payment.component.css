@@ -36,3 +36,28 @@
   {
       color: white;
   }
+  ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: gray !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline:focus {
+    /*change color of underline*/
+    background-color: gray !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: gray !important;;
+  }
+  .center .btn
+  {
+    background: #3f51b5;
+    color:white;
+    width: 100%;
+  }
+  .center .btn:hover
+  {
+    background: #3f51b5;
+    color:white;
+  }
