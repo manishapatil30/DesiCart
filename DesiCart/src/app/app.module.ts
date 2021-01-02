@@ -50,7 +50,8 @@ import { OpendialogComponent } from './opendialog/opendialog.component';
 import { KnowmoredialogComponent } from './knowmoredialog/knowmoredialog.component';
 import { KnowmorevolemComponent } from './knowmorevolem/knowmorevolem.component';
 import { PaymentComponent } from './payment/payment.component';
-
+import { NgxWhastappButtonModule } from "ngx-whatsapp-button";
+import { PaymentService } from './payment/payment.service';
 // const config = new AuthServiceConfig([
 //   {
 //     id: GoogleLoginProvider.PROVIDER_ID,
@@ -108,6 +109,7 @@ export function provideConfig() {
     MatCardModule,
     MatFormFieldModule,
     MatDialogModule,
+    NgxWhastappButtonModule,
     MatCheckboxModule,
     MatIconModule,
     BrowserAnimationsModule,
@@ -123,7 +125,8 @@ export function provideConfig() {
       useFactory: provideConfig
     },
     LoginService,
-    ShippingCalculator
+    ShippingCalculator,
+    PaymentService
   ],
   bootstrap: [AppComponent]
 })
