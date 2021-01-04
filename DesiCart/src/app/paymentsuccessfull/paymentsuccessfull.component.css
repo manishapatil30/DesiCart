@@ -14,7 +14,10 @@
 }
 .box p
 {
-    color: #65cfa7;
+    /* color: #65cfa7; */
+    background: -webkit-linear-gradient(90deg, #62cbb2, #6cd799);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     font-size:25px;
     font-weight: bold;
 }
