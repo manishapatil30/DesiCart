@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -14,6 +14,7 @@ export class PaymentComponent implements OnInit {
   cvcnumber: any;
   exdate: any;
   locknumber: any;
+  response:any;
   ammount: any;
   handler: any = null;
   form: FormGroup = new FormGroup({});
@@ -33,8 +34,9 @@ export class PaymentComponent implements OnInit {
   ngOnInit() {
 
     this.loadStripe();
+   
   }
-
+  
   pay(amount) {
     var self = this;
     var handler = (<any>window).StripeCheckout.configure({
@@ -54,12 +56,12 @@ export class PaymentComponent implements OnInit {
             UserLockerNo:self.locknumber
           }
       
-          self.http.post(environment.baseURL + '/stripepayment', body, { headers }).subscribe((data => {
-            console.log(data);
-           
-            if(data!='')
+          self.http.post(environment.baseURL + '/stripepayment', body, { headers }).subscribe((res => {
+            console.log(res);
+            if(res!='')
             {
-                alert("Payment successfull");
+              self.knowmore();
+                // alert(document.getElementById("message").textContent="Payment successfull");
             }
           }), (error) => {
             console.log(error);
@@ -81,7 +83,10 @@ export class PaymentComponent implements OnInit {
     });
 
   }
-
+  knowmore()
+  {
+    this.router.navigate(['/home/paymentsuccess']);
+  }
   loadStripe() {
     if (!window.document.getElementById('stripe-script')) {
       var s = window.document.createElement("script");
@@ -116,4 +121,5 @@ export class PaymentComponent implements OnInit {
   get f() {
     return this.form.controls;
   }
+ 
 }

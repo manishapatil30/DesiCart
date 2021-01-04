@@ -1,0 +1,26 @@
+<app-payment></app-payment>
+<div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+    <div class="modal d-block fade" 
+      [ngClass]="{ show: showModal }"
+      (click)="onClose()"
+      id="listing-dialog" 
+      tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+        <div class="modal-dialog modal-md" role="document" (click)="onDialogClick($event)">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                   
+                </div> -->
+                <div class="modal-body">
+                   <div class="box">
+                    <div class="example-button-container" style="padding: 20px;">
+                        <button class="whats" mat-fab color="primary"  style="background-image: linear-gradient(to bottom right, #62cbb2, #6cd799);width: 60px;height: 60px;padding-bottom: 35px;">
+                            <mat-icon style="font-size: 30px;">done</mat-icon>
+                        </button>
+                    </div>
+                       <p>Payment Successful!</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
