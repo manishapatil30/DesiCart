@@ -35,7 +35,7 @@
             <mat-form-field class="example-full-width border-white" appearance="outline">
                 <mat-label>Enter Locker No.</mat-label>
                 <input matInput placeholder="Enter your locker number" formControlName="locknumber" id="locknumber"
-                    [(ngModel)]="locknumber" type="text" required/>
+                    [(ngModel)]="locknumber" type="text" required numbersOnly/>
                 <mat-error *ngIf="f.locknumber.errors?.required">
                    Locker Number is <strong>required</strong>
                 </mat-error>
