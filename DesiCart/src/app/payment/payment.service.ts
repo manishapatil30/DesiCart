@@ -14,7 +14,8 @@ export class PaymentService {
   constructor(private http: HttpClient) {
    }
 
-   getpaymentdetails(data:any){
+   getpaymentdetails(data:any) : Observable<any> {
     return this.http.post(`${environment.baseURL}/stripepayment`,data, { headers });
+
   }
 }

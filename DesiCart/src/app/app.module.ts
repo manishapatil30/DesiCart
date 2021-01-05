@@ -53,6 +53,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { NgxWhastappButtonModule } from "ngx-whatsapp-button";
 import { PaymentService } from './payment/payment.service';
 import { PaymentsuccessfullComponent } from './paymentsuccessfull/paymentsuccessfull.component';
+import { PaymentfailComponent } from './paymentfail/paymentfail.component';
 // const config = new AuthServiceConfig([
 //   {
 //     id: GoogleLoginProvider.PROVIDER_ID,
@@ -99,7 +100,8 @@ export function provideConfig() {
     KnowmoredialogComponent,
     KnowmorevolemComponent,
     PaymentComponent,
-    PaymentsuccessfullComponent
+    PaymentsuccessfullComponent,
+    PaymentfailComponent
   ],
   imports: [
     BrowserModule,

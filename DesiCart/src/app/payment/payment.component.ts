@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { PaymentService } from './payment.service';
+import { catchError, map } from 'rxjs/operators'
+import { throwError, Observable } from 'rxjs';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -14,7 +16,7 @@ export class PaymentComponent implements OnInit {
   cvcnumber: any;
   exdate: any;
   locknumber: any;
-  response:any;
+  response: any;
   ammount: any;
   handler: any = null;
   form: FormGroup = new FormGroup({});
@@ -34,13 +36,14 @@ export class PaymentComponent implements OnInit {
   ngOnInit() {
 
     this.loadStripe();
-   
+
   }
-  
+
   pay(amount) {
     var self = this;
     var handler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_51HtoOfBBFzdG14PeoslQ8nZSUo0q9zt09rtHw1KVm7bNzVAYPbOAboBQ9GSLn3UTLFpq1ZrTvH5yzRGx3R70ZFly00PTsHosdP',
+      // key: 'pk_test_51HtoOfBBFzdG14PeoslQ8nZSUo0q9zt09rtHw1KVm7bNzVAYPbOAboBQ9GSLn3UTLFpq1ZrTvH5yzRGx3R70ZFly00PTsHosdP',
+      key:'pk_live_51HU6gmEcZiCcx8CbutSZQC0NKNzTg8AOu3bKWlpTUOKM5H2ghqhzx8xSFFrg8Qi8p1EkipL9SU37befwp2YlRlDl004KmgGdmC',
       locale: 'auto',
       token: function (token: any) {
         // You can access the token ID with `token.id`.
@@ -53,18 +56,19 @@ export class PaymentComponent implements OnInit {
           const body = {
             Amount: amount,
             TokenID: token.id,
-            UserLockerNo:self.locknumber
+            UserLockerNo: self.locknumber
           }
-      
+
           self.http.post(environment.baseURL + '/stripepayment', body, { headers }).subscribe((res => {
             console.log(res);
-            if(res!='')
-            {
+            if (res != '') {
               self.knowmore();
-                // alert(document.getElementById("message").textContent="Payment successfull");
+            }
+            else {
+              self.paymentfail();
             }
           }), (error) => {
-            console.log(error);
+            self.paymentfail();
           });
         }
       }
@@ -78,14 +82,16 @@ export class PaymentComponent implements OnInit {
       description: 'yourDesiCart Payment',
       amount: amount * 100,
       currency: 'INR',
-     
+
 
     });
 
   }
-  knowmore()
-  {
+  knowmore() {
     this.router.navigate(['/home/paymentsuccess']);
+  }
+  paymentfail() {
+    this.router.navigate(['/home/paymentfail']);
   }
   loadStripe() {
     if (!window.document.getElementById('stripe-script')) {
@@ -121,5 +127,5 @@ export class PaymentComponent implements OnInit {
   get f() {
     return this.form.controls;
   }
- 
+
 }

@@ -1,0 +1,24 @@
+.modal-body
+{
+    background-color: #fafcff;
+}
+.box
+{
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    padding: 20px;
+}
+.box .texxtt
+{
+    /* color: #65cfa7; */
+    font-size:25px;
+    font-weight: bold;
+}
+.modal-body
+{
+    border-radius: 30px;
+}
