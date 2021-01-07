@@ -2,24 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ShippingCalculator } from './shippingcalculator.service';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-shippingcalculator',
   templateUrl: './shippingcalculator.component.html',
   styleUrls: ['./shippingcalculator.component.css']
 })
 export class ShippingcalculatorComponent implements OnInit {
-  high:any;
+  high: any;
   CountryZones = [];
   selectCountry: boolean = true;
   weightType: string;
-
+  length: any;
+  width: any
+  height: any;
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private shippingService: ShippingCalculator,
     public dialog: MatDialog,
-    ) { }
+  ) { }
 
   shippingForm: FormGroup;
 
@@ -27,6 +29,9 @@ export class ShippingcalculatorComponent implements OnInit {
     this.shippingForm = this.fb.group({
       ZoneNumber: ['', Validators.required],
       WeightKgs: ['', Validators.required],
+      length: [''],
+      width: [''],
+      height: [''],
       // weightType: ['' , Validators.required]
     })
 
@@ -41,20 +46,28 @@ export class ShippingcalculatorComponent implements OnInit {
     this.weightType = type;
   }
 
-   getShippingRates() {
-     if(this.shippingForm.get('ZoneNumber').invalid) {
-        alert("Country is required.")
-     }
+  getShippingRates() {
+    if (this.shippingForm.get('ZoneNumber').invalid) {
+      alert("Country is required.")
+    }
     //  else if(this.shippingForm.get('weightType').invalid) {
     //   alert("Please select Weight Type.")
     //  }
-     else if(this.shippingForm.get('WeightKgs').invalid) {
+    else if (this.shippingForm.get('WeightKgs').invalid) {
       alert("Weight is required.")
-     }
-     else {
-       if(this.shippingForm.valid) {
-         const countryZone = parseInt(this.shippingForm.get('ZoneNumber').value);
-         const weigth = Math.round(this.shippingForm.get('WeightKgs').value);
+    }
+    else {
+      this.length = parseInt(this.shippingForm.get('length').value);
+      this.width = parseInt(this.shippingForm.get('width').value);
+      this.height = parseInt(this.shippingForm.get('height').value);
+      // alert(this.length);
+
+      if (this.shippingForm.valid) {
+
+        const countryZone = parseInt(this.shippingForm.get('ZoneNumber').value);
+
+        // const weigth = Math.round(this.shippingForm.get('WeightKgs').value);
+
         // if(this.shippingForm.get('weightType').value == 'lbs') {
         //    const lbsWeight = this.shippingForm.get('WeightKgs').value;
         //    const weigthKgs = lbsWeight * 0.453592;
@@ -63,82 +76,91 @@ export class ShippingcalculatorComponent implements OnInit {
         //  else if(this.shippingForm.get('weightType').value == 'kgs') {
         //   var weigth = Math.round(this.shippingForm.get('WeightKgs').value);
         //  }
-         
-      
-         const newObj = {
+       
+
+        if (this.length && this.width && this.height != '') {
+          var weightkilo = Math.round(this.shippingForm.get('WeightKgs').value);
+          var wiightcalculated = Math.round((this.length * this.height * this.width) / 5000);
+          if (weightkilo >= wiightcalculated) {
+            var weigth = weightkilo;
+          }
+          else {
+            var weigth = wiightcalculated;
+          }
+        }
+        else {
+          var weightkilo = Math.round(this.shippingForm.get('WeightKgs').value);
+          var weigth = weightkilo;
+        }
+       
+        const newObj = {
           ZoneNumber: countryZone,
           WeightKgs: weigth
-         }
+        }
 
-         this.shippingService.getShippingPrice(newObj).subscribe((res: any) => {
-           if(res.Status == 1) {
+        this.shippingService.getShippingPrice(newObj).subscribe((res: any) => {
+          if (res.Status == 1) {
             //  alert('Shipping Price is ' + res.ShippingPrice);
-            
-             this.selectCountry = !this.selectCountry;
-             this.router.navigate(['/home/opend/'+ res.ShippingPrice + '/' + weigth]);
-             this.shippingForm.reset();
-           }
-           else if(res.Status == 0) {
-              alert(res.Message);
-           }
-         })
-       }
-       else {
-         alert("Fields are required.")
-       }
-     }
-   }
 
-public onhome()
-{
-  this.router.navigate(['/home']);
-  window.scrollTo(0, 0);
-}
-   public pricing() {
+            this.selectCountry = !this.selectCountry;
+            this.router.navigate(['/home/opend/' + res.ShippingPrice + '/' + weigth]);
+            this.shippingForm.reset();
+          }
+          else if (res.Status == 0) {
+            alert(res.Message);
+          }
+        })
+      }
+      else {
+        alert("Fields are required.")
+      }
+    }
+  }
+
+  public onhome() {
+    this.router.navigate(['/home']);
+    window.scrollTo(0, 0);
+  }
+  public pricing() {
     this.router.navigate(['/home/pricing']);
     window.scrollTo(0, 0);
   }
-  public knowmore()
-  {
+  public knowmore() {
     this.router.navigate(['/home/knowmore']);
   }
-  public volumetric()
-  {
+  public volumetric() {
     this.router.navigate(['/home/volumetric']);
   }
-  public contactUs()
-  {
+  public contactUs() {
     this.router.navigate(['/home/contact']);
     window.scrollTo(0, 0);
   }
-  public comment()
-  {
+  public comment() {
     this.router.navigate(['/home/comment']);
     window.scrollTo(0, 0);
   }
-  public provibited(){
+  public provibited() {
     this.router.navigate(['/home/prohibited']);
     window.scrollTo(0, 0);
   }
-  public terms(){
+  public terms() {
     this.router.navigate(['/home/terms']);
     window.scrollTo(0, 0);
   }
-  public personal(){
+  public personal() {
     this.router.navigate(['/home/personal']);
     window.scrollTo(0, 0);
   }
-  public onamshopping(){
+  public onamshopping() {
     this.router.navigate(['/home/onamshopping']);
     window.scrollTo(0, 0);
   }
-  public tosis(){
+  public tosis() {
     this.router.navigate(['/home/tosis']);
     window.scrollTo(0, 0);
   }
-  public payment()
-  {
+  public payment() {
     this.router.navigate(['/home/payment']);
   }
 }
-export class DialogContentExampleDialog {}
+export class DialogContentExampleDialog { }
