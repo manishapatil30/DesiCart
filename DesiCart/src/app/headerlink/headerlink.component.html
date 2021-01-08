@@ -100,7 +100,7 @@
 
     </div>
 </header>
-<!-- <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
     <a class="navbar-brand" (click)="onHome();$event.stoppropagation">
        
     </a>
@@ -116,18 +116,18 @@
             <li class="nav-item active" (click)="onHome();$event.stoppropagation">
           <a class="nav-link text-black ml-3" routerLink="homepage" routerLinkActive="active_yellow">Home</a>
         </li>
-        <li class="nav-item" (click)="onHow();$event.stoppropagation">
+        <li class="nav-item active" (click)="onHow();$event.stoppropagation">
             <a class="nav-link text-black ml-3" routerLink="how" routerLinkActive="active_yellow">How</a>
         </li>
-        <li class="nav-item" (click)="onPricing();$event.stoppropagation">
+        <li class="nav-item active" (click)="onPricing();$event.stoppropagation">
             <a class="nav-link text-black ml-3" routerLink="pricing" routerLinkActive="active_yellow">Pricing & Services</a>
         </li>
-            <li class="nav-item"
+            <li class="nav-item active"
                 (click)="onShipping();$event.stoppropagation">
                 <a class="nav-link text-black ml-3" routerLink="shipping"
                     routerLinkActive="active_yellow">Shipping calculator</a>
             </li>
-            <li class="nav-item" (click)="onShop();$event.stoppropagation">
+            <li class="nav-item active" (click)="onShop();$event.stoppropagation">
             <a class="nav-link text-black ml-3" routerLink="shop" routerLinkActive="active_yellow">Shop</a>
         </li>
         </ul>
@@ -156,7 +156,7 @@
             <button type="button" class="btn text-black login_btn" (click)="onSign()" *ngIf="!Auth">Login</button>
         </form>
     </div>
-</nav> -->
+</nav>
 
 
 

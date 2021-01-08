@@ -27,17 +27,17 @@ import { PaymentsuccessfullComponent } from './paymentsuccessfull/paymentsuccess
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentfailComponent } from './paymentfail/paymentfail.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/home/shipping', pathMatch: 'full' },
+  { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
   {
     path: 'home', component: HomeComponent, children: [
-      { path: '', redirectTo: 'shipping', pathMatch: 'full' },
-      {
-        path: 'shipping', component: ShippingcalculatorComponent
-      },
-      // { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+      // { path: '', redirectTo: 'shipping', pathMatch: 'full' },
       // {
-      //   path: 'homepage', component: HomepageComponent
+      //   path: 'shipping', component: ShippingcalculatorComponent
       // },
+      { path: '', redirectTo: 'homepage', pathMatch: 'full' },
+      {
+        path: 'homepage', component: HomepageComponent
+      },
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'opend/:pr/:wet', component: OpendialogComponent },
       { path: 'knowmore', component: KnowmoredialogComponent },
@@ -55,6 +55,9 @@ const routes: Routes = [
       { path: 'terms', component: TermsconditionsComponent },
       { path: 'prohibited', component: ProhibteditemsComponent },
       { path: 'onamshopping', component: OnamshoppComponent },
+      {
+        path: 'shipping', component: ShippingcalculatorComponent
+      },
       { path: 'tosis', component: TosisComponent },
       { path: 'signup', component: SignupComponent },
       // {
