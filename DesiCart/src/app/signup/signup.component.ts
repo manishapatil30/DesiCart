@@ -138,6 +138,9 @@ export class SignupComponent implements OnInit {
           Password: this.form.get('password').value,
           PhoneNo: this.form.get('phoneNumber').value,
           WhatsappNo: this.form.get('mobileNumber').value,
+          CountryCode :1,
+          WhatsappCountryCode :1,
+          LockerCity :1,
           Type: 'SignUp'
     
         };
