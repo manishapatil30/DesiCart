@@ -533,6 +533,10 @@
   border: 1px solid gainsboro;
   margin-bottom: 40px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+
+  /* padding: 40px; */
+  background-color:#f2f3f7;
+
 }
 .midest
 {
@@ -636,4 +640,29 @@ li{
   width: 85%;
   margin: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+/* .responsive
+{
+  width: 350px;
+  height: 250px;
+} */
+
+@media screen and (min-width:580px) {
+  #diamensionbox {
+    width: 350px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width:680px) {
+  #diamensionbox {
+    width: 250px;
+    height: 150px;
+  }
+}
+@media screen and (max-width:360px) {
+  #diamensionbox {
+    width: 200px;
+    height: 150px;
+  }
 }
