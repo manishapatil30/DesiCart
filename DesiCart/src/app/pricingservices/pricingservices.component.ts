@@ -10,34 +10,52 @@ import { pricingService } from './pricing.service';
   styleUrls: ['./pricingservices.component.css']
 })
 export class PricingservicesComponent implements OnInit {
-
+Noitems:any;
+personalshopper:any;
+Weight:any;
+Tailoring:any;
+localstrogae:any;
   constructor(private router: Router, private fb: FormBuilder, private http: HttpClient,private pricingservice:pricingService) { }
   pricingform: FormGroup;
   ngOnInit(): void {
     this.pricingform = this.fb.group({
-      noitems: ['', Validators.required],
-      pshopper: ['', Validators.required],
-      weight: ['', Validators.required],
-      tailoring: ['', Validators.required],
-      lstorage: ['', Validators.required],
-      charge: ['', Validators.required],
+      noitems: [''],
+      pshopper: [''],
+      weight: [''],
+      tailoring: [''],
+      lstorage: [''],
+      // charge: ['', Validators.required],
       // weightType: ['' , Validators.required]
     })
   }
   getShippingRates() {
+    // this.Noitems=Number(this.pricingform.get('noitems').value);
+    // this.personalshopper=Number(this.pricingform.get('pshopper').value);
+    // this.Weight=parseFloat(this.pricingform.get('weight').value);
+    // this.Tailoring=parseFloat(this.pricingform.get('tailoring').value);
+    // this.localstrogae=Number(this.pricingform.get('lstorage').value);
+
+    // if(this.Noitems==='' && this.personalshopper==='' && this.Weight==='' && this.Tailoring==='' &&this.localstrogae==='')
+    // {
+    //   this.Noitems=Number(this.pricingform.get('noitems').value);
+    //   this.personalshopper=Number(this.pricingform.get('pshopper').value);
+    //   this.Weight=parseFloat(this.pricingform.get('weight').value);
+    //   this.Tailoring=parseFloat(this.pricingform.get('tailoring').value);
+    //   this.localstrogae=Number(this.pricingform.get('lstorage').value);
+    // }
     const headers = { 'x-api-key': 'pTBve3DrV2fJfGksPgBt5q0OVwB8Yiu6d5uxRSx2' };
     var body = {
       NoOfItems: Number(this.pricingform.get('noitems').value),
       ShopperEstimatedTotalCost: Number(this.pricingform.get('pshopper').value),
-      WeightInKgs: parseFloat(this.pricingform.get('weight').value),
-      TailoringEstimatedCost: parseFloat(this.pricingform.get('tailoring').value),
+      WeightInKgs: (this.pricingform.get('weight').value),
+      TailoringEstimatedCost: (this.pricingform.get('tailoring').value),
       LockerDays: Number(this.pricingform.get('lstorage').value)
     }
     
     this.pricingservice.savepricingPrice(body).subscribe((data: any) => {
       console.log(data);
       if (data.Status == 1) {
-        alert("Total service fee=" + data.TotalServiceFee);
+        alert("Total service fee=" + "₹"+ data.TotalServiceFee);
       }
       else {
         alert("Error! please try again");
