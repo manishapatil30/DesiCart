@@ -127,20 +127,23 @@
   }
   .center
   {
-      text-align: center;
+    /* width: 40%; */
+      /* text-align: center;
       justify-content: center;
-      justify-items: center;
+      justify-items: center; */
       margin-top: 10px;
       margin-bottom: 10px;
   }
   .center button
   {
-    height: 34px;
+    height: 40px;
+    width: 100%;
     background: black;
     border-radius: 6px;
     color: white;
     padding: 2px 15px 5px 15px;
     margin-top: 15px;
+    font-size: 20px;
   }
   .center button:focus{
       outline: none;
@@ -148,6 +151,7 @@
   .center a
   {
       color: white;
+     
   }
   .pricing
   {
@@ -166,7 +170,7 @@
       padding-bottom: 40px;
   }
   .pricing .row .card{
-      border-radius: 15px;
+      /* border-radius: 15px; */
   }
   .pricing .row .card p{
     color: white;
@@ -530,3 +534,64 @@
     text-align: center;
   }
 }
+.center1
+    {
+        /* text-align: center;
+        justify-content: center;
+        justify-items: center; */
+        margin:20px auto;
+        margin-bottom: 10px;
+        /* margin-top: 30px; */
+    }
+    .center1 button
+    {
+      height: 40px;
+      width: 60%;
+      /* margin: auto; */
+      background: white;
+      font-size: 16px;
+      border-radius: 10px;
+      color: black;
+      letter-spacing: 2px;
+    }
+    .center1 button:focus{
+        outline: none;
+    }
+    .center1 a
+    {
+        color: white;
+    }
+    .pricing_services .card
+    {
+      /* border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px; */
+      width: 95%;
+      margin: auto;
+    }
+    .pricing_services .card-body
+    {
+      /* border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px; */
+      background-color:whitesmoke ;
+    }
+    .pricing_services .card-body td
+    {
+      padding: 8px;
+    }
+    .pricing_services .card-body .box
+    {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    .pricing_services .card-body .box p
+    {
+     font-size: 14px;
+    }
+     .pricing_services .card-body input::placeholder
+    {
+     font-size: 12px;
+    }

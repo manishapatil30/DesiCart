@@ -46,6 +46,7 @@ import { LoginService } from './login/login.service';
 import { NumberDirective } from './validators/numbersOnly.directive';
 import { FooterComponent } from './footer/footer.component';
 import { ShippingCalculator } from './shippingcalculator/shippingcalculator.service';
+import { pricingService } from './pricingservices/pricing.service';
 import { OpendialogComponent } from './opendialog/opendialog.component';
 import { KnowmoredialogComponent } from './knowmoredialog/knowmoredialog.component';
 import { KnowmorevolemComponent } from './knowmorevolem/knowmorevolem.component';
@@ -129,6 +130,7 @@ export function provideConfig() {
       useFactory: provideConfig
     },
     LoginService,
+    pricingService,
     ShippingCalculator,
     PaymentService
   ],
