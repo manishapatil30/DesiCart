@@ -2,158 +2,258 @@
 
     <div class="pricing_services">
         <div class="container-fluid">
+            <div style="width: 80%;margin: 10px auto;">
+                <h3 align="center">Service Charge Calculator</h3>
+                <p style="margin-left: 30px;text-align: center;margin-top:
+                    20px;">You can calculate the estimated yourDesiCart service
+                    charges using below calculator. Service charges are in
+                    addition to the International Shipping Charges. Service
+                    Charges will be applied to the services you avail. </p>
+            </div>
+
             <form [formGroup]="pricingform" (ngSubmit)="getShippingRates()">
                 <div class="row">
                     <div class="row col-md-12 col-lg-12 col-xl-12">
                         <div class="card">
-                            <div class="card-header bg-light">
-                                <h5 align="center">Pricing Calculator</h5>
-                            </div>
+                            <!-- <div class="card-header bg-light">
+                                <h5 align="center">Service Charge Calculator</h5>
+                                <p align="center">You can calculate the estimated yourDesiCart service charges using below calculator. Service charges are in addition to the International Shipping Charges. Service Charges will be applied to the services you avail. </p>
+                            </div> -->
                             <div class="card-body">
                                 <div class="row col-md-12 col-lg-12
                                     col-xl-12">
-                                    <div class="col-md-10 col-sm-10">
+                                    <div class="col-md-10 col-sm-10 col-xl-10">
                                         <table width="100%">
                                             <tbody>
-                                                <tr>
-                                                    <td width="18%">
-                                                        <b><label>No of items:</label></b>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text"
-                                                            class="form-control" placeholder="No of item you plan to buy"
-                                                            formControlName="noitems" >
-                                                    </td>
-                                                    <td>
-                                                        <p style="margin-left:
-                                                            30px;"><i class="fa
-                                                                fa-cart-plus"
-                                                                style="margin-right:
-                                                                5px;font-size:
-                                                                18px;"></i>Rs.
-                                                            20 per item
-                                                            above 20 items.</p>
-                                                    </td>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <td>
+                                                            <b><label>Base Charge:</label></b>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-4 col-md-4">
+                                                        <td>
+                                                            <input type="text"
+                                                                class="form-control"
+                                                                value="Rs.750" size="40"
+                                                                readonly>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-5 col-md-5">
+                                                        <td>
+                                                            <p ><i class="fa
+                                                                    fa-cart-plus"
+                                                                    style="margin-right:
+                                                                    5px;font-size:
+                                                                    18px;"></i>Flat
+                                                    Fee applied to each
+                                                                international
+                                                                shipment. If there
+                                                                is no international
+                                                                shipment, then this
+                                                                charge is not
+                                                                applied.</p>
+                                                        </td>
+    
+                                                    </div>
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b> <label>Personal
-                                                                Shopper:</label></b>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text"
-                                                            class="form-control" placeholder="Estimated cost of item"
-                                                            formControlName="pshopper">
-                                                    </td>
-                                                    <td>
-                                                        <p style="margin-left:
-                                                            30px;"><i class="fa
-                                                                fa-rupee"
-                                                                style="margin-right:
-                                                                5px;font-size:
-                                                                18px;"></i>Rs.
-                                                            299 + 4% of
-                                                            cost entered.</p>
-                                                    </td>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <td>
+                                                            <b><label>You Buy We
+                                                                    Ship Service:</label></b>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-4 col-md-4">
+                                                        <td>
+                                                            <input type="text"
+                                                                class="form-control"  size="40"
+                                                                placeholder="No of item you plan to buy"
+                                                                formControlName="noitems">
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-5 col-md-5">
+                                                        <td>
+                                                            <p ><i class="fa
+                                                                    fa-cart-plus"  size="40"
+                                                                    style="margin-right:
+                                                                    5px;font-size:
+                                                                    18px;"></i><b>Rs.
+                                                                    20</b> per item
+                                                                above <b>20</b>
+                                                                items.</p>
+                                                        </td>
+                                                    </div>
+                                                   
+                                                    
+                                                    
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b><label>Weight:</label></b>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text"
-                                                            class="form-control" placeholder="Weight in kgs"
-                                                            formControlName="weight">
-                                                    </td>
-                                                    <td>
-                                                        <p style="margin-left:
-                                                            30px;"><i class="fa
-                                                                fa-rupee"
-                                                                style="margin-right:
-                                                                5px;font-size:
-                                                                18px;"></i>Rs.
-                                                            299 + weight
-                                                            based rate that we
-                                                            provide you.</p>
-                                                    </td>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <td>
+                                                            <b> <label>Personal
+                                                                    Shopper Service:</label></b>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-4 col-md-4">
+                                                        <td>
+                                                            <textarea type="text"
+                                                                rows="2"  size="40"
+                                                                class="form-control"
+                                                                placeholder="Estimated cost of items you want the shopper to buy on your behalf from India"
+                                                                formControlName="pshopper"></textarea>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-5 col-md-5">
+                                                        <td>
+                                                            <p ><i class="fa
+                                                                    fa-rupee"  size="40"
+                                                                    style="margin-right:
+                                                                    5px;font-size:
+                                                                    18px;"></i><b>Rs.
+                                                                    299 + 4%</b> of
+                                                                cost entered.
+                                                                Commute charges to
+                                                                buy the products
+                                                                will be additional.</p>
+                                                        </td>
+                                                    </div>
+                                                    
+                                                   
+                                                    
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b><label>Tailoring:</label></b>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text"
-                                                            class="form-control" placeholder="Tailored item cost"
-                                                            formControlName="tailoring">
-                                                    </td>
-                                                    <td>
-                                                        <p style="margin-left:
-                                                            30px;"><i class="fa
-                                                                fa-percent"
-                                                                style="margin-right:
-                                                                5px;font-size:
-                                                                18px;"></i>Rs.
-                                                            299 + 4% of
-                                                            tailored item cost</p>
-                                                    </td>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <td>
+                                                            <b><label>Pickup/Drop
+                                                                    Off Service:</label></b>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-4 col-md-4">
+                                                        <td>
+                                                            <textarea type="text"
+                                                                rows="2"  size="40"
+                                                                class="form-control"
+                                                                placeholder="enter the estimated weight of the package to be pickedup"
+                                                                formControlName="weight"></textarea>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-5 col-md-5">
+                                                        <td>
+                                                            <p ><i class="fa
+                                                                    fa-rupee"  size="40"
+                                                                    style="margin-right:
+                                                                    5px;font-size:
+                                                                    18px;"></i><b>Rs.
+                                                                    299</b> +
+                                                                domestic (within
+                                                                India) package
+                                                                pickup/drop off
+                                                                charges. </p>
+                                                        </td>
+                                                    </div>
+                                                   
+                                                    
+                                                    
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b><label>Locker
-                                                                storage:</label></b>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text"
-                                                            class="form-control" placeholder="number of days"
-                                                            formControlName="lstorage">
-                                                    </td>
-                                                    <td>
-                                                        <p style="margin-left:
-                                                            30px;"><i class="fa
-                                                                fa-location-arrow"
-                                                                style="margin-right:
-                                                                5px;font-size:
-                                                                18px;"></i>Rs.200
-                                                            per week
-                                                            after 20 days - per
-                                                            international
-                                                            shipment</p>
-                                                    </td>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <td>
+                                                            <b><label>Tailoring
+                                                                    Service:</label></b>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-4 col-md-4">
+                                                        <td>
+                                                            <input type="text"  size="40"
+                                                                class="form-control"
+                                                                placeholder="Tailored item cost"
+                                                                formControlName="tailoring">
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-5 col-md-5">
+                                                        <td>
+                                                            <p ><i class="fa
+                                                                    fa-percent"
+                                                                    style="margin-right:
+                                                                    5px;font-size:
+                                                                    18px;"></i><b>Rs.
+                                                                    299 + 4%</b> of
+                                                                tailored item cost</p>
+                                                        </td>
+                                                    </div>
+                                                  
+                                                  
+                                                    
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        <b><label>Base charge:</label></b>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text"
-                                                            class="form-control"
-                                                             value="Rs.750" readonly>
-                                                    </td>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-sm-3 col-md-3">
+                                                        <td>
+                                                            <b><label>Locker
+                                                                    Storage:</label></b>
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-4 col-md-4">
+                                                        <td>
+                                                            <input type="text"  size="40"
+                                                                class="form-control"
+                                                                placeholder="number of days"
+                                                                formControlName="lstorage">
+                                                        </td>
+                                                    </div>
+                                                    <div class="col-sm-5 col-md-5">
+                                                        <td>
+                                                            <p><i class="fa
+                                                                    fa-location-arrow"
+                                                                    style="margin-right:
+                                                                    5px;font-size:
+                                                                    18px;"></i>Free
+                                                                for <b>20</b> days
+                                                                from the day your
+                                                                first item arrives
+                                                                in locker. After
+                                                                that <b>Rs.200</b>
+                                                                per week. This
+                                                                20-day time resets
+                                                                per international
+                                                                shipment. If locker
+                                                                is not used, then no
+                                                                charge.</p>
+                                                        </td>
+                                                    </div>
+                                                   
+                                                    
+                                                    
+                                                </tr>
 
-                                                </tr>
 
                                             </tbody>
                                         </table>
-                                        <div class="center">
+                                        <div class="center" width="100%">
                                             <a href=""><button class="btn"
-                                                    type="submit" [disabled]="!pricingform.valid">Total</button></a>
+                                                    type="submit"
+                                                    [disabled]="!pricingform.valid">Total</button></a>
                                         </div>
                                     </div>
 
                                     <div class="col-md-2 col-sm-2">
+                                        <b>
+                                            <h6>Other Charges:</h6>
+                                        </b>
                                         <div class="box">
-                                            <p>Video requests -
-                                                items/packing/unpacking - 100
-                                                Rs.
+                                            <p>More Video Requests -
+                                                items/packing/unpacking - <b>100
+                                                    Rs.</b>
                                                 per item/package</p>
-                                            <p>Photo requests -
-                                                items/packing/unpacking - 100
-                                                Rs.
+                                            <p>More Photo Requests -
+                                                items/packing/unpacking - <b>100
+                                                    Rs.</b>
                                                 per item/package</p>
-                                            <p>Personal shopper - commute
+                                            <!-- <p>Personal shopper - commute
                                                 charges to
-                                                buy products</p>
-                                            <p>special packing charges</p>
+                                                buy products</p> -->
+                                            <p>Special packing charges for
+                                                fragile items</p>
                                             <p>shipment protection costs</p>
                                         </div>
                                     </div>
@@ -507,12 +607,11 @@
                                 <td valign="top">
                                     <p><svg width="1.5em" height="1.5em"
                                             viewBox="0 0 16 16" class="bi
-                                            bi-geo-alt"
-                                            fill="currentColor"
+                                            bi-geo-alt" fill="currentColor"
                                             xmlns="http://www.w3.org/2000/svg"
                                             style="color: yellowgreen;">
-                                            <path fill-rule="evenodd"
-                                                d="M12.166 8.94C12.696 7.867 13
+                                            <path fill-rule="evenodd" d="M12.166
+                                                8.94C12.696 7.867 13
                                                 6.862 13 6A5 5 0 0 0 3 6c0
                                                 .862.305 1.867.834 2.94.524
                                                 1.062 1.234 2.12 1.96
@@ -522,8 +621,8 @@
                                                 1.436-2.008 1.96-3.07zM8
                                                 16s6-5.686 6-10A6 6 0 0 0 2 6c0
                                                 4.314 6 10 6 10z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M8 8a2 2 0 1 0 0-4 2 2 0
+                                                <path fill-rule="evenodd" d="M8
+                                                    8a2 2 0 1 0 0-4 2 2 0
                                                     0 0 0 4zm0 1a3 3 0 1 0 0-6 3
                                                     3 0 0 0 0 6z"
                                                     style="margin-bottom: 10px;"
@@ -550,16 +649,15 @@
                                                     fill="currentColor"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     style="color: yellowgreen;">
-                                                    <path
-                                                        d="M3 0h10a2 2 0 0 1 2
+                                                    <path d="M3 0h10a2 2 0 0 1 2
                                                         2v12a2 2 0 0 1-2 2H3a2 2
                                                         0 0 1-2-2v-1h1v1a1 1 0 0
                                                         0 1 1h10a1 1 0 0 0
                                                         1-1V2a1 1 0 0 0-1-1H3a1
                                                         1 0 0 0-1 1v1H1V2a2 2 0
                                                         0 1 2-2z" />
-                                                        <path
-                                                            d="M1 5v-.5a.5.5 0 0
+                                                        <path d="M1 5v-.5a.5.5 0
+                                                            0
                                                             1 1 0V5h.5a.5.5 0 0
                                                             1 0 1h-2a.5.5 0 0 1
                                                             0-1H1zm0 3v-.5a.5.5
@@ -1470,7 +1568,7 @@
                                                         <div class="number">
                                                             <img
                                                                 src="assets\Images\Group 1094.png"
-                                                                width="95%"
+                                                                width="90%"
                                                                 height="600">
                                                         </div>
                                                     </div>
