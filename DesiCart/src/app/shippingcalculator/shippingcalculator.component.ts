@@ -13,9 +13,12 @@ export class ShippingcalculatorComponent implements OnInit {
   CountryZones = [];
   selectCountry: boolean = true;
   weightType: string;
+  WeightKgs:any;
   length: any;
   width: any
   height: any;
+  weightkilo:any;
+  wiightcalculated:any;
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -65,7 +68,6 @@ export class ShippingcalculatorComponent implements OnInit {
       if (this.shippingForm.valid) {
 
         const countryZone = parseInt(this.shippingForm.get('ZoneNumber').value);
-
         // const weigth = Math.round(this.shippingForm.get('WeightKgs').value);
 
         // if(this.shippingForm.get('weightType').value == 'lbs') {
@@ -77,20 +79,22 @@ export class ShippingcalculatorComponent implements OnInit {
         //   var weigth = Math.round(this.shippingForm.get('WeightKgs').value);
         //  }
        
-
+        
         if (this.length && this.width && this.height != '') {
-          var weightkilo = Math.round(this.shippingForm.get('WeightKgs').value);
-          var wiightcalculated = Math.round((this.length * this.height * this.width) / 5000);
-          if (weightkilo >= wiightcalculated) {
-            var weigth = weightkilo;
+          // this.weightkilo = Math.round(this.shippingForm.get('WeightKgs').value);
+          this.weightkilo =  Math.ceil((this.shippingForm.get('WeightKgs').value)* 2)/ 2;
+          
+          this.wiightcalculated = Math.round((this.length * this.height * this.width) / 5000);
+          if (this.weightkilo >= this.wiightcalculated) {
+            var weigth = this.weightkilo;
           }
           else {
-            var weigth = wiightcalculated;
+            var weigth = this.wiightcalculated;
           }
         }
         else {
-          var weightkilo = Math.round(this.shippingForm.get('WeightKgs').value);
-          var weigth = weightkilo;
+          this.weightkilo =  Math.ceil((this.shippingForm.get('WeightKgs').value)* 2)/ 2;
+          var weigth = this.weightkilo;
         }
        
         const newObj = {
