@@ -93,8 +93,19 @@ export class ShippingcalculatorComponent implements OnInit {
           }
         }
         else {
-          this.weightkilo =  Math.ceil((this.shippingForm.get('WeightKgs').value)* 2)/ 2;
-          var weigth = this.weightkilo;
+          // this.weightkilo =  Math.ceil((this.shippingForm.get('WeightKgs').value)* 2)/ 2;
+          // var weigth = this.weightkilo;
+
+          if((this.shippingForm.get('WeightKgs').value) > 20)
+          {
+            this.weightkilo =  Math.ceil(this.shippingForm.get('WeightKgs').value);
+            var weigth = this.weightkilo;
+          }
+          else{
+            this.weightkilo =  Math.ceil((this.shippingForm.get('WeightKgs').value)* 2)/ 2;
+            var weigth = this.weightkilo;
+          }
+         
         }
        
         const newObj = {
