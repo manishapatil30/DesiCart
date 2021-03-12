@@ -449,6 +449,11 @@
 .shopping_cards {
   padding: 2rem 0;
 }
+.shopping_cards .card:not(.highlight-card):hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.137);
+}
+
 
 @media screen and (max-width:1200px) {
   #shopping_card_three{
