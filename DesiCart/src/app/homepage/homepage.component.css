@@ -636,7 +636,14 @@
   }
  }
 
- details summary::-webkit-details-marker {
+ /* details summary::-webkit-details-marker {
+  display:none;
+  background-image:none;
+ -webkit-appearance:none;
+ list-style-type: none;
+ outline: none;
+} */
+details summary::marker {
   display:none;
   background-image:none;
  -webkit-appearance:none;
@@ -646,6 +653,7 @@
 
 summary {
   outline: none !important;
+  list-style-type: none;
 }
 
 
