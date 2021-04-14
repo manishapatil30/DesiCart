@@ -153,6 +153,10 @@
       color: white;
      
   }
+  .center button:hover {
+    transform: translateY(-3px);
+    background-color:#3d434b;
+  }
   .pricing
   {
     width: 90%;
@@ -526,8 +530,21 @@
   .shopping_single_card p {
     font-size: 1rem;
   }
+  
 }
-
+.optional
+{
+  border: 1px solid silver;
+  padding: 10px 0 10px 0 ;
+  width:90%;
+  margin: 10px 20px;
+}
+@media screen and (max-width:380px) {
+ .optional
+  {
+    border: 1px solid white;
+  }
+}
 @media screen and (max-width:700px) {
   .pricing_title {
     padding: 0 0 0.8rem 0;
@@ -540,32 +557,40 @@
   }
 }
 .center1
-    {
-        /* text-align: center;
-        justify-content: center;
-        justify-items: center; */
-        margin:20px auto;
-        margin-bottom: 10px;
-        /* margin-top: 30px; */
-    }
-    .center1 button
-    {
-      height: 40px;
-      width: 60%;
-      /* margin: auto; */
-      background: white;
-      font-size: 16px;
-      border-radius: 10px;
-      color: black;
-      letter-spacing: 2px;
-    }
-    .center1 button:focus{
-        outline: none;
-    }
-    .center1 a
-    {
-        color: white;
-    }
+  {
+    /* width: 40%; */
+      /* text-align: center;
+      justify-content: center;
+      justify-items: center; */
+      margin-top: 10px;
+      margin: auto;
+      width: 70%;
+      margin-bottom: 10px;
+  }
+  .center1 button
+  {
+    height: 40px;
+    width: 100%;
+    margin: auto;
+    background: black;
+    border-radius: 6px;
+    color: white;
+    padding: 2px 15px 5px 15px;
+    margin-top: 25px;
+    font-size: 20px;
+  }
+  .center1 button:focus{
+      outline: none;
+  }
+  .center1 a
+  {
+      color: white;
+     
+  }
+  .center1 button:hover {
+    transform: translateY(-3px);
+    background-color:#3d434b;
+  }
     .pricing_services .card
     {
       /* border-top-left-radius: 20px;
@@ -608,4 +633,47 @@
     {
      width: 130%;
     }
-   
+
+    .pricing_services1 .card
+    {
+      /* border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px; */
+      width: 70%;
+      margin: auto;
+    }
+    .pricing_services1 .card-body
+    {
+      /* border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px; */
+      background-color:whitesmoke ;
+    }
+    .pricing_services1 .card-body td
+    {
+      padding: 8px;
+    }
+    .pricing_services1 .card-body .box
+    {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    .pricing_services1 .card-body .box p
+    {
+     font-size: 16px;
+    }
+     .pricing_services1 .card-body input::placeholder
+    {
+     font-size: 12px;
+    }
+    .pricing_services1 .card-body  textarea::placeholder
+    {
+     font-size: 12px;
+    }
+    .pricing_services1 .card-body .abc
+    {
+     margin: auto;
+    }
+    

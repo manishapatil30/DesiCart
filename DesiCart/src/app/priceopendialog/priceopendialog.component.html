@@ -1,0 +1,112 @@
+<app-pricingservices></app-pricingservices>
+<div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+<div class="modal d-block fade"
+    [ngClass]="{ show: showModal }"
+    (click)="onClose()"
+    id="listing-dialog"
+    tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+    <div class="modal-dialog modal-lg" role="document"
+        (click)="onDialogClick($event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Pick-Up Charges
+                </h5>
+                <button type="button"
+                    class="close"
+                    (click)="onClose()"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <b><p>Rates for shipping a {{wweight}}kg prepaid packet from {{pic}} to {{post}} </p></b>
+               <b> <label>Air Mode</label></b>
+                <table width="100%" border="1">
+                    <thead>
+                        <!-- <th>Sr.No</th> -->
+                        <th>Courier Provider</th>
+                        <th>Rate (INR)</th>
+                        <th>Users Rating</th>
+                    </thead>
+                    <tbody *ngFor="let item of ratedata;index as i">
+                        <tr *ngIf="item.mode==1;">
+                            <!-- <td>{{i+1}}</td> -->
+                            <td>{{item.courier_name}}</td>
+                            <td>&#8377; {{(299 + (25*item.rate/100) + item.rate) | number:'1.2-2'}}</td>
+                            <td>
+                                <div style="display: inline;">
+                                    <span><div class="progress" *ngIf="item.rating >= 4" style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-success" style="width:80%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                     
+                                      <div class="progress" *ngIf="item.rating >= 3 && item.rating <= 4 " style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-info" style="width:60%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                      
+                                      <div class="progress" *ngIf="item.rating >= 2 && item.rating <= 3 " style="width: 100%;border-radius: 20px;">
+                                         <div class="progress-bar bg-warning" style="width:40%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                      <div class="progress" *ngIf="item.rating >= 1 && item.rating<= 2" style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-danger" style="width:20%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                      <div class="progress" *ngIf="item.rating < 1" style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-danger" style="width:10%"><span>{{item.rating}}</span></div>
+                                      </div></span>
+                                    
+                                </div>
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <b><label>Surface Mode</label></b>
+                <table width="100%" border="1">
+                    <thead>
+                        <!-- <th>Sr.No</th> -->
+                        <th>Courier Provider</th>
+                        <th>Rate (INR)</th>
+                        <th>Users Rating</th>
+                    </thead>
+                    <tbody *ngFor="let item of ratedata;index as i">
+                        <tr *ngIf="item.mode==0">
+                            <!-- <td>{{i+1}}</td> -->
+                            <td>{{item.courier_name}}</td>
+                            <td>&#8377; {{(299 + (25*item.rate/100) + item.rate) | number:'1.2-2'}}</td>
+                            <td>
+                                
+                                <div style="display: inline;">
+                                    <span><div class="progress" *ngIf="item.rating >= 4" style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-success" style="width:80%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                     
+                                      <div class="progress" *ngIf="item.rating >= 3 && item.rating <= 4 " style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-info" style="width:60%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                      
+                                      <div class="progress" *ngIf="item.rating >= 2 && item.rating <= 3 " style="width: 100%;border-radius: 20px;">
+                                         <div class="progress-bar bg-warning" style="width:40%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                      <div class="progress" *ngIf="item.rating >= 1 && item.rating<= 2" style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-danger" style="width:20%"><span>{{item.rating}}</span></div>
+                                      </div>
+                                    
+                                      <div class="progress" *ngIf="item.rating < 1" style="width: 100%;border-radius: 20px;">
+                                        <div class="progress-bar bg-danger" style="width:10%"><span>{{item.rating}}</span></div>
+                                      </div></span>
+                                </div>
+                            
+                                  
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

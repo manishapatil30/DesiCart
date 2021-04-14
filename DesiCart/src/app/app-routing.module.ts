@@ -26,6 +26,7 @@ import { KnowmorevolemComponent } from './knowmorevolem/knowmorevolem.component'
 import { PaymentsuccessfullComponent } from './paymentsuccessfull/paymentsuccessfull.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentfailComponent } from './paymentfail/paymentfail.component';
+import { PriceopendialogComponent } from './priceopendialog/priceopendialog.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
       { path: 'paymentsuccess', component: PaymentsuccessfullComponent },
       { path: 'paymentfail', component: PaymentfailComponent },
       { path: 'volumetric', component: KnowmorevolemComponent },
+      { path: 'pickup-charges/:pic/:post/:weight', component: PriceopendialogComponent },
       { path: 'pricing', component: PricingservicesComponent },
       { path: 'payment', component: PaymentComponent },
       { path: 'shop', component: ShopComponent },
