@@ -34,7 +34,7 @@ export class PriceopendialogComponent implements OnInit {
     this.showModal = false;
     //Allow fade out animation to play before navigating back
     setTimeout(
-      () => this.router.navigate(['home/pricing']),
+      () => this.router.navigate(['home/pickup']),
       100
     );
   }

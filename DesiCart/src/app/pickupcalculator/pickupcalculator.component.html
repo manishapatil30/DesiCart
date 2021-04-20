@@ -1,0 +1,159 @@
+<div class="top">
+    <div class="vc_empty_space" style="height: 35px;"><span
+        class="vc_empty_space_inner"></span>
+    </div>
+    <div class="pricing_services">
+        <div class="container-fluid">
+            <div style="width: 80%;margin: 10px auto;">
+                <h3 align="center"> Domestic Pickup Charge Calculator</h3>
+                <p style="margin-left: 30px;text-align: center;margin-top:
+                    20px;"> </p>
+            </div>
+
+            <form [formGroup]="pricingform1" (ngSubmit)="getpickupcharges()">
+                <div class="row pricing_services1">
+                    <div class="row col-md-12 col-lg-12 col-xl-12">
+                        <div class="card">
+                           
+                            <div class="card-body">
+                                <div class="row col-md-12 col-lg-12
+                                    col-xl-12 abc">
+                                    <div class="col-md-12 col-sm-12 col-xl-12" >
+                                        <table width="80%" style="margin: auto;">
+                                            <tbody>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                        <td> 
+                                                            <b><label>Pick-up Area Pincode*</label></b>
+                                                            <input type="text"
+                                                                class="form-control" placeholder="Enter Pick-Up Pincode"
+                                                                 size="65" maxlength="6" formControlName="pickupcode"
+                                                                 required numbersOnly>
+                                                        </td>
+                                                    </div>
+                                                  
+                                                   
+                                                </tr>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                        <td>
+                                                            <b><label>Delivery Area Pincode*</label></b>
+                                                            <input type="text"
+                                                                class="form-control"  size="65" formControlName="delivercode"
+                                                                placeholder="Enter Delivery Pincode" maxlength="6"
+                                                                 numbersOnly required>
+                                                        </td>
+                                                    </div>
+                                                  
+                                                    
+                                                </tr>
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                        <td>
+                                                            <b><label>Declared Value in INR</label></b>
+                                                            <input type="text" min="0"
+                                                                class="form-control"  size="65"
+                                                                placeholder="Declared Value"
+                                                                formControlName="shippingprice">
+                                                        </td>
+                                                    </div>
+                                                    
+                                                   
+                                                    
+                                                </tr>
+                                               
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                        <td>
+                                                            <b> <label>Weight(Kgs)*</label></b>
+                                                            <input type="text" min="0"
+                                                            class="form-control"  size="65"
+                                                            placeholder="Weight in kgs"
+                                                            formControlName="shipiingweight" required>
+                                                        </td>
+                                                    </div>
+                                                   
+                                                   
+                                                </tr>
+                                             
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="col-sm-4 col-md-4">
+                                                        <td>
+                                                            <b>Optional Fields:</b>
+                                                        </td>
+                                                    </div>
+                                                </tr>
+                                                <div class="optional">
+                                                    <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                        <div class="col-sm-3 col-md-3">
+                                                            <td>
+                                                                <b><label>Length(cm)</label></b>
+                                                            </td>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6" style="margin-left: 13px;">
+                                                            <td>
+                                                                <input type="number" min="0"  size="40"
+                                                                    class="form-control"
+                                                                    placeholder="optional"
+                                                                    formControlName="length">
+                                                            </td>
+                                                        </div>
+                                                    
+                                                    </tr>
+                                                    <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                        <div class="col-sm-3 col-md-3">
+                                                            <td>
+                                                                <b><label>Width(cm)</label></b>
+                                                            </td>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6" style="margin-left: 13px;">
+                                                            <td>
+                                                                <input type="number" min="0"  size="40"
+                                                                    class="form-control"
+                                                                    placeholder="optional"
+                                                                    formControlName="width">
+                                                            </td>
+                                                        </div>
+                                                    
+                                                    </tr>
+                                                    <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                        <div class="col-sm-3 col-md-3">
+                                                            <td>
+                                                                <b><label>Height(cm)</label></b>
+                                                            </td>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6" style="margin-left: 13px;">
+                                                            <td>
+                                                                <input type="number" min="0"  size="40"
+                                                                    class="form-control"
+                                                                    placeholder="optional"
+                                                                    formControlName="height">
+                                                            </td>
+                                                        </div>
+                                                    
+                                                    </tr>
+
+                                                </div>
+                                                
+                                                <tr class="row col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                                                    <div class="center1" width="70%">
+                                                        <a href=""><button class="btn"
+                                                                type="submit"
+                                                                [disabled]="!pricingform1.valid">Calculate</button></a>
+                                                    </div>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="vc_empty_space" style="height: 40px;"><span
+        class="vc_empty_space_inner"></span>
+    </div>
+</div>

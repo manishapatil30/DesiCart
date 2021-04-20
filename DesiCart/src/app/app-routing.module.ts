@@ -27,6 +27,7 @@ import { PaymentsuccessfullComponent } from './paymentsuccessfull/paymentsuccess
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentfailComponent } from './paymentfail/paymentfail.component';
 import { PriceopendialogComponent } from './priceopendialog/priceopendialog.component';
+import { PickupcalculatorComponent } from './pickupcalculator/pickupcalculator.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
       {
         path: 'homepage', component: HomepageComponent
       },
+      { path: 'pickup', component: PickupcalculatorComponent },
       { path: 'headerlink', component: HeaderlinkComponent },
       { path: 'opend/:pr/:wet', component: OpendialogComponent },
       { path: 'knowmore', component: KnowmoredialogComponent },
