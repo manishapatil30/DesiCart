@@ -57,6 +57,7 @@ import { PaymentsuccessfullComponent } from './paymentsuccessfull/paymentsuccess
 import { PaymentfailComponent } from './paymentfail/paymentfail.component';
 import { PriceopendialogComponent } from './priceopendialog/priceopendialog.component';
 import { PickupcalculatorComponent } from './pickupcalculator/pickupcalculator.component';
+import { ServicechargecalculatordialogComponent } from './servicechargecalculatordialog/servicechargecalculatordialog.component';
 // const config = new AuthServiceConfig([
 //   {
 //     id: GoogleLoginProvider.PROVIDER_ID,
@@ -106,7 +107,8 @@ export function provideConfig() {
     PaymentsuccessfullComponent,
     PaymentfailComponent,
     PriceopendialogComponent,
-    PickupcalculatorComponent
+    PickupcalculatorComponent,
+    ServicechargecalculatordialogComponent
   ],
   imports: [
     BrowserModule,

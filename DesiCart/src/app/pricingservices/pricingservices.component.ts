@@ -116,6 +116,7 @@ localstrogae:any;
     this.pricingservice.savepricingPrice(body).subscribe((data: any) => {
       console.log(data);
       if (data.Status == 1) {
+        this.router.navigate(['/home/servicecharge/'+ data.TotalServiceFee]);
         alert("Total service fee=" + "₹"+ data.TotalServiceFee);
       }
       else {

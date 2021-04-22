@@ -28,6 +28,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { PaymentfailComponent } from './paymentfail/paymentfail.component';
 import { PriceopendialogComponent } from './priceopendialog/priceopendialog.component';
 import { PickupcalculatorComponent } from './pickupcalculator/pickupcalculator.component';
+import { ServicechargecalculatordialogComponent } from './servicechargecalculatordialog/servicechargecalculatordialog.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
   {
@@ -42,6 +44,7 @@ const routes: Routes = [
       },
       { path: 'pickup', component: PickupcalculatorComponent },
       { path: 'headerlink', component: HeaderlinkComponent },
+      { path: 'servicecharge/:price', component: ServicechargecalculatordialogComponent },
       { path: 'opend/:pr/:wet', component: OpendialogComponent },
       { path: 'knowmore', component: KnowmoredialogComponent },
       { path: 'paymentsuccess', component: PaymentsuccessfullComponent },

@@ -1,0 +1,26 @@
+<app-pricingservices></app-pricingservices>
+<div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+<div class="modal d-block fade"
+    [ngClass]="{ show: showModal }"
+    (click)="onClose()"
+    id="listing-dialog"
+    tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+    <div class="modal-dialog modal-md" role="document"
+        (click)="onDialogClick($event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Services Charges
+                </h5>
+                <button type="button"
+                    class="close"
+                    (click)="onClose()"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               <p>Total service fee= ₹ {{pic}}</p>
+             
+            </div>
+        </div>
+    </div>
+
