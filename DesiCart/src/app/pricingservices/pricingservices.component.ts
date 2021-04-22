@@ -117,7 +117,6 @@ localstrogae:any;
       console.log(data);
       if (data.Status == 1) {
         this.router.navigate(['/home/servicecharge/'+ data.TotalServiceFee]);
-        alert("Total service fee=" + "₹"+ data.TotalServiceFee);
       }
       else {
         alert("Error! please try again");
