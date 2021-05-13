@@ -34,21 +34,20 @@
                             <td>&#8377; {{(299 + (25*item.rate/100) + item.rate) | number:'1.2-2'}}</td>
                             <td>
                                 <div style="display: inline;">
-                                    <span><div class="progress" *ngIf="item.rating >= 4" style="width: 100%;border-radius: 20px;">
+                                    <span>
+                                        <div class="progress" *ngIf="item.rating > 4" style="width: 100%;border-radius: 20px;">
                                         <div class="progress-bar bg-success" style="width:80%"><span>{{item.rating}}</span></div>
                                       </div>
                                     
-                                     
-                                      <div class="progress" *ngIf="item.rating >= 3 && item.rating <= 4 " style="width: 100%;border-radius: 20px;">
+                                      <div class="progress" *ngIf="item.rating > 3 && item.rating <= 4 " style="width: 100%;border-radius: 20px;">
                                         <div class="progress-bar bg-info" style="width:60%"><span>{{item.rating}}</span></div>
                                       </div>
-                                    
-                                      
-                                      <div class="progress" *ngIf="item.rating >= 2 && item.rating <= 3 " style="width: 100%;border-radius: 20px;">
+                                
+                                      <div class="progress" *ngIf="item.rating > 2 && item.rating <= 3 " style="width: 100%;border-radius: 20px;">
                                          <div class="progress-bar bg-warning" style="width:40%"><span>{{item.rating}}</span></div>
                                       </div>
                                     
-                                      <div class="progress" *ngIf="item.rating >= 1 && item.rating<= 2" style="width: 100%;border-radius: 20px;">
+                                      <div class="progress" *ngIf="item.rating >= 1 && item.rating <= 2" style="width: 100%;border-radius: 20px;">
                                         <div class="progress-bar bg-danger" style="width:20%"><span>{{item.rating}}</span></div>
                                       </div>
                                     
@@ -79,17 +78,17 @@
                             <td>
                                 
                                 <div style="display: inline;">
-                                    <span><div class="progress" *ngIf="item.rating >= 4" style="width: 100%;border-radius: 20px;">
+                                    <span><div class="progress" *ngIf="item.rating > 4" style="width: 100%;border-radius: 20px;">
                                         <div class="progress-bar bg-success" style="width:80%"><span>{{item.rating}}</span></div>
                                       </div>
                                     
                                      
-                                      <div class="progress" *ngIf="item.rating >= 3 && item.rating <= 4 " style="width: 100%;border-radius: 20px;">
+                                      <div class="progress" *ngIf="item.rating > 3 && item.rating <= 4 " style="width: 100%;border-radius: 20px;">
                                         <div class="progress-bar bg-info" style="width:60%"><span>{{item.rating}}</span></div>
                                       </div>
                                     
                                       
-                                      <div class="progress" *ngIf="item.rating >= 2 && item.rating <= 3 " style="width: 100%;border-radius: 20px;">
+                                      <div class="progress" *ngIf="item.rating > 2 && item.rating <= 3 " style="width: 100%;border-radius: 20px;">
                                          <div class="progress-bar bg-warning" style="width:40%"><span>{{item.rating}}</span></div>
                                       </div>
                                     
