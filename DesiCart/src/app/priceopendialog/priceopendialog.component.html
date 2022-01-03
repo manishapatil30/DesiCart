@@ -31,7 +31,7 @@
                         <tr *ngIf="item.mode==1;">
                             <!-- <td>{{i+1}}</td> -->
                             <td>{{item.courier_name}}</td>
-                            <td>&#8377; {{(299 + (25*item.rate/100) + item.rate) | number:'1.2-2'}}</td>
+                            <td>&#8377; {{(100 + (25*item.rate/100) + item.rate) | number:'1.2-2'}}</td>
                             <td>
                                 <div style="display: inline;">
                                     <span>
@@ -74,7 +74,7 @@
                         <tr *ngIf="item.mode==0">
                             <!-- <td>{{i+1}}</td> -->
                             <td>{{item.courier_name}}</td>
-                            <td>&#8377; {{(299 + (25*item.rate/100) + item.rate) | number:'1.2-2'}}</td>
+                            <td>&#8377; {{(100 + (25*item.rate/100) + item.rate) | number:'1.2-2'}}</td>
                             <td>
                                 
                                 <div style="display: inline;">
